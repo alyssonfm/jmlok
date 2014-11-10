@@ -1,0 +1,15 @@
+<project name="generateTests" default="compile_tests" basedir="..">
+	<target name="compile_tests">
+			<echo>Compiling the tests</echo>
+			<javac fork="yes" memorymaximumsize="512m" includes="*.java" debug="on" srcdir="${tests_src}" destdir="${tests_bin}" includeantruntime="false">
+				<classpath>
+					<fileset dir="${lib}">
+						<include name="**/*.jar" />
+					</fileset>
+					<pathelement location="${source_bin}" />
+					<pathelement path="${jmlLib}" />
+				</classpath>
+			</javac>
+	</target>
+	
+</project>

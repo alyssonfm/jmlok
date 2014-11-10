@@ -1,0 +1,17 @@
+<project name="JavaCompile" default="compile_project" basedir="..">
+
+	<target name="compile_project">
+			<echo>Compiling the project</echo>
+			<javac fork="yes" memorymaximumsize="512m" debug="on" srcdir="${source_folder}/" destdir="${source_bin}/" includeantruntime="false">
+				<classpath>
+					<pathelement path="${jmlLib}" />
+					<fileset dir="${lib}">
+						<include name="**/*.jar" />
+					</fileset>
+					<fileset dir="${source_folder}/">
+						<include name="**/*.java" />
+					</fileset>
+				</classpath>
+			</javac>
+	</target>
+</project>

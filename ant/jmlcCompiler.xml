@@ -1,0 +1,15 @@
+<project name="jmlcCompiler" default="jmlc" basedir="..">
+	<target name="jmlc">
+		<echo>
+             Compiling with JML compiler
+        </echo>
+		<exec command="${jmlcExec}">		
+			<arg value="--recursive" />
+			<arg value="${source_folder}" />
+			
+			<arg value="-d" />			
+			<arg value="${jmlBin}" />
+			
+		</exec>
+	</target>
+</project>

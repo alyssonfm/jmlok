@@ -1,0 +1,14 @@
+<project name="openjmlCompiler" default="openJML" basedir="..">
+
+	<target name="openJML">
+		<echo>
+	            Compiling the JML code
+	        </echo>
+		<exec command="java -jar C:/openjml/openjml.jar -rac">
+			<arg value="-dir" />
+			<arg value="${source_folder}" />
+			<arg value="-d" />
+			<arg value="${jmlBin}" />
+		</exec>
+	</target>
+</project>

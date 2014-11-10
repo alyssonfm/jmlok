@@ -1,0 +1,17 @@
+<project name="jmlcCompiler" default="jmlc" basedir="..">
+	<target name="jmlc">
+		<echo>
+            Compilando com JMLC
+        </echo>
+		<exec command="${jmlcExec}">		
+			<arg value="${source_folder}"/>			
+			
+			<arg value="-S"/>
+			<arg value="${source_folder}"/>
+			
+			<arg value="-d" />			
+			<arg value="${jmlBin}" />
+			
+		</exec>
+	</target>
+</project>

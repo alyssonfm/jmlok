@@ -1,0 +1,25 @@
+<project name="runTests" default="run_tests" basedir="..">
+
+	<target name="run_tests">
+			<echo>Running JUnit to test the JML code</echo>
+			<junit printsummary="yes" haltonfailure="yes" fork="true" maxmemory="512m">			
+				<classpath>
+					<fileset dir="${lib}">
+						<include name="**/*.jar" />
+					</fileset>
+					<fileset dir="${jmlCompiler}">
+						<include name="jmlruntime.jar" />
+					</fileset>
+					<pathelement location="${jmlBin}" />
+					<pathelement location="${tests_bin}" />
+				</classpath>
+				<formatter type="xml" />
+				<batchtest todir="${tests_src}" haltonfailure="no">
+					<fileset dir="${tests_bin}">
+						<include name="*Test.class" />
+					</fileset>
+				</batchtest>
+			</junit>			
+		</target>
+	
+</project>
