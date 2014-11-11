@@ -9,7 +9,7 @@ import detect.TestError;
 
 /**
  * Class used to categorize the nonconformances discovered into the SUT.
- * @author Alysson Milanez and Dennis Sousa.
+ * @author Alysson Milanez and Dennis Sousa. xD
  */
 public class Categorize {
 
