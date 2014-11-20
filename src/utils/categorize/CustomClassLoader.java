@@ -1,13 +1,14 @@
-package utils;
+package utils.categorize;
 
 import java.io.FileInputStream;
+
+import utils.commons.Constants;
 
 /**
  * Class CustomClassLoader used to load the class file of a given path.
  * @author Alysson Milanez and Dennis Sousa.
  *
  */
-
 public class CustomClassLoader extends ClassLoader {
 	
 	final String basePath = Constants.SOURCE_BIN+Constants.FILE_SEPARATOR;

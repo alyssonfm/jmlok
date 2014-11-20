@@ -31,7 +31,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 
-import utils.Constants;
+import utils.commons.Constants;
 
 /**
  * Main class to the GUI. Represents the first screen showed to JMLOK user.
@@ -119,14 +119,14 @@ public class Main extends JFrame {
 		setMinimumSize(new Dimension(this.WIDTH, this.HEIGHT));
 		setMaximumSize(new Dimension(1450, this.HEIGHT));
 		setMaximizedBounds(new Rectangle(1450, this.HEIGHT));
-		
+		// Initialize Icons for all Windows
 		List<Image> icons = new ArrayList<Image>();
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(16x16).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(32x32).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(64x64).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(128x128).jpg")).getImage());
 		setIconImages(icons);
-		
+		// Initialize Layout for Window.
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -137,6 +137,7 @@ public class Main extends JFrame {
 		dirLibs = new JFileChooser();
 		dirSources = new JFileChooser();
 		
+		// Labels
 		JLabel lblExternalLibFolder = new JLabel("Choose external libraries folder");
 		springLayout.putConstraint(SpringLayout.EAST, lblExternalLibFolder, 350, SpringLayout.WEST, contentPane);
 		springLayout.putConstraint(SpringLayout.NORTH, lblExternalLibFolder, 50, SpringLayout.NORTH, contentPane);
@@ -154,6 +155,7 @@ public class Main extends JFrame {
 		lblSrcFolder.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblSrcFolder);
 		
+		// TextFields
 		textFieldSrcFolder = new JLabel();
 		springLayout.putConstraint(SpringLayout.NORTH, textFieldSrcFolder, 5, SpringLayout.NORTH, lblSrcFolder);
 		springLayout.putConstraint(SpringLayout.EAST, textFieldSrcFolder, -10, SpringLayout.EAST, contentPane);
@@ -168,14 +170,14 @@ public class Main extends JFrame {
 		textFieldExtLibFolder.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(textFieldExtLibFolder);
 		
+		// Browse Buttons
 		JButton btnBrowseSrcFolder = new JButton("Browse");
 		springLayout.putConstraint(SpringLayout.NORTH, btnBrowseSrcFolder, 2, SpringLayout.NORTH, lblSrcFolder);
 		springLayout.putConstraint(SpringLayout.WEST, btnBrowseSrcFolder, 6, SpringLayout.EAST, lblSrcFolder);
 		btnBrowseSrcFolder.setFont(new Font("Verdana", Font.BOLD, 18));
 		btnBrowseSrcFolder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				browseSrcFolder();
-				
+				browseSrcFolder();		
 			}
 		});
 		contentPane.add(btnBrowseSrcFolder);
@@ -193,6 +195,7 @@ public class Main extends JFrame {
 		});
 		contentPane.add(btnBrowseExtLibFolder);
 		
+		// Time
 		JLabel lblTime = new JLabel("Time to tests generation  ");
 		springLayout.putConstraint(SpringLayout.NORTH, lblTime, 13, SpringLayout.SOUTH, lblExternalLibFolder);
 		lblTime.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -209,6 +212,13 @@ public class Main extends JFrame {
 		contentPane.add(textFieldTime);
 		textFieldTime.setColumns(6);
 		
+		JLabel lblSeconds = new JLabel("seconds");
+		springLayout.putConstraint(SpringLayout.NORTH, lblSeconds, 0, SpringLayout.NORTH, lblTime);
+		springLayout.putConstraint(SpringLayout.WEST, lblSeconds, 520, SpringLayout.WEST, contentPane);
+		lblSeconds.setFont(new Font("Verdana", Font.BOLD, 18));
+		contentPane.add(lblSeconds);
+		
+		// Run Button
 		btnRun = new JButton("Run");
 		springLayout.putConstraint(SpringLayout.WEST, btnRun, -274, SpringLayout.EAST, contentPane);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnRun, -10, SpringLayout.SOUTH, contentPane);
@@ -234,12 +244,7 @@ public class Main extends JFrame {
 		});
 		contentPane.add(btnRun);
 		
-		JLabel lblSeconds = new JLabel("seconds");
-		springLayout.putConstraint(SpringLayout.NORTH, lblSeconds, 0, SpringLayout.NORTH, lblTime);
-		springLayout.putConstraint(SpringLayout.WEST, lblSeconds, 520, SpringLayout.WEST, contentPane);
-		lblSeconds.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(lblSeconds);
-		
+		// Clean Button
 		JButton btnClean = new JButton("Clean");
 		springLayout.putConstraint(SpringLayout.SOUTH, btnClean, -10, SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, btnClean, -51, SpringLayout.EAST, contentPane);
@@ -250,7 +255,7 @@ public class Main extends JFrame {
 		});
 		btnClean.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(btnClean);
-		
+		// Folder images
 		BufferedImage imgLabel = null;
 		try {
 			imgLabel = ImageIO.read(Main.class.getResource("/gui/images/folder.png"));
@@ -258,7 +263,7 @@ public class Main extends JFrame {
 			e.printStackTrace();
 		}
 		Image dFolderImg = imgLabel.getScaledInstance(24, 24, Image.SCALE_SMOOTH);
-
+		
 		JLabel lblIconFolder1 = new JLabel("");
 		lblIconFolder1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIconFolder1.setIcon(new ImageIcon(dFolderImg));		
@@ -278,6 +283,7 @@ public class Main extends JFrame {
 		springLayout.putConstraint(SpringLayout.EAST, lblIconFolder2, 2, SpringLayout.WEST, textFieldExtLibFolder);
 		contentPane.add(lblIconFolder2);
 
+		// Time Icon
 		try {
 			imgLabel = ImageIO.read(Main.class.getResource("/gui/images/time.png"));
 		} catch (IOException e) {
@@ -285,7 +291,6 @@ public class Main extends JFrame {
 		}
 		Image dTimeImg = imgLabel.getScaledInstance(24, 24, Image.SCALE_SMOOTH);
 
-		
 		JLabel labelTimeIcon = new JLabel("");
 		springLayout.putConstraint(SpringLayout.NORTH, labelTimeIcon, 0, SpringLayout.NORTH, textFieldTime);
 		springLayout.putConstraint(SpringLayout.WEST, labelTimeIcon, 2, SpringLayout.EAST, textFieldTime);

@@ -3,7 +3,7 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import utils.Constants;
+import utils.commons.Constants;
 import controller.Controller;
 
 /**

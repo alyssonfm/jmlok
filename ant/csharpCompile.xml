@@ -1,0 +1,9 @@
+<project name="C Sharp Compiler" default="compile_project" basedir="..">
+	
+	<target name="compile_project">
+		<echo>Compiling the project</echo>
+    	<csc optimize="true" debug="false" warnLevel="4" unsafe="false" targetType="exe" destfile="${output_file}">
+    		<src dir="${source_folder}/" includes="*.cs"/>
+      	</csc>
+    </target>
+  </project>

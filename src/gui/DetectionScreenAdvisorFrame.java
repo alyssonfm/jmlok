@@ -22,8 +22,8 @@ import javax.swing.border.EmptyBorder;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
-import utils.Constants;
-import utils.FileUtil;
+import utils.commons.Constants;
+import utils.commons.FileUtil;
 import controller.Controller;
 import detect.Detect;
 import detect.DetectEvent;
@@ -56,53 +56,53 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public DetectionScreenAdvisorFrame(Detect d, ByteArrayOutputStream caos) {
-		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(Constants.MAIN_FONT));
-		
 		setDetectionSuceeded(true);
-		
+		// Prepare window opening		
+		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(Constants.MAIN_FONT));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 458);
 		setMinimumSize(new Dimension(DetectionScreenAdvisorFrame.WIDTH, DetectionScreenAdvisorFrame.HEIGHT));
-		
+		// Initialize Icons
 		List<Image> icons = new ArrayList<Image>();
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(16x16).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(32x32).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(64x64).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(128x128).jpg")).getImage());
 		setIconImages(icons);
-		
+		// Initialize Window
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		springLayout = new SpringLayout();
 		contentPane.setLayout(springLayout);
 		
+		// Phase label
 		lblDetectionPhaseIs = new JLabel("Current Stage: " + "Creating Directories");
 		springLayout.putConstraint(SpringLayout.NORTH, lblDetectionPhaseIs, 10, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, lblDetectionPhaseIs, 405, SpringLayout.WEST, contentPane);
 		springLayout.putConstraint(SpringLayout.WEST, lblDetectionPhaseIs, 30, SpringLayout.WEST, contentPane);
 		lblDetectionPhaseIs.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblDetectionPhaseIs);
-		
+		// Text Area Space
 		JScrollPane scrollPane = new JScrollPane();
 		springLayout.putConstraint(SpringLayout.NORTH, scrollPane, 45, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.WEST, scrollPane, 12, SpringLayout.WEST, contentPane);
 		springLayout.putConstraint(SpringLayout.SOUTH, scrollPane, -45, SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, scrollPane, -12, SpringLayout.EAST, contentPane);
 		contentPane.add(scrollPane);
-		
+		// Interaction Button
 		btnNexts = new JButton("Nonconformances");
 		springLayout.putConstraint(SpringLayout.NORTH, btnNexts, 0, SpringLayout.NORTH, lblDetectionPhaseIs);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnNexts, 0, SpringLayout.SOUTH, lblDetectionPhaseIs);
 		springLayout.putConstraint(SpringLayout.EAST, btnNexts, -39, SpringLayout.EAST, contentPane);
 		contentPane.add(btnNexts);
 		btnNexts.setVisible(false);
-		
+		// Text Area
 		textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
 		baos = caos;
 		textArea.setEditable(false);
-		
+		// Progress Bar
 		progressBar = new JProgressBar(0, 100);
 		springLayout.putConstraint(SpringLayout.NORTH, progressBar, 10, SpringLayout.SOUTH, scrollPane);
 		springLayout.putConstraint(SpringLayout.WEST, progressBar, 0, SpringLayout.WEST, scrollPane);
@@ -110,7 +110,7 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		springLayout.putConstraint(SpringLayout.EAST, progressBar, 0, SpringLayout.EAST, scrollPane);
 		progressBar.setStringPainted(true);
 		contentPane.add(progressBar);
-
+		// Start monitoring progress
 		addListeners(d);
 		startProgressWorker();
 	}

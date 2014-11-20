@@ -14,8 +14,10 @@ import org.jmlspecs.openjml.JmlTree.JmlMethodDecl;
 import org.jmlspecs.openjml.JmlTree.JmlSingleton;
 import org.jmlspecs.openjml.JmlTree.JmlVariableDecl;
 
-import utils.Constants;
-import utils.FileUtil;
+import utils.categorize.AcessingTestCases;
+import utils.categorize.ClassDriver;
+import utils.commons.Constants;
+import utils.datastructure.Nonconformance;
 
 import com.sun.source.tree.Tree;
 import com.sun.tools.javac.tree.JCTree;
@@ -85,7 +87,7 @@ public class Examinator {
 	 */
 	public void setPrincipalClassName(String principalClassName) {
 		this.principalClassName = principalClassName;
-		this.variables = FileUtil.getVariablesFromClass(principalClassName);
+		this.variables = ClassDriver.getVariablesFromClass(principalClassName);
 		this.isAllVarUpdated = false;
 	}
 	
@@ -153,7 +155,7 @@ public class Examinator {
 	 */
 	private void updateVariables(String classname) {
 		if(!classname.equals(this.getPrincipalClassName()))
-			for(String s : FileUtil.getVariablesFromClass(classname))
+			for(String s : ClassDriver.getVariablesFromClass(classname))
 				if(!this.variables.contains(s))
 					this.variables.add(s);
 	}
@@ -499,13 +501,13 @@ public class Examinator {
 	 */
 	private boolean examineAllClassAssociated(String className, String methodName, Operations typeOfExamination) throws Exception {
 		if(typeOfExamination == Operations.ATR_VAR_IN_PRECONDITION || typeOfExamination == Operations.REQUIRES_TRUE){
-			ArrayList<String> interfacesOfClass = FileUtil.getInterfacesPathFromClass(className);
+			ArrayList<String> interfacesOfClass = ClassDriver.getInterfacesPathFromClass(className);
 			if(!interfacesOfClass.isEmpty())
 				for (String i : interfacesOfClass)
 					if(examineJavaAndJMLCode(i, methodName, false, typeOfExamination))
 						return true;
 		}
-		String superClassOfClass = FileUtil.getSuperclassPathFromClass(className, srcDir);
+		String superClassOfClass = ClassDriver.getSuperclassPathFromClass(className, srcDir);
 		if(!(superClassOfClass == "")){
 			if(examineJavaAndJMLCode(superClassOfClass, methodName, false, typeOfExamination))
 				return true;
@@ -732,7 +734,7 @@ public class Examinator {
 	 */
 	private List<String> generateClassList(String classesFileName){
 		List<String> classList = new ArrayList<String>();
-		String classNames = FileUtil.readFile(classesFileName);
+		String classNames = AcessingTestCases.readFile(classesFileName);
 		int index = 0;
 		while(index < classNames.length()){
 			int endInput = classNames.indexOf("\n" ,index);
@@ -740,6 +742,17 @@ public class Examinator {
 			index = endInput + 1;
 		}
 		return classList;
+	}
+	
+	/**
+	 * Return code of test method that generated nonconformance.
+	 * @param n nonconformance studied
+	 * @return code of test method that generated nonconformance.
+	 */
+	public String showsMethodCode(Nonconformance n){
+		java.io.File file = new java.io.File(Constants.TEST_DIR	+ Constants.FILE_SEPARATOR + n.getTestFile());
+		this.methodCalling = "";
+		return showsMethodCode(file, n.getTestFile().replace(".java", ""), n.getNumberedTest());
 	}
 	
 	/**
@@ -751,7 +764,8 @@ public class Examinator {
 	 */
 	public String showsMethodCode(java.io.File file, String classname, String methodname){
 		JmlClassDecl ourClass = takeClassFromFile(file, classname);
-		JmlMethodDecl anMethod = takeMethodsFromClass(ourClass, methodname).get(0);
+		JmlMethodDecl anMethod;
+		anMethod = takeMethodsFromClass(ourClass, methodname).get(0);
 		return anMethod.toString();
 	}
 	

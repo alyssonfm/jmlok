@@ -1,5 +1,6 @@
 package controller;
 
+
 import gui.CategorizationScreenAdvisorFrame;
 import gui.DetectionScreenAdvisorFrame;
 
@@ -16,18 +17,16 @@ import java.util.Set;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
-import utils.ClassPathHacker;
-import utils.Constants;
-import utils.FileUtil;
+import utils.commons.ClassPathHacker;
+import utils.commons.Constants;
+import utils.commons.FileUtil;
+import utils.datastructure.Nonconformance;
 import categorize.Categorize;
-import categorize.Nonconformance;
 import detect.Detect;
-import detect.ResultProducer;
-import detect.TestError;
 
 public class Controller {
 	
-	private static Set<TestError> errors;
+	private static Set<Nonconformance> errors;
 	private static Set<Nonconformance> nonconformities;
 	private static String source;
 	
@@ -97,7 +96,6 @@ public class Controller {
 	 * Set an hack to add jars on SystemClassLoader.
 	 * @param libFolder The name of the library folder containing jars.
 	 */
-	
 	private static void setSystemVariableClassPath(String libFolder) {
 		boolean isWindows = System.getProperty("os.name").contains("Windows");
 		String separator = (isWindows)?";":":";
@@ -118,11 +116,10 @@ public class Controller {
 	 * @param source The source folder where the errors where detected.
 	 * @return an list of nonconformances already categorized.
 	 */
-	private static List<Nonconformance> fulfillCategorizePhase(Set<TestError> errors, String source) {
+	private static List<Nonconformance> fulfillCategorizePhase(Set<Nonconformance> errors, String source) {
 		Categorize c = new Categorize();
 		List<Nonconformance> x = new ArrayList<Nonconformance>();
 		nonconformities = c.categorize(errors, source);
-		ResultProducer.generateResult(nonconformities);
 		for(Nonconformance n : nonconformities)
 			x.add(n);
 		return x;

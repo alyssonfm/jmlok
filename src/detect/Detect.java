@@ -18,8 +18,10 @@ import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectHelper;
 
-import utils.Constants;
-import utils.FileUtil;
+import utils.commons.Constants;
+import utils.commons.FileUtil;
+import utils.datastructure.Nonconformance;
+import utils.detect.DetectUtil;
 
 /**
  * Class used to detect nonconformances in Java/JML programs.
@@ -79,10 +81,10 @@ public class Detect {
 	 * @return - The list of nonconformances detected.
 	 * @throws Exception When some XML cannot be read.
 	 */
-	public Set<TestError> detect(String source, String lib, String timeout){
+	public Set<Nonconformance> detect(String source, String lib, String timeout){
 		try {
 			execute(source, lib, timeout);			
-			ResultProducer r = new ResultProducer();
+			NCCreator r = new NCCreator();
 			if(isJMLC) return r.listErrors(Constants.JMLC_COMPILER);
 			else return r.listErrors(Constants.OPENJML_COMPILER);
 		} catch (Exception e) {
@@ -180,7 +182,7 @@ public class Detect {
 			className = className + "\n";
 			lines.append(className);
 		}
-		return FileUtil.makeFile(Constants.CLASSES, lines.toString());
+		return DetectUtil.makeFile(Constants.CLASSES, lines.toString());
 	}
 	
 	/**
@@ -278,7 +280,7 @@ public class Detect {
 	private void runRandoop(String libFolder, String timeout,
 			String pathToRandoop) throws IOException, InterruptedException {
 		Runtime runtime = Runtime.getRuntime();
-		Process proc = runtime.exec(FileUtil.getCommandToUseRandoop(timeout, pathToRandoop, FileUtil.getListPathPrinted(libFolder, FileUtil.JAR_FILES)));
+		Process proc = runtime.exec(DetectUtil.getCommandToUseRandoop(timeout, pathToRandoop, FileUtil.getListPathPrinted(libFolder, FileUtil.JAR_FILES)));
 		final InputStreamReader ou = new InputStreamReader(proc.getInputStream());
 		final InputStreamReader er = new InputStreamReader(proc.getErrorStream());
 		final BufferedReader bo = new BufferedReader(ou); 
@@ -319,7 +321,7 @@ public class Detect {
 		if(exitVal != 0) {
 			System.out.println("Error reading: " + pathToRandoop + "\n"
 					+ "Java couldn't run Randoop. Verify if command below works."
-					+ "Command Used -> " + FileUtil.getCommandToUseRandoop(timeout, pathToRandoop, FileUtil.getListPathPrinted(libFolder, FileUtil.JAR_FILES) + pathToRandoop));
+					+ "Command Used -> " + DetectUtil.getCommandToUseRandoop(timeout, pathToRandoop, FileUtil.getListPathPrinted(libFolder, FileUtil.JAR_FILES) + pathToRandoop));
 		}
 	}
 	
@@ -330,7 +332,7 @@ public class Detect {
 	 */
 	public void jmlCompile(String sourceFolder) throws Exception{
 		final StringBuilder buff = new StringBuilder();
-		if(FileUtil.hasDirectories(sourceFolder)){
+		if(DetectUtil.hasDirectories(sourceFolder)){
 			if(isJMLC){
 				runJMLCompiler(sourceFolder, buff, "jmlcCompiler.xml", isJMLC);
 			} else if(isOpenJML){
