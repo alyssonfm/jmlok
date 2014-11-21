@@ -53,7 +53,7 @@ public class NCCreator {
 	 * @param compiler = the integer that indicates the JML compiler used.
 	 * @return - the of list the distinct nonconformances that were detected by the JMLOK tool.
 	 */
-	public Set<Nonconformance> listErrors(int compiler){
+	public Set<Nonconformance> listNonconformances(int compiler){
 		File results = new File(Constants.TEST_RESULTS);
 		Set<Nonconformance> result;
 		if(compiler == Constants.JMLC_COMPILER){

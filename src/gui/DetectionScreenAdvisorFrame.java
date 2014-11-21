@@ -184,7 +184,21 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		d.addDetectListener(new DetectListener() {
 			
 			@Override
-			public void detectGeneratedTestsWithRandoop(DetectEvent e) {
+			public void detectCreatedDirectories(DetectEvent e) {
+				textArea.setText(baos.toString());
+				restartProgressWorker(20);
+				lblDetectionPhaseIs.setText("Current Stage: " + "Compiling Project");
+			}
+			
+			@Override
+			public void detectCompiledProject(DetectEvent e) {
+				textArea.setText(baos.toString());
+				restartProgressWorker(60);
+				lblDetectionPhaseIs.setText("Current Stage: " + "Generating Tests");
+			}
+
+			@Override
+			public void detectGeneratedTests(DetectEvent e) {
 				textArea.setText(baos.toString());
 				restartProgressWorker(80);
 				lblDetectionPhaseIs.setText("Current Stage: " + "Executing Tests");
@@ -196,27 +210,6 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 				progressBar.setValue(100);
 				lblDetectionPhaseIs.setText("Detection Phase finished.");
 				modifyButton();
-			}
-			
-			@Override
-			public void detectCreatedDirectories(DetectEvent e) {
-				textArea.setText(baos.toString());
-				restartProgressWorker(20);
-				lblDetectionPhaseIs.setText("Current Stage: " + "Compiling with Java");
-			}
-			
-			@Override
-			public void detectCompiledProjectWithJava(DetectEvent e) {
-				textArea.setText(baos.toString());
-				restartProgressWorker(40);
-				lblDetectionPhaseIs.setText("Current Stage: " + "Compiling with JML");
-			}
-			
-			@Override
-			public void detectCompiledProjectWithJML(DetectEvent e) {
-				textArea.setText(baos.toString());
-				restartProgressWorker(60);
-				lblDetectionPhaseIs.setText("Current Stage: " + "Generating Tests");
 			}
 
 			@Override

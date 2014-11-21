@@ -10,6 +10,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -33,6 +34,7 @@ public class Detect {
 	private boolean isWindows = false;
 	private boolean isJMLC = false;
 	private boolean isOpenJML = false;
+	private boolean isCodeContracts = false;
 	private String jmlLib;
 	private File jmlokDir = new File(Constants.TEMP_DIR);
 	private File javaBin = new File(Constants.SOURCE_BIN);
@@ -46,7 +48,7 @@ public class Detect {
 	private String timeout;
 	
 	private enum StagesDetect{
-		CREATED_DIRECTORIES, COMPILED_JAVA, COMPILED_JML, GENERATED_TESTS, EXECUTED_TESTS, ERROR_ON_DETECTION
+		CREATED_DIRECTORIES, COMPILED_PROJECT, GENERATED_TESTS, EXECUTED_TESTS, ERROR_ON_DETECTION
 	}
 	
 	/**
@@ -66,6 +68,10 @@ public class Detect {
 			isOpenJML = true;
 			jmlLib = Constants.OPENJML_SRC;
 			break;
+		case Constants.CODECONTRACTS_COMPILER:
+			isCodeContracts = true;
+			// Initialize variables for it.
+			break;
 		default:
 			break;
 		}
@@ -83,16 +89,19 @@ public class Detect {
 	 */
 	public Set<Nonconformance> detect(String source, String lib, String timeout){
 		try {
+			// Execute scripts division starts here
 			execute(source, lib, timeout);			
-			NCCreator r = new NCCreator();
-			if(isJMLC) return r.listErrors(Constants.JMLC_COMPILER);
-			else return r.listErrors(Constants.OPENJML_COMPILER);
+			// List Errors
+			NCCreator ncFinder = new NCCreator();
+			if(isJMLC) return ncFinder.listNonconformances(Constants.JMLC_COMPILER);
+			else if(isOpenJML) return ncFinder.listNonconformances(Constants.OPENJML_COMPILER);
+			else return ncFinder.listNonconformances(Constants.CODECONTRACTS_COMPILER);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			triggersEvent(StagesDetect.ERROR_ON_DETECTION);
 			// This line below commented serves to inform all errors just on Detection console.
 			// e.printStackTrace(); 
-			return null;
+			return new HashSet<Nonconformance>();
 		}
 	}
 	
@@ -113,14 +122,13 @@ public class Detect {
 			
 			timeout = time;
 			runStage("Creating directories", "Directories created in", StagesDetect.CREATED_DIRECTORIES);
-			runStage("Compiling the project", "Project compiled in", StagesDetect.COMPILED_JAVA);
-			runStage("Compiling with JML compiler", "Project compiled with JML in", StagesDetect.COMPILED_JML);
+			runStage("Compiling the project", "Project compiled in", StagesDetect.COMPILED_PROJECT);
 
 			if(!FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals("")){
 				runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
-				runStage("Running JUnit to test the JML code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
+				runStage("Running test into contract-based code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
 			}else{
-				throw new Exception("JML couldn't compile the files.");
+				throw new Exception("Couldn't compile the files.");
 			}
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -149,11 +157,8 @@ public class Detect {
 			createDirectories();
 			cleanDirectories();			
 			break;
-		case COMPILED_JAVA:
-			javaCompile(sourceFolder, librariesFolder);
-			break;
-		case COMPILED_JML:
-			jmlCompile(sourceFolder);
+		case COMPILED_PROJECT:
+			compileProject(sourceFolder, librariesFolder);
 			break;
 		case GENERATED_TESTS:
 			generateTests(librariesFolder, timeout);
@@ -168,6 +173,15 @@ public class Detect {
 		}
 		System.out.println(finMsg + " " + ((double) countTime() * 0.001) + " seconds");
 		triggersEvent(stagesDetect);
+	}
+
+	private void compileProject(String sourceFolder2, String librariesFolder2) throws Exception {
+		if(isCodeContracts)
+			;
+		else{
+			javaCompile(sourceFolder, librariesFolder);
+			jmlCompile(sourceFolder);
+		}
 	}
 
 	/**
@@ -530,14 +544,11 @@ public class Detect {
 			case CREATED_DIRECTORIES:
 				l.detectCreatedDirectories(e);
 				break;
-			case COMPILED_JAVA:
-				l.detectCompiledProjectWithJava(e);
-				break;
-			case COMPILED_JML:
-				l.detectCompiledProjectWithJML(e);
+			case COMPILED_PROJECT:
+				l.detectCompiledProject(e);
 				break;
 			case GENERATED_TESTS:
-				l.detectGeneratedTestsWithRandoop(e);
+				l.detectGeneratedTests(e);
 				break;
 			case EXECUTED_TESTS:
 				l.detectExecutedTests(e);
