@@ -32,6 +32,9 @@ import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 
 import utils.commons.Constants;
+import javax.swing.JRadioButton;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ButtonGroup;
 
 /**
  * Main class to the GUI. Represents the first screen showed to JMLOK user.
@@ -60,6 +63,7 @@ public class Main extends JFrame {
 	// Parameters for window size.
 	private final int WIDTH = 750;
 	private final int HEIGHT = 210;
+	private final ButtonGroup chooseLanguage = new ButtonGroup();
 	
 	/**
 	 * Display the frame. Initialize the program.
@@ -113,7 +117,7 @@ public class Main extends JFrame {
 	 */
 	public Main() {
 		// Set window options.
-		setTitle("JMLOK 2.0");
+		setTitle("CodeSpecOK");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 219);
 		setMinimumSize(new Dimension(this.WIDTH, this.HEIGHT));
@@ -300,6 +304,20 @@ public class Main extends JFrame {
 		labelTimeIcon.setFont(new Font("Dialog", Font.BOLD, 8));
 		labelTimeIcon.setIcon(new ImageIcon(dTimeImg));
 		contentPane.add(labelTimeIcon);
+		
+		JRadioButton rdbtnJml = new JRadioButton("JML");
+		chooseLanguage.add(rdbtnJml);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJml, 0, SpringLayout.NORTH, btnRun);
+		rdbtnJml.setFont(new Font("Verdana", Font.BOLD, 18));
+		contentPane.add(rdbtnJml);
+		
+		JRadioButton rdbtnCodeContracts = new JRadioButton("Code Contracts");
+		chooseLanguage.add(rdbtnCodeContracts);
+		springLayout.putConstraint(SpringLayout.EAST, rdbtnJml, -46, SpringLayout.WEST, rdbtnCodeContracts);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnCodeContracts, 0, SpringLayout.NORTH, btnRun);
+		springLayout.putConstraint(SpringLayout.EAST, rdbtnCodeContracts, 0, SpringLayout.EAST, lblExternalLibFolder);
+		rdbtnCodeContracts.setFont(new Font("Verdana", Font.BOLD, 18));
+		contentPane.add(rdbtnCodeContracts);
 	}
 
 	/**
@@ -371,5 +389,4 @@ public class Main extends JFrame {
 		}
 		return path.getParent().toString();
 	}
-	
 }

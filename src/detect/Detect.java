@@ -121,8 +121,8 @@ public class Detect {
 			initTimer();
 			
 			timeout = time;
-			runStage("Creating directories", "Directories created in", StagesDetect.CREATED_DIRECTORIES);
-			runStage("Compiling the project", "Project compiled in", StagesDetect.COMPILED_PROJECT);
+			runStage("Creating directories", "\nDirectories created in", StagesDetect.CREATED_DIRECTORIES);
+			runStage("\nCompiling the project", "Project compiled in", StagesDetect.COMPILED_PROJECT);
 
 			if(!FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals("")){
 				runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
@@ -182,6 +182,7 @@ public class Detect {
 			javaCompile(sourceFolder, librariesFolder);
 			jmlCompile(sourceFolder);
 		}
+		triggersEvent(StagesDetect.COMPILED_PROJECT);
 	}
 
 	/**
