@@ -3,7 +3,6 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import utils.commons.Constants;
 import controller.Controller;
 
 /**
@@ -17,6 +16,7 @@ public class ThreadExecutingProgram extends Thread {
 	private String libFolder;
 	private String timeout;
 	private JFrame main;
+	private int compiler;
 
 	/**
 	 * Initialize the thread.
@@ -24,17 +24,18 @@ public class ThreadExecutingProgram extends Thread {
 	 * @param libFolder The library folder which program execution depends.
 	 * @param timeout The time(in seconds) where test will be generated.
 	 */
-	public ThreadExecutingProgram(JFrame main, String srcFolder, String libFolder, String timeout) {
+	public ThreadExecutingProgram(JFrame main, String srcFolder, String libFolder, String timeout, int compiler) {
 		this.srcFolder = srcFolder;
 		this.libFolder = libFolder;
 		this.timeout = timeout;
 		this.main = main;
+		this.compiler = compiler;
 	}
 	
 	@Override
 	public void run() {
 		try {
-			Controller.prepareToDetectPhase(Constants.JMLC_COMPILER, srcFolder, libFolder, timeout);
+			Controller.prepareToDetectPhase(compiler, srcFolder, libFolder, timeout);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this.main, e.getMessage());
 			e.printStackTrace();

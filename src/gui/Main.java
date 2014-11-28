@@ -11,9 +11,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,10 +28,11 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 
-import utils.commons.Constants;
+
 import javax.swing.JRadioButton;
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.ButtonGroup;
+
+import controller.Controller;
 
 /**
  * Main class to the GUI. Represents the first screen showed to JMLOK user.
@@ -49,6 +47,10 @@ public class Main extends JFrame {
 	 */
 	private static final long serialVersionUID = 9142967374337903926L;
 	
+	private int compiler;
+	private Controller control = new Controller();
+	private JRadioButton rdbtnCodeContracts;
+	private JRadioButton rdbtnJml;
 	private JPanel contentPane;
 	private JLabel textFieldSrcFolder;
 	private JLabel textFieldExtLibFolder;
@@ -83,7 +85,7 @@ public class Main extends JFrame {
 	}
 
 	/**
-	 * An class used for thread control, to make GUI changes an the execution of the program
+	 * A class used for thread control, to make GUI changes at the execution of the program
 	 * fluid, with response for user.
 	 * @author Alysson Milanez and Dennis Sousa.
 	 *
@@ -230,20 +232,21 @@ public class Main extends JFrame {
 		btnRun.setFont(new Font("Verdana", Font.BOLD, 18));
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(textFieldSrcFolder.getText().equals(""))
-					JOptionPane.showMessageDialog(Main.this, "Choose the source folder before running.");
-				else if(!textFieldTime.getText().matches("\\d+"))
-					JOptionPane.showMessageDialog(Main.this, "Please insert a valid number of seconds.");
-				else if(!System.getProperty("os.name").contains("Windows") && !(System.getenv("CLASSPATH").contains("randoop.jar")))
-					JOptionPane.showMessageDialog(Main.this, "The file randoop.jar was not configured using JMLOKSetup. Please runs JMLOKSetup again and put randoop.jar into your choosen ext lib folder.");
-				else{	
+				try {
+					control.checkSrcFolderField(textFieldSrcFolder.getText());
+					control.checkTimeField(textFieldTime.getText());
+					control.checkOS();
 					btnRun.setEnabled(false);
-			        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+					setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			        //Instances of javax.swing.SwingWorker are not reusable, so
 			        //we create new instances as needed.
 			        task = new Task();
 			        task.execute();
+
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(Main.this, e2.getMessage());
 				}
+				
 			}
 		});
 		contentPane.add(btnRun);
@@ -305,38 +308,36 @@ public class Main extends JFrame {
 		labelTimeIcon.setIcon(new ImageIcon(dTimeImg));
 		contentPane.add(labelTimeIcon);
 		
-		JRadioButton rdbtnJml = new JRadioButton("JML");
+		rdbtnJml = new JRadioButton("JML");
 		chooseLanguage.add(rdbtnJml);
 		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJml, 0, SpringLayout.NORTH, btnRun);
 		rdbtnJml.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(rdbtnJml);
 		
-		JRadioButton rdbtnCodeContracts = new JRadioButton("Code Contracts");
+		rdbtnCodeContracts = new JRadioButton("Code Contracts");
 		chooseLanguage.add(rdbtnCodeContracts);
 		springLayout.putConstraint(SpringLayout.EAST, rdbtnJml, -46, SpringLayout.WEST, rdbtnCodeContracts);
 		springLayout.putConstraint(SpringLayout.NORTH, rdbtnCodeContracts, 0, SpringLayout.NORTH, btnRun);
 		springLayout.putConstraint(SpringLayout.EAST, rdbtnCodeContracts, 0, SpringLayout.EAST, lblExternalLibFolder);
 		rdbtnCodeContracts.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(rdbtnCodeContracts);
+
 	}
 
 	/**
 	 * Execute the program, after some variables are correctly initialized.
 	 */
 	protected void runningProgram() {
-		// showInterestingMessage();
-		String extLibFolder = extFolder;
-		String time = textFieldTime.getText();
-		if(extLibFolder.equals("")) {
-			if(System.getProperty("os.name").contains("Windows"))
-				extLibFolder = Constants.JMLC_LIB;
-			else
-				extLibFolder = System.getenv("USER_CLASSPATH_LIB");
-		}if(time.equals("")){
-			time = "10";
+		try {
+			compiler = control.chooseCompiler(rdbtnJml.isSelected(), rdbtnCodeContracts.isSelected());
+			String extLibFolder = control.checkLibField(extFolder);
+			String time = control.timeValue(textFieldTime.getText());
+			ThreadExecutingProgram t = new ThreadExecutingProgram(this, srcFolder, extLibFolder, time, compiler);
+			t.run();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(Main.this, e.getMessage());
 		}
-		ThreadExecutingProgram t = new ThreadExecutingProgram(this, srcFolder, extLibFolder, time);
-		t.run();
+		
 	}
 
 	/**
@@ -354,7 +355,7 @@ public class Main extends JFrame {
 	protected void browseExtLibFolder() {
 		dirLibs.setApproveButtonText("Select");
 		dirLibs.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		dirLibs.setCurrentDirectory(new File(jarPath()));
+		dirLibs.setCurrentDirectory(new File(control.jarPath()));
 		if (dirLibs.showOpenDialog(Main.this) == JFileChooser.APPROVE_OPTION) {
 			extFolder = dirLibs.getSelectedFile().getAbsolutePath();
 			int begin = extFolder.lastIndexOf(File.separator);
@@ -368,7 +369,7 @@ public class Main extends JFrame {
 	protected void browseSrcFolder() {
 		dirSources.setApproveButtonText("Select");
 		dirSources.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		dirSources.setCurrentDirectory(new File(jarPath()));
+		dirSources.setCurrentDirectory(new File(control.jarPath()));
 		if (dirSources.showOpenDialog(Main.this) == JFileChooser.APPROVE_OPTION) {
 			srcFolder = dirSources.getSelectedFile().getAbsolutePath();
 			int begin = srcFolder.lastIndexOf(File.separator);
@@ -376,17 +377,5 @@ public class Main extends JFrame {
 		}
 	}
 	
-	/**
-	 * Return the path name where running Jar was found to use.
-	 * @return the path name where running Jar was found to use.
-	 */
-	private String jarPath() {
-		Path path = null;
-		try {
-			path = Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
-		return path.getParent().toString();
-	}
+
 }
