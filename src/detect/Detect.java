@@ -156,7 +156,7 @@ public class Detect {
 			compileProject(sourceFolder, librariesFolder);
 			break;
 		case GENERATED_TESTS:
-			generateTestsForJava(librariesFolder, timeout);
+			generateTests(librariesFolder, timeout);
 			break;
 		case EXECUTED_TESTS:
 			runTests(librariesFolder);
@@ -170,9 +170,9 @@ public class Detect {
 		triggersEvent(stagesDetect);
 	}
 
-	private void compileProject(String sourceFolder2, String librariesFolder2) throws Exception {
+	private void compileProject(String sourceFolder, String librariesFolder) throws Exception {
 		if(compiler == Constants.CODECONTRACTS_COMPILER)
-			codeContractsCompile(sourceFolder);
+			codeContractsCompile(sourceFolder, librariesFolder);
 		else{
 			javaCompile(sourceFolder, librariesFolder);
 			jmlCompile(sourceFolder);
@@ -253,7 +253,7 @@ public class Detect {
 	 * @param sourceFolder = the path to source files.
 	 * @throws Exception problem with ANT projects.
 	 */
-	public void codeContractsCompile(String sourceFolder) throws Exception {
+	public void codeContractsCompile(String sourceFolder, String librariesFolder) throws Exception {
 		final StringBuilder buff = new StringBuilder();
 
 		// Run ant file
