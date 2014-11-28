@@ -156,7 +156,7 @@ public class Detect {
 			compileProject(sourceFolder, librariesFolder);
 			break;
 		case GENERATED_TESTS:
-			generateTests(librariesFolder, timeout);
+			generateTestsForJava(librariesFolder, timeout);
 			break;
 		case EXECUTED_TESTS:
 			runTests(librariesFolder);
@@ -265,7 +265,6 @@ public class Detect {
  		runProject(buff, p, buildFile, "csharpCompile.xml", "compile_project", consoleLogger);
 	}
 
-	
 	/**
 	 * Method used to generate the tests to conformance checking.
 	 * @param libFolder = the path to external libraries needed to tests generation and compilation.
@@ -273,18 +272,25 @@ public class Detect {
 	 * @throws Exception When the XML cannot be read.
 	 */
 	public void generateTests(String libFolder, String timeout) throws Exception{
+		if(this.compiler == Constants.CODECONTRACTS_COMPILER)
+			generateTestsForCSharp(libFolder, timeout);
+		else
+			generateTestsForJava(libFolder, timeout);
+	}
+	
+	/**
+	 * Method used to generate the tests to conformance checking on Java projects.
+	 * @param libFolder = the path to external libraries needed to tests generation and compilation.
+	 * @param timeout = the time to tests generation.
+	 * @throws Exception When the XML cannot be read.
+	 */
+	public void generateTestsForJava(String libFolder, String timeout) throws Exception{
 		final StringBuilder buff = new StringBuilder();
 		contractLib = contractLib + libFolder;
 		
 		// Run Randoop
-		String pathToRandoop;
-		if(compiler == Constants.CODECONTRACTS_COMPILER){
-			pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
-					  + Constants.FILE_SEPARATOR + "csharprandoop.jar";
-		}else{
-			pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
+		String pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
 					  + Constants.FILE_SEPARATOR + "randoop.jar";
-		}			
 		runRandoop(libFolder, timeout, pathToRandoop);
 		
 		// Run ant file
@@ -299,7 +305,37 @@ public class Detect {
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlLib", contractLib);
 		p.setUserProperty("timeout", timeout);
-		runProject(buff, p, buildFile, "generateTests.xml", "compile_tests", consoleLogger);
+		runProject(buff, p, buildFile, "generateTestsJava.xml", "compile_tests", consoleLogger);
+	}
+	
+	/**
+	 * Method used to generate the tests to conformance checking for CSharp projects.
+	 * @param libFolder = the path to external libraries needed to tests generation and compilation.
+	 * @param timeout = the time to tests generation.
+	 * @throws Exception When the XML cannot be read.
+	 */
+	public void generateTestsForCSharp(String libFolder, String timeout) throws Exception{
+		final StringBuilder buff = new StringBuilder();
+		contractLib = contractLib + libFolder;
+		
+		// Run Randoop
+		String pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
+					  + Constants.FILE_SEPARATOR + "randoop.jar";
+		runRandoop(libFolder, timeout, pathToRandoop);
+		
+		// Run ant file
+		Project p = new Project();
+		DefaultLogger consoleLogger = createLogger(buff);
+		File buildFile = accessFile("generateTests.xml");
+		p.setUserProperty("classes", Constants.CLASSES);
+		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
+		p.setUserProperty("tests_src", Constants.TEST_DIR);
+		p.setUserProperty("tests_bin", Constants.TEST_BIN);
+		p.setUserProperty("tests_folder", Constants.TESTS);
+		p.setUserProperty("lib", libFolder);
+		p.setUserProperty("jmlLib", contractLib);
+		p.setUserProperty("timeout", timeout);
+		runProject(buff, p, buildFile, "generateTestsCSharp.xml", "compile_tests", consoleLogger);
 	}
 	
 	/**
@@ -419,6 +455,41 @@ public class Detect {
 	 * @throws Exception problems with ANT project.
 	 */
 	private void runTests(String libFolder) throws Exception{
+		if(this.compiler == Constants.CODECONTRACTS_COMPILER)
+			runTestsOnCSharp(libFolder);
+		else
+			runTestsOnJava(libFolder);
+	}
+	
+	/**
+	 * Method used to run the tests with the JML oracles.
+	 * @param libFolder = the path to external libraries needed to tests execution.
+	 * @throws Exception problems with ANT project.
+	 */
+	private void runTestsOnJava(String libFolder) throws Exception{
+		final StringBuilder buff = new StringBuilder();
+		
+		// Run ant file
+		Project p = new Project();
+		DefaultLogger consoleLogger = createLogger(buff);
+		File buildFile = accessFile("runTests.xml");
+		p.setUserProperty("lib", libFolder);
+		p.setUserProperty("jmlBin", Constants.JML_BIN);
+		if(compiler == Constants.JMLC_COMPILER) 
+			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
+		else if(compiler == Constants.OPENJML_COMPILER) 
+			p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
+		p.setUserProperty("tests_src", Constants.TEST_DIR);
+		p.setUserProperty("tests_bin", Constants.TEST_BIN);
+		runProject(buff, p, buildFile, "runTests.xml", "run_tests", consoleLogger);
+	}
+	
+	/**
+	 * Method used to run the tests on CSharp project.
+	 * @param libFolder = the path to external libraries needed to tests execution.
+	 * @throws Exception problems with ANT project.
+	 */
+	private void runTestsOnCSharp(String libFolder) throws Exception{
 		final StringBuilder buff = new StringBuilder();
 		
 		// Run ant file
