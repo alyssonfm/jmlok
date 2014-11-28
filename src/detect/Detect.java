@@ -32,12 +32,9 @@ import utils.detect.DetectUtil;
 public class Detect {
 
 	private boolean isWindows = false;
-	private boolean isJMLC = false;
-	private boolean isOpenJML = false;
-	private boolean isCodeContracts = false;
-	private String jmlLib;
-	private File jmlokDir = new File(Constants.TEMP_DIR);
-	private File javaBin = new File(Constants.SOURCE_BIN);
+	private String contractLib;
+	private File tempDir = new File(Constants.TEMP_DIR);
+	private File javaBin = new File(Constants.JML_SOURCE_BIN);
 	private File jmlBin = new File(Constants.JML_BIN);
 	private File testSource = new File(Constants.TEST_DIR);
 	private File testBin = new File(Constants.TEST_BIN);
@@ -46,6 +43,7 @@ public class Detect {
 	private String sourceFolder;
 	private String librariesFolder;
 	private String timeout;
+	private int compiler;
 	
 	private enum StagesDetect{
 		CREATED_DIRECTORIES, COMPILED_PROJECT, GENERATED_TESTS, EXECUTED_TESTS, ERROR_ON_DETECTION
@@ -53,24 +51,23 @@ public class Detect {
 	
 	/**
 	 * The constructor of this class, creates a new instance of Detect class, creates the jmlok directory and set the JML compiler used.
-	 * @param comp = the integer that indicates which JML compiler will be used.
+	 * @param comp = the integer that indicates which compiler will be used.
 	 */
 	public Detect(int comp) {
-		while (!jmlokDir.exists()) {
-			jmlokDir.mkdirs();
+		// Create directories
+		while (!tempDir.exists()) {
+			tempDir.mkdirs();
 		}
-		switch (comp) {
+		this.compiler = comp;
+		switch (this.compiler) {
 		case Constants.JMLC_COMPILER:
-			isJMLC = true;
-			jmlLib = Constants.JMLC_LIB;
+			contractLib = Constants.JMLC_LIB;
 			break;
 		case Constants.OPENJML_COMPILER:
-			isOpenJML = true;
-			jmlLib = Constants.OPENJML_SRC;
+			contractLib = Constants.OPENJML_SRC;
 			break;
 		case Constants.CODECONTRACTS_COMPILER:
-			isCodeContracts = true;
-			// Initialize variables for it.
+			// Doesn't need a library for contract compilation.
 			break;
 		default:
 			break;
@@ -93,9 +90,7 @@ public class Detect {
 			execute(source, lib, timeout);			
 			// List Errors
 			NCCreator ncFinder = new NCCreator();
-			if(isJMLC) return ncFinder.listNonconformances(Constants.JMLC_COMPILER);
-			else if(isOpenJML) return ncFinder.listNonconformances(Constants.OPENJML_COMPILER);
-			else return ncFinder.listNonconformances(Constants.CODECONTRACTS_COMPILER);
+			return ncFinder.listNonconformances(compiler);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			triggersEvent(StagesDetect.ERROR_ON_DETECTION);
@@ -176,15 +171,15 @@ public class Detect {
 	}
 
 	private void compileProject(String sourceFolder2, String librariesFolder2) throws Exception {
-		if(isCodeContracts)
-			;
+		if(compiler == Constants.CODECONTRACTS_COMPILER)
+			codeContractsCompile(sourceFolder);
 		else{
 			javaCompile(sourceFolder, librariesFolder);
 			jmlCompile(sourceFolder);
 		}
 		triggersEvent(StagesDetect.COMPILED_PROJECT);
 	}
-
+	
 	/**
 	 * Method used to list all classes present into the directory received as parameter.
 	 * @param sourceFolder = the directory source of the files.
@@ -240,18 +235,36 @@ public class Detect {
 	 */
 	public void javaCompile(String sourceFolder, String libFolder) throws Exception{
 		final StringBuilder buff = new StringBuilder();
-		jmlLib = jmlLib + libFolder;
+		contractLib = contractLib + libFolder;
 
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
 		File buildFile = accessFile("javaCompile.xml");
 		p.setUserProperty("source_folder", sourceFolder);
-		p.setUserProperty("source_bin", Constants.SOURCE_BIN);
+		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("lib", libFolder);
-		p.setUserProperty("jmlLib", jmlLib);		
+		p.setUserProperty("jmlLib", contractLib);		
 		runProject(buff, p, buildFile, "javaCompile.xml", "compile_project", consoleLogger);
 	}
+
+	/**
+	 * Method to C# compilation of the files (needed for tests generation).
+	 * @param sourceFolder = the path to source files.
+	 * @throws Exception problem with ANT projects.
+	 */
+	public void codeContractsCompile(String sourceFolder) throws Exception {
+		final StringBuilder buff = new StringBuilder();
+
+		// Run ant file
+		Project p = new Project();
+		DefaultLogger consoleLogger = createLogger(buff);
+		File buildFile = accessFile("csharpCompile.xml");
+		p.setUserProperty("source_folder", sourceFolder);
+		p.setUserProperty("output_file", Constants.CODECONTRACTS_SOURCE_BIN);
+ 		runProject(buff, p, buildFile, "csharpCompile.xml", "compile_project", consoleLogger);
+	}
+
 	
 	/**
 	 * Method used to generate the tests to conformance checking.
@@ -261,12 +274,17 @@ public class Detect {
 	 */
 	public void generateTests(String libFolder, String timeout) throws Exception{
 		final StringBuilder buff = new StringBuilder();
-		jmlLib = jmlLib + libFolder;
+		contractLib = contractLib + libFolder;
 		
 		// Run Randoop
 		String pathToRandoop;
-		pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
-					  + Constants.FILE_SEPARATOR + "randoop.jar";			
+		if(compiler == Constants.CODECONTRACTS_COMPILER){
+			pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
+					  + Constants.FILE_SEPARATOR + "csharprandoop.jar";
+		}else{
+			pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
+					  + Constants.FILE_SEPARATOR + "randoop.jar";
+		}			
 		runRandoop(libFolder, timeout, pathToRandoop);
 		
 		// Run ant file
@@ -274,12 +292,12 @@ public class Detect {
 		DefaultLogger consoleLogger = createLogger(buff);
 		File buildFile = accessFile("generateTests.xml");
 		p.setUserProperty("classes", Constants.CLASSES);
-		p.setUserProperty("source_bin", Constants.SOURCE_BIN);
+		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
 		p.setUserProperty("tests_folder", Constants.TESTS);
 		p.setUserProperty("lib", libFolder);
-		p.setUserProperty("jmlLib", jmlLib);
+		p.setUserProperty("jmlLib", contractLib);
 		p.setUserProperty("timeout", timeout);
 		runProject(buff, p, buildFile, "generateTests.xml", "compile_tests", consoleLogger);
 	}
@@ -335,7 +353,7 @@ public class Detect {
 		int exitVal = proc.waitFor();
 		if(exitVal != 0) {
 			System.out.println("Error reading: " + pathToRandoop + "\n"
-					+ "Java couldn't run Randoop. Verify if command below works."
+					+ "Couldn't run Randoop. Verify if command below works."
 					+ "Command Used -> " + DetectUtil.getCommandToUseRandoop(timeout, pathToRandoop, FileUtil.getListPathPrinted(libFolder, FileUtil.JAR_FILES) + pathToRandoop));
 		}
 	}
@@ -348,16 +366,16 @@ public class Detect {
 	public void jmlCompile(String sourceFolder) throws Exception{
 		final StringBuilder buff = new StringBuilder();
 		if(DetectUtil.hasDirectories(sourceFolder)){
-			if(isJMLC){
-				runJMLCompiler(sourceFolder, buff, "jmlcCompiler.xml", isJMLC);
-			} else if(isOpenJML){
-				runJMLCompiler(sourceFolder, buff, "openjmlCompiler.xml", isJMLC);
+			if(compiler == Constants.JMLC_COMPILER){
+				runJMLCompiler(sourceFolder, buff, "jmlcCompiler.xml", true);
+			} else if(compiler == Constants.OPENJML_COMPILER){
+				runJMLCompiler(sourceFolder, buff, "openjmlCompiler.xml", false);
 			}
 		} else {
-			if(isJMLC){
-				runJMLCompiler(sourceFolder, buff, "jmlcCompiler2.xml", isJMLC);
-			} else if(isOpenJML){
-				runJMLCompiler(sourceFolder, buff, "openjmlCompiler2.xml", isJMLC);
+			if(compiler == Constants.JMLC_COMPILER){
+				runJMLCompiler(sourceFolder, buff, "jmlcCompiler2.xml", true);
+			} else if(compiler == Constants.OPENJML_COMPILER){
+				runJMLCompiler(sourceFolder, buff, "openjmlCompiler2.xml", false);
 			}
 		}
 	}
@@ -409,8 +427,10 @@ public class Detect {
 		File buildFile = accessFile("runTests.xml");
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
-		if(isJMLC) p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
-		else if(isOpenJML) p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
+		if(compiler == Constants.JMLC_COMPILER) 
+			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
+		else if(compiler == Constants.OPENJML_COMPILER) 
+			p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
 		runProject(buff, p, buildFile, "runTests.xml", "run_tests", consoleLogger);

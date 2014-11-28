@@ -9,13 +9,14 @@ import java.awt.Font;
  * @version 1.0
  * 
  */
-public class Constants {
 
+public class Constants {
 	//Constant to get the file separator of the System.
 	public static final String FILE_SEPARATOR = System.getProperty("file.separator");
 	//Constants to folders created path.
-	public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "jmlOK";
-	public static final String SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "bin";
+	public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "codespecok";
+	public static final String JML_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "bin";
+	public static final String CODECONTRACTS_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "bin";
 	public static final String JML_BIN = TEMP_DIR + FILE_SEPARATOR + "jmlBin";
 	public static final String TESTS = TEMP_DIR + FILE_SEPARATOR + "tests";
 	public static final String TEST_DIR = TESTS + FILE_SEPARATOR + "src";
