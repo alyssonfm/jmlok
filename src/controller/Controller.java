@@ -34,8 +34,9 @@ public class Controller {
 	private static String source;
 	
 	/**
-	 * @param folder
-	 * @throws Exception
+	 * Check if the folder chosen have a valid name
+	 * @param String name of chosen folder
+	 * @throws Exception if is null or empty
 	 */
 	public void checkSrcFolderField(String folder) throws Exception{
 		if (folder.equals("") || folder == null) throw new Exception("Choose the source folder before running.");
@@ -57,19 +58,19 @@ public class Controller {
 	}
 	
 	/**
-	 * Check if the Operational System is Microsoft Windows
+	 * Check if the Operational System that user is using is Microsoft Windows
 	 * @throws Exception 
 	 */
 	public void checkOS() throws Exception{
 		if(!System.getProperty("os.name").contains("Windows") && !(System.getenv("CLASSPATH").contains("randoop.jar"))){
-			throw new Exception("The file randoop.jar was not configured using JMLOKSetup. Please runs JMLOKSetup again and put randoop.jar into your choosen ext lib folder.");
+			throw new Exception("The file randoop.jar was not configured using JMLOKSetup. "
+					+ "Please runs JMLOKSetup again and put randoop.jar into your choosen ext lib folder.");
 		}
 	}
 	
 	/**
-	 * 
-	 * @param time
-	 * @return
+	 * Check if the format of the String is compatible to integers.
+	 * @param String time
 	 * @throws TimeException if time is not valid value
 	 */
 	public void checkTimeField(String time) throws Exception{
@@ -77,9 +78,10 @@ public class Controller {
 	}
 	
 	/**
-	 * 
-	 * @param time
-	 * @return correct time
+	 * Check if the value for time is empty and in this case, assigns a default value == 10
+	 * @param String time
+	 * @return if time.equals("") ==> time == 10
+	 * @return if !time.equals("") ==> time
 	 */
 	public String timeValue(String time){
 		if(time.equals("")){
