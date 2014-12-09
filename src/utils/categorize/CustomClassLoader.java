@@ -11,7 +11,7 @@ import utils.commons.Constants;
  */
 public class CustomClassLoader extends ClassLoader {
 	
-	final String basePath = Constants.SOURCE_BIN+Constants.FILE_SEPARATOR;
+	final String basePath = Constants.JML_SOURCE_BIN+Constants.FILE_SEPARATOR;
 	
 	@Override
     protected Class<?> findClass(final String name) throws ClassNotFoundException {
