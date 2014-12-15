@@ -32,6 +32,9 @@ public class Constants {
 	public static final int JMLC_COMPILER = 0;
 	public static final int OPENJML_COMPILER = 1;
 	public static final int CODECONTRACTS_COMPILER = 2;
+	public static final int WINDOWS_OS = 0;
+	public static final int LINUX_OS = 1;
+	public static final int MAC_OS = 2;
 	//Constants that indicates the path to jml compilers.
 	public static final String OPENJML_SRC = "C:" + FILE_SEPARATOR + "openjml";
 	public static final String JMLC_LIB = System.getenv("JMLDIR");

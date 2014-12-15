@@ -48,7 +48,7 @@ public class Main extends JFrame {
 	private static final long serialVersionUID = 9142967374337903926L;
 	
 	private int compiler;
-	private Controller control = new Controller();
+	private Controller control;
 	private JRadioButton rdbtnCodeContracts;
 	private JRadioButton rdbtnJml;
 	private JPanel contentPane;
@@ -235,7 +235,7 @@ public class Main extends JFrame {
 				try {
 					control.checkSrcFolderField(textFieldSrcFolder.getText());
 					control.checkTimeField(textFieldTime.getText());
-					control.checkOS();
+					control.checkRandoopRequirements();
 					btnRun.setEnabled(false);
 					setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			        //Instances of javax.swing.SwingWorker are not reusable, so
@@ -330,8 +330,8 @@ public class Main extends JFrame {
 	protected void runningProgram() {
 		try {
 			compiler = control.chooseCompiler(rdbtnJml.isSelected(), rdbtnCodeContracts.isSelected());
-			String extLibFolder = control.checkLibField(extFolder);
-			String time = control.timeValue(textFieldTime.getText());
+			String extLibFolder = control.correctLibFolder(extFolder);
+			String time = control.correctTimeValue(textFieldTime.getText());
 			ThreadExecutingProgram t = new ThreadExecutingProgram(this, srcFolder, extLibFolder, time, compiler);
 			t.run();
 		} catch (Exception e) {

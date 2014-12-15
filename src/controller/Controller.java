@@ -32,24 +32,58 @@ public class Controller {
 	private static Set<Nonconformance> errors;
 	private static Set<Nonconformance> nonconformities;
 	private static String source;
+	private int compiler;
+	private int os;
+	
+	public Controller(int compiler, int os) {
+		this.compiler = compiler;
+		this.os = System.getProperty("os.name").contains("Windows") ? 0 : 1;
+	}
 	
 	/**
-	 * @param folder
-	 * @throws Exception
+	 * Check whether source folder wasn't present on input.
+	 * @param srcFolder Source folder input.
+	 * @throws Exception When source folder input is a empty or a null String.
 	 */
-	public void checkSrcFolderField(String folder) throws Exception{
-		if (folder.equals("") || folder == null) throw new Exception("Choose the source folder before running.");
+	public void checkSrcFolderField(String srcFolder) throws Exception{
+		if (srcFolder.equals("") || srcFolder == null) throw new Exception("Choose the source folder before running.");
+	}
+	
+	/**
+	 * Check a configuration problem on non-Windows OS, whereas randoop.jar needs to be on
+	 * the CLASSPATH to be ran on Java.
+	 * @throws Exception When Randoop is not on CLASSPATH if Windows isn't the OS.
+	 */
+	public void checkRandoopRequirements() throws Exception{
+		if(!System.getProperty("os.name").contains("Windows") 
+		&& !(System.getenv("CLASSPATH").contains("randoop.jar"))){
+			throw new Exception("The file randoop.jar was not configured using JMLOKSetup. "
+					+ "Please runs JMLOKSetup again and put randoop.jar into your choosen ext lib folder.");
+		}
+	}
+	
+	/**
+	 * Uses a regex to check if the input of time contain only digits. 
+	 * @param time String informing time in seconds for tool execution.
+	 * @throws TimeException if time is not valid value.
+	 */
+	public void checkTimeField(String time) throws Exception{
+		if(!(time.matches("\\d+"))) throw new Exception("Please insert a valid number of seconds.");
 	}
 	
 	/**
 	 * Check if the folder selected is valid and exist. If is a empty string, will use default values
-	 * @param extLibFolder
-	 * @return 
+	 * @param extLibFolder The value of libraries folder input.
+	 * @return The default value for libraries folder or itself.
 	 */
-	public String checkLibField(String extLibFolder) {
+	public String correctLibFolder(String extLibFolder) {
 		if(extLibFolder.equals("")) {
-			if(System.getProperty("os.name").contains("Windows"))
-				extLibFolder = Constants.JMLC_LIB;
+			if(this.os == Constants.WINDOWS_OS)
+				if(this.compiler == Constants.JMLC_COMPILER){
+					extLibFolder = Constants.JMLC_LIB;
+				}else{
+					extLibFolder = "";
+				}
 			else
 				extLibFolder = System.getenv("USER_CLASSPATH_LIB");
 		}
@@ -57,31 +91,11 @@ public class Controller {
 	}
 	
 	/**
-	 * Check if the Operational System is Microsoft Windows
-	 * @throws Exception 
+	 * Check if the time value isn't empty, and then return it or the default value.
+	 * @param time Input value for time in seconds.
+	 * @return correct time for Time value.
 	 */
-	public void checkOS() throws Exception{
-		if(!System.getProperty("os.name").contains("Windows") && !(System.getenv("CLASSPATH").contains("randoop.jar"))){
-			throw new Exception("The file randoop.jar was not configured using JMLOKSetup. Please runs JMLOKSetup again and put randoop.jar into your choosen ext lib folder.");
-		}
-	}
-	
-	/**
-	 * 
-	 * @param time
-	 * @return
-	 * @throws TimeException if time is not valid value
-	 */
-	public void checkTimeField(String time) throws Exception{
-		if(!(time.matches("\\d+"))) throw new Exception("Please insert a valid number of seconds.");
-	}
-	
-	/**
-	 * 
-	 * @param time
-	 * @return correct time
-	 */
-	public String timeValue(String time){
+	public String correctTimeValue(String time){
 		if(time.equals("")){
 			time = "10";
 		}
@@ -90,14 +104,19 @@ public class Controller {
 	
 	/**
 	 * Receive how parameters two booleans and returns the index of correct compiler
-	 * @param state  of the radio button for select jml compiler
-	 * @param state  of the radio button for select c# compiler
+	 * @param jml State of the radio button for select jml compiler
+	 * @param cc State of the radio button for select c# compiler
 	 * @return the compiled selected by the user
 	 */
 	public int chooseCompiler(boolean jml, boolean cc) throws Exception{
-		if (jml) return Constants.JMLC_COMPILER;
-		else if (cc) return Constants.CODECONTRACTS_COMPILER;
-		else throw new Exception("Please, select the compiler");
+		if (jml){
+			this.compiler = Constants.JMLC_COMPILER;
+			return this.compiler;
+		}else if (cc){
+			this.compiler = Constants.CODECONTRACTS_COMPILER;
+			return this.compiler;
+		}else 
+			throw new Exception("Please, select the compiler");
 	}
 
 	/**
