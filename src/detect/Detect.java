@@ -119,7 +119,8 @@ public class Detect {
 			runStage("Creating directories", "\nDirectories created in", StagesDetect.CREATED_DIRECTORIES);
 			runStage("\nCompiling the project", "Project compiled in", StagesDetect.COMPILED_PROJECT);
 
-			if(!FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals("")){
+			if((!(compiler == Constants.CODECONTRACTS_COMPILER) | !FileUtil.getListPathPrinted(Constants.CODECONTRACTS_SOURCE_BIN, FileUtil.DIRECTORIES).equals(""))
+			 &&(!(compiler == Constants.JMLC_COMPILER) | !FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals(""))){
 				runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
 				runStage("Running test into contract-based code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
 			}else{
