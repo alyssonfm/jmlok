@@ -1,14 +1,6 @@
-<project name="C Sharp Compiler" default="compile_project" basedir=".."
-	xmlns:au="antlib:org.apache.ant.antunit"
-	xmlns:dn="antlib:org.apache.ant.dotnet">
+<project name="C Sharp Compiler" default="compile_project" basedir="..">
 	
-	<property name="basename" value="Program"/>
-	<property name="build.dir" value="C:\Users\denni_000\workspace\CodeSpec\buildData"/>
-	<property environment="env"/>
-	
-	<property name="src.dir" location="C:\Users\denni_000\Documents\Visual Studio 2013\Projects\CodeContractsTest\CodeContractsTest"/>
-	<property name="out.type" value="exe"/>
-	<property name="Output.exe" location="${build.dir}/${basename}.${out.type}" />
+	<property name="Output.exe" location="${build_dir}/ProgramCompiled.exe" />	
 	<property name="cscExec" value="csc" />
 
 	<target name="compile_project">
@@ -17,44 +9,9 @@
 		</echo>
 	
 		<exec command="${cscExec}">
-			<!--<arg value="/target:library"/>-->
 			<arg value="/out:${Output.exe}"/> 
-			<arg value="/debug"/>
-			<arg value="${src.dir}\*.cs"/>
+			<arg value="${source_folder}\*.cs"/>
 		</exec>
 	</target>
 
-	<!--
-	<target name="compile_project">
-		<condition property="csc.found">
-			<or>
-				<available file="csc"     filepath="${env.PATH}"/>
-				<available file="csc.exe" filepath="${env.PATH}"/>
-			</or>
-		</condition>
-
-		<fail unless="csc.found">Needed C# compiler is missing</fail>
-	    <mkdir dir="${build.dir}"/>
-    	
-		<dn:nant>
-			<csc destFiles="${Output.exe}" targetType="${out.type}">
-				<src dir="${src.dir}" includes="*.cs"/>
-			</csc>
-		</dn:nant>
-		
-		
-		<csc target="exe" output="${build.dir}\${basename}.exe"
-        	 imports="System,System.Data,System.Drawing,System.Windows.Forms,System.XML">
-       	   <sources basedir="${source_folder}/">
-         		<includes name="*.cs"/>
-    	   </sources>
-	       <references basedir="${source_folder}/">
-       	 		<includes name="*.dll"/>
-       		</references>
-     	</csc>
-    
-		
-   </target>
-	
-	-->
 </project>

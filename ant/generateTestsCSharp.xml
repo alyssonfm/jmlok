@@ -1,0 +1,21 @@
+<project name="generate_Tests" default="generateTests" basedir="..">
+	<property name="toTest.path" location="${build_dir}/ProgramCompiled.exe"/>
+	
+	<property name="randoop_dir" value="C:\Users\denni_000\git\codespecok\lib\randoop\bin" />
+	<property name="randoopExec" value="${randoop_dir}\Randoop.exe"/>
+	
+	
+	<target name="generateTests">
+			<echo>
+				Generating tests with C Sharp Randoop.
+			</echo>
+		
+			<exec command="${randoopExec}">
+				<arg value="/timelimit:${timeout}"/> 
+				<!--<arg value="/outputdir ${output.dir}"/>!-->
+				<arg value="${toTest.path}"/>
+				
+			</exec>
+	</target>
+	
+</project>
