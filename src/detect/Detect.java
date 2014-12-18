@@ -262,7 +262,7 @@ public class Detect {
 		DefaultLogger consoleLogger = createLogger(buff);
 		File buildFile = accessFile("csharpCompile.xml");
 		p.setUserProperty("source_folder", sourceFolder);
-		p.setUserProperty("output_file", Constants.CODECONTRACTS_SOURCE_BIN);
+		p.setUserProperty("build_dir", Constants.CODECONTRACTS_SOURCE_BIN);
  		runProject(buff, p, buildFile, "csharpCompile.xml", "compile_project", consoleLogger);
 	}
 
@@ -297,7 +297,7 @@ public class Detect {
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("generateTests.xml");
+		File buildFile = accessFile("generateTestsJava.xml");
 		p.setUserProperty("classes", Constants.CLASSES);
 		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
@@ -319,24 +319,14 @@ public class Detect {
 		final StringBuilder buff = new StringBuilder();
 		contractLib = contractLib + libFolder;
 		
-		// Run Randoop
-		String pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
-					  + Constants.FILE_SEPARATOR + "randoop.jar";
-		runRandoop(libFolder, timeout, pathToRandoop);
-		
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("generateTests.xml");
-		p.setUserProperty("classes", Constants.CLASSES);
-		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
-		p.setUserProperty("tests_src", Constants.TEST_DIR);
-		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		p.setUserProperty("tests_folder", Constants.TESTS);
-		p.setUserProperty("lib", libFolder);
-		p.setUserProperty("jmlLib", contractLib);
+		File buildFile = accessFile("generateTestsCSharp.xml");
+		p.setUserProperty("build_dir", Constants.CODECONTRACTS_SOURCE_BIN);
 		p.setUserProperty("timeout", timeout);
-		runProject(buff, p, buildFile, "generateTestsCSharp.xml", "compile_tests", consoleLogger);
+		p.setUserProperty("randoop_dir", getJARPath() + File.separator + "lib" + File.separator + "randoop" + File.separator + "bin");
+		runProject(buff, p, buildFile, "generateTestsCSharp.xml", "generateTests", consoleLogger);
 	}
 	
 	/**
@@ -492,6 +482,11 @@ public class Detect {
 	 */
 	private void runTestsOnCSharp(String libFolder) throws Exception{
 		final StringBuilder buff = new StringBuilder();
+		
+		// TODO: To delete.
+		if(FileUtil.getListPathPrinted(Constants.TEST_DIR, FileUtil.DIRECTORIES).equals(""))
+			throw new Exception("\n ERROR: Execute tests stage is Unfinished");
+		
 		
 		// Run ant file
 		Project p = new Project();
