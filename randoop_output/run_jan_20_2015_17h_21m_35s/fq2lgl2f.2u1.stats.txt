@@ -1,0 +1,2361 @@
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter constructor Void .ctor()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#NoInputs
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#NoInputs
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#NoInputs
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#NoInputs
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter constructor Void .ctor()#Redundant
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#Redundant
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Int32 getCount()#Redundant
+CodeContractsTest.GenCounter.Int32 getCount()#New#normal
+CodeContractsTest.GenCounter.Void resetCount()#New#normal
+CodeContractsTest.GenCounter.Void updateCount(Boolean)#New#normal

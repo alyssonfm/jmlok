@@ -36,6 +36,8 @@ public class Detect {
 	private File tempDir = new File(Constants.TEMP_DIR);
 	private File javaBin = new File(Constants.JML_SOURCE_BIN);
 	private File jmlBin = new File(Constants.JML_BIN);
+	private File cSharpBin = new File(Constants.CODECONTRACTS_SOURCE_BIN);
+	private File testOutput = new File(Constants.RANDOOP_OUTPUT_FOLDER);
 	private File testSource = new File(Constants.TEST_DIR);
 	private File testBin = new File(Constants.TEST_BIN);
 	private long startTime;
@@ -119,13 +121,16 @@ public class Detect {
 			runStage("Creating directories", "\nDirectories created in", StagesDetect.CREATED_DIRECTORIES);
 			runStage("\nCompiling the project", "Project compiled in", StagesDetect.COMPILED_PROJECT);
 
-			if((!(compiler == Constants.CODECONTRACTS_COMPILER) | !FileUtil.getListPathPrinted(Constants.CODECONTRACTS_SOURCE_BIN, FileUtil.DIRECTORIES).equals(""))
-			 &&(!(compiler == Constants.JMLC_COMPILER) | !FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals(""))){
-				runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
-				runStage("Running test into contract-based code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
+			if(compiler == Constants.CODECONTRACTS_COMPILER){
+				if(FileUtil.getListPathPrinted(Constants.CODECONTRACTS_SOURCE_BIN, FileUtil.DIRECTORIES).equals(""))
+					throw new Exception("Couldn't compile the files.");
 			}else{
-				throw new Exception("Couldn't compile the files.");
+				if(FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals(""))
+					throw new Exception("Couldn't compile the files.");
 			}
+			
+			runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
+			runStage("Running test into contract-based code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -200,18 +205,28 @@ public class Detect {
 	 * Method used to creates all directories to be used by the tool.
 	 */
 	private void createDirectories(){
-		while (!javaBin.exists()) {
-			javaBin.mkdirs();
+		if(compiler == Constants.CODECONTRACTS_COMPILER){
+			while(!cSharpBin.exists()){
+				cSharpBin.mkdirs();
+			}
+			while(!testOutput.exists()){
+				testOutput.mkdirs();
+			}
+		}else{
+			while (!javaBin.exists()) {
+				javaBin.mkdirs();
+			}
+			while (!jmlBin.exists()) {
+				jmlBin.mkdirs();
+			}
+			while (!testSource.exists()) {
+				testSource.mkdirs();
+			}
+			while (!testBin.exists()) {
+				testBin.mkdirs();
+			}
 		}
-		while (!jmlBin.exists()) {
-			jmlBin.mkdirs();
-		}
-		while (!testSource.exists()) {
-			testSource.mkdirs();
-		}
-		while (!testBin.exists()) {
-			testBin.mkdirs();
-		}
+		
 	}
 	
 	/**
@@ -219,10 +234,15 @@ public class Detect {
 	 */
 	private void cleanDirectories(){
 		try {
-			FileUtils.cleanDirectory(javaBin);
-			FileUtils.cleanDirectory(jmlBin);
-			FileUtils.cleanDirectory(testSource);
-			FileUtils.cleanDirectory(testBin);
+			if(compiler == Constants.CODECONTRACTS_COMPILER){
+				FileUtils.cleanDirectory(cSharpBin);
+				FileUtils.cleanDirectory(testOutput);
+		}else{
+				FileUtils.cleanDirectory(javaBin);
+				FileUtils.cleanDirectory(jmlBin);
+				FileUtils.cleanDirectory(testSource);
+				FileUtils.cleanDirectory(testBin);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -325,7 +345,7 @@ public class Detect {
 		File buildFile = accessFile("generateTestsCSharp.xml");
 		p.setUserProperty("build_dir", Constants.CODECONTRACTS_SOURCE_BIN);
 		p.setUserProperty("timeout", timeout);
-		p.setUserProperty("config_dir", Constants.RANDOOP_CONFIG);
+		p.setUserProperty("output.dir", Constants.RANDOOP_OUTPUT_FOLDER);
 		p.setUserProperty("randoop_dir", getJARPath() + File.separator + "lib" + File.separator + "randoop" + File.separator + "bin");
 		runProject(buff, p, buildFile, "generateTestsCSharp.xml", "generateTests", consoleLogger);
 	}

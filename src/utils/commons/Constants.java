@@ -14,11 +14,12 @@ public class Constants {
 	//Constant to get the file separator of the System.
 	public static final String FILE_SEPARATOR = System.getProperty("file.separator");
 	//Constants to folders created path.
-	public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "codespecok";
+	//public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "codespecok";
+	public static final String TEMP_DIR = "C:" + FILE_SEPARATOR + "CodeSpecOK";
 	public static final String JML_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "bin";
 	//public static final String CODECONTRACTS_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "cSharpBin";
-	public static final String CODECONTRACTS_SOURCE_BIN = "C:\\Users\\denni_000\\workspace\\CodeSpec\\buildData";
-	public static final String RANDOOP_CONFIG = "C:\\Users\\denni_000\\workspace\\CodeSpec\\configData";
+	public static final String CODECONTRACTS_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "CSharpBin";
+	public static final String RANDOOP_OUTPUT_FOLDER = TEMP_DIR + FILE_SEPARATOR + "Randoop_Tests";
 	public static final String JML_BIN = TEMP_DIR + FILE_SEPARATOR + "jmlBin";
 	public static final String TESTS = TEMP_DIR + FILE_SEPARATOR + "tests";
 	public static final String TEST_DIR = TESTS + FILE_SEPARATOR + "src";

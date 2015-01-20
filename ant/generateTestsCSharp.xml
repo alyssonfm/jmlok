@@ -1,7 +1,5 @@
 <project name="generate_Tests" default="generateTests" basedir="..">
 	<property name="toTest.path" location="${build_dir}/CodeContractsTest.exe"/>
-	
-	<property name="randoop_dir" value="C:\Users\denni_000\git\codespecok\lib\Randoop\bin" />
 	<property name="randoopExec" value="${randoop_dir}\Randoop.exe"/>
 	
 	
@@ -11,10 +9,11 @@
 			</echo>
 		
 			<exec command="${randoopExec}">
-				<arg value="/timelimit:${timeout}"/> 
-				<!--<arg value="/outputdir ${output.dir}"/>!-->
  				<arg value="${toTest.path}"/>
-				
+				<arg value="/outputdir:${output.dir}"/>
+				<arg value="/singledir"/>
+				<arg value="/noexplorer"/>
+				<arg value="/timelimit:${timeout}"/> 
 			</exec>
 	</target>
 	

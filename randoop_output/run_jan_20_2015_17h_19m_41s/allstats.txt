@@ -1,0 +1,45 @@
+========== CodeContractsTest.GenCounter.Int32 getCount()
+
+Test generation statistics.
+588    : TRIED to create test ending with this member
+8      : FAILED TO CREATE: found no input arguments
+186    : FAILED TO CREATE: found inputs, but new test syntactially the same as an old test
+394    : SUCCEEDED in creating a new test
+
+Test execution statistics.
+394    : normal
+
+========== CodeContractsTest.GenCounter.Void updateCount(Boolean)
+
+Test generation statistics.
+588    : TRIED to create test ending with this member
+2      : FAILED TO CREATE: found no input arguments
+130    : FAILED TO CREATE: found inputs, but new test syntactially the same as an old test
+456    : SUCCEEDED in creating a new test
+
+Test execution statistics.
+448    : normal
+8      : System.Diagnostics.Contracts.__ContractsRuntime+ContractException
+
+========== CodeContractsTest.GenCounter.Void resetCount()
+
+Test generation statistics.
+570    : TRIED to create test ending with this member
+8      : FAILED TO CREATE: found no input arguments
+174    : FAILED TO CREATE: found inputs, but new test syntactially the same as an old test
+388    : SUCCEEDED in creating a new test
+
+Test execution statistics.
+388    : normal
+
+========== CodeContractsTest.GenCounter constructor Void .ctor()
+
+Test generation statistics.
+536    : TRIED to create test ending with this member
+0      : FAILED TO CREATE: found no input arguments
+535    : FAILED TO CREATE: found inputs, but new test syntactially the same as an old test
+1      : SUCCEEDED in creating a new test
+
+Test execution statistics.
+1      : normal
+
