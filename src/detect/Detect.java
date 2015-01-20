@@ -325,6 +325,7 @@ public class Detect {
 		File buildFile = accessFile("generateTestsCSharp.xml");
 		p.setUserProperty("build_dir", Constants.CODECONTRACTS_SOURCE_BIN);
 		p.setUserProperty("timeout", timeout);
+		p.setUserProperty("config_dir", Constants.RANDOOP_CONFIG);
 		p.setUserProperty("randoop_dir", getJARPath() + File.separator + "lib" + File.separator + "randoop" + File.separator + "bin");
 		runProject(buff, p, buildFile, "generateTestsCSharp.xml", "generateTests", consoleLogger);
 	}

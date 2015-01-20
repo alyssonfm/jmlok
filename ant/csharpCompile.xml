@@ -1,7 +1,7 @@
 <project name="C Sharp Compiler" default="compile_project" basedir="..">
 	
-	<property name="Output.exe" location="${build_dir}/ProgramCompiled.exe" />	
-	<property name="cscExec" value="csc" />
+	<property name="Output.exe" location="${build_dir}" />	
+	<property name="cscExec" value="msbuild" />
 
 	<target name="compile_project">
 		<echo>
@@ -9,8 +9,8 @@
 		</echo>
 	
 		<exec command="${cscExec}">
-			<arg value="/out:${Output.exe}"/> 
-			<arg value="${source_folder}\*.cs"/>
+			<arg value="/p:CodeContractsEnableRuntimeChecking=true;CodeContractsAssemblyMode=0;CodeContractsRuntimeThrowOnFailure=true;OutputPath=${Output.exe}"/>
+			<arg value="${source_folder}\CodeContractsTest.sln"/>
 		</exec>
 	</target>
 
