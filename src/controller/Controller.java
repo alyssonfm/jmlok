@@ -46,13 +46,16 @@ public class Controller {
 	 * Check if the folder selected is valid and exist. If is a empty string, will use default values
 	 * @param extLibFolder
 	 * @return 
+	 * @throws Exception 
 	 */
-	public String checkLibField(String extLibFolder) {
-		if(extLibFolder.equals("")) {
-			if(System.getProperty("os.name").contains("Windows"))
+	public String checkLibField(String extLibFolder, int compiler) throws Exception {
+		if(extLibFolder.equals("") && compiler == Constants.JMLC_COMPILER) {
+			if (Constants.JMLC_LIB == null) throw new Exception("Please, set the JMLDIR system variable.");
+			else if(System.getProperty("os.name").contains("Windows"))
 				extLibFolder = Constants.JMLC_LIB;
 			else
-				extLibFolder = System.getenv("USER_CLASSPATH_LIB");
+//				extLibFolder = System.getenv("USER_CLASSPATH_LIB");
+				extLibFolder = "";
 		}
 		return extLibFolder;
 	}
@@ -74,7 +77,8 @@ public class Controller {
 	 * @throws TimeException if time is not valid value
 	 */
 	public void checkTimeField(String time) throws Exception{
-		if(!(time.matches("\\d+"))) throw new Exception("Please insert a valid number of seconds.");
+		if (time.equals(""));
+		else if(!(time.matches("\\d+"))) throw new Exception("Please insert a valid number of seconds.");
 	}
 	
 	/**

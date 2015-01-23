@@ -330,7 +330,7 @@ public class Main extends JFrame {
 	protected void runningProgram() {
 		try {
 			compiler = control.chooseCompiler(rdbtnJml.isSelected(), rdbtnCodeContracts.isSelected());
-			String extLibFolder = control.checkLibField(extFolder);
+			String extLibFolder = control.checkLibField(extFolder, compiler);
 			String time = control.timeValue(textFieldTime.getText());
 			ThreadExecutingProgram t = new ThreadExecutingProgram(this, srcFolder, extLibFolder, time, compiler);
 			t.run();
