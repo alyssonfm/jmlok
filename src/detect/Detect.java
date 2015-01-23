@@ -1,7 +1,9 @@
 package detect;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -37,14 +39,16 @@ public class Detect {
 	private File javaBin = new File(Constants.JML_SOURCE_BIN);
 	private File jmlBin = new File(Constants.JML_BIN);
 	private File cSharpBin = new File(Constants.CODECONTRACTS_SOURCE_BIN);
-	private File testOutput = new File(Constants.RANDOOP_OUTPUT_FOLDER);
+	private File testCSharpOutput = new File(Constants.RANDOOP_OUTPUT_FOLDER);
 	private File testSource = new File(Constants.TEST_DIR);
 	private File testBin = new File(Constants.TEST_BIN);
 	private long startTime;
 	private List<DetectListener> detectListeners;
 	private String sourceFolder;
 	private String librariesFolder;
+	private String projectName;
 	private String timeout;
+	private String resultOfTests;
 	private int compiler;
 	
 	private enum StagesDetect{
@@ -113,6 +117,7 @@ public class Detect {
 		try {
 			sourceFolder = srcFolder;
 			librariesFolder = libFolder;
+			projectName = srcFolder.substring(srcFolder.lastIndexOf(Constants.FILE_SEPARATOR)).trim();
 
 			getClassListFile(sourceFolder);
 			initTimer();
@@ -131,6 +136,8 @@ public class Detect {
 			
 			runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
 			runStage("Running test into contract-based code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
+			
+			throw new Exception("Unimplemented");
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -209,8 +216,8 @@ public class Detect {
 			while(!cSharpBin.exists()){
 				cSharpBin.mkdirs();
 			}
-			while(!testOutput.exists()){
-				testOutput.mkdirs();
+			while(!testCSharpOutput.exists()){
+				testCSharpOutput.mkdirs();
 			}
 		}else{
 			while (!javaBin.exists()) {
@@ -236,7 +243,7 @@ public class Detect {
 		try {
 			if(compiler == Constants.CODECONTRACTS_COMPILER){
 				FileUtils.cleanDirectory(cSharpBin);
-				FileUtils.cleanDirectory(testOutput);
+				FileUtils.cleanDirectory(testCSharpOutput);
 		}else{
 				FileUtils.cleanDirectory(javaBin);
 				FileUtils.cleanDirectory(jmlBin);
@@ -283,7 +290,8 @@ public class Detect {
 		File buildFile = accessFile("csharpCompile.xml");
 		p.setUserProperty("source_folder", sourceFolder);
 		p.setUserProperty("build_dir", Constants.CODECONTRACTS_SOURCE_BIN);
- 		runProject(buff, p, buildFile, "csharpCompile.xml", "compile_project", consoleLogger);
+		p.setUserProperty("project_name", projectName);
+ 		runProject(buff, p, buildFile, "csharpCompile.xml", "compile_project", consoleLogger);			
 	}
 
 	/**
@@ -347,6 +355,7 @@ public class Detect {
 		p.setUserProperty("timeout", timeout);
 		p.setUserProperty("output.dir", Constants.RANDOOP_OUTPUT_FOLDER);
 		p.setUserProperty("randoop_dir", getJARPath() + File.separator + "lib" + File.separator + "randoop" + File.separator + "bin");
+		p.setUserProperty("project_name", projectName);
 		runProject(buff, p, buildFile, "generateTestsCSharp.xml", "generateTests", consoleLogger);
 	}
 	
@@ -483,7 +492,7 @@ public class Detect {
 		
 		// Run ant file
 		Project p = new Project();
-		DefaultLogger consoleLogger = createLogger(buff);
+		DefaultLogger consoleLogger = createLogger(buff);	
 		File buildFile = accessFile("runTests.xml");
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
@@ -493,7 +502,7 @@ public class Detect {
 			p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		runProject(buff, p, buildFile, "runTests.xml", "run_tests", consoleLogger);
+		runProject(buff, p, buildFile, "runTestsJava.xml", "run_tests", consoleLogger);
 	}
 	
 	/**
@@ -503,27 +512,84 @@ public class Detect {
 	 */
 	private void runTestsOnCSharp(String libFolder) throws Exception{
 		final StringBuilder buff = new StringBuilder();
-		
-		// TODO: To delete.
-		if(FileUtil.getListPathPrinted(Constants.TEST_DIR, FileUtil.DIRECTORIES).equals(""))
-			throw new Exception("\n ERROR: Execute tests stage is Unfinished");
-		
-		
-		// Run ant file
+				
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("runTests.xml");
-		p.setUserProperty("lib", libFolder);
-		p.setUserProperty("jmlBin", Constants.JML_BIN);
-		if(compiler == Constants.JMLC_COMPILER) 
-			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
-		else if(compiler == Constants.OPENJML_COMPILER) 
-			p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
-		p.setUserProperty("tests_src", Constants.TEST_DIR);
-		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		runProject(buff, p, buildFile, "runTests.xml", "run_tests", consoleLogger);
+		File buildFile = accessFile("compileTestsCSharp.xml");
+		p.setUserProperty("DLL_toCopy", getJARPath() + Constants.FILE_SEPARATOR + 
+				"lib" + Constants.FILE_SEPARATOR + "Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll");
+		p.setUserProperty("DirBin_toCopy", Constants.CODECONTRACTS_SOURCE_BIN);
+		p.setUserProperty("dir_target", Constants.RANDOOP_OUTPUT_FOLDER);
+		p.setUserProperty("name_project", projectName);		
+		runProject(buff, p, buildFile, "compileTestsCSharp.xml", "compile_tests", consoleLogger);
+		
+		runTestsOnConsole();
 	}
 	
+	private void runTestsOnConsole() throws InterruptedException, IOException {
+		String pathToVSTest = getJARPath() + Constants.FILE_SEPARATOR + "lib" + Constants.FILE_SEPARATOR + 
+				"TestWindow" + Constants.FILE_SEPARATOR + "vstest.console.exe";
+		Runtime runtime = Runtime.getRuntime();
+		Process proc = runtime.exec(pathToVSTest + " " + 
+				Constants.RANDOOP_OUTPUT_FOLDER + Constants.FILE_SEPARATOR + "RandoopTestSuite.dll");
+		final InputStreamReader ou = new InputStreamReader(proc.getInputStream());
+		final InputStreamReader er = new InputStreamReader(proc.getErrorStream());
+		final BufferedReader bo = new BufferedReader(ou); 
+		final BufferedReader be = new BufferedReader(er);
+		
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				String line = null;
+				try {
+					while ((line = bo.readLine()) != null) {
+						storeLineOnResultOfTests(line);
+					}
+					ou.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}		
+			}
+		}).start();
+		
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				String line = null;
+				try {
+					while ((line = be.readLine()) != null) {
+						storeLineOnResultOfTests(line);
+					}
+					er.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}		
+			}
+		}).start();
+
+		proc.waitFor();
+		
+		saveResultsOfTestsOnFile();
+	}
+
+	private void storeLineOnResultOfTests(String line) {
+		resultOfTests += line + "\n";
+	}
+
+	private void saveResultsOfTestsOnFile() throws IOException {
+		File file = new File(Constants.TEST_ERRORS);
+
+		// if file doesnt exists, then create it
+		if (!file.exists()) {
+			file.createNewFile();
+		}
+
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(resultOfTests);
+		bw.close();
+	}
+
 	/**
 	 * Run specify ANT project.
 	 * @param buff = where log will be printed.

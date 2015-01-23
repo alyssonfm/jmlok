@@ -9,8 +9,12 @@
 		</echo>
 	
 		<exec command="${cscExec}">
-			<arg value="/p:CodeContractsEnableRuntimeChecking=true;CodeContractsAssemblyMode=0;CodeContractsRuntimeThrowOnFailure=true;OutputPath=${Output.exe}"/>
-			<arg value="${source_folder}\CodeContractsTest.sln"/>
+			<arg value="/p:CodeContractsEnableRuntimeChecking=true"/>
+			<arg value="/p:CodeContractsAssemblyMode=0"/>
+			<arg value="/p:CodeContractsRuntimeThrowOnFailure=true"/>
+			<arg value="/p:OutputPath=${Output.exe}"/>
+			<arg value="${source_folder}\${project_name}.sln"/>
+			<arg value="/v:m"/>
 		</exec>
 	</target>
 

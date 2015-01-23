@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0d40bbeb-30f1-45b2-ac27-7376b778ee7b" name="denni_000@QUANTUS-PC 2015-01-22 14:52:54" runUser="QUANTUS-PC\denni_000" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2015-01-22T14:52:54.9906754-02:00" queuing="2015-01-22T14:52:54.9906754-02:00" start="2015-01-22T14:52:55.0958253-02:00" finish="2015-01-22T14:52:55.2492474-02:00" />
+  <TestSettings name="default" id="5f0f0735-1206-4ce8-a409-ba96595b0a69">
+    <Execution>
+      <TestTypeSpecific />
+    </Execution>
+    <Deployment runDeploymentRoot="denni_000_QUANTUS-PC 2015-01-22 14_52_54" />
+    <Properties />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="4eff2c26-6f72-4fa4-a804-90aa40220460" testId="67bbda7d-4cc5-3ff9-06ed-b28f19aa1f88" testName="UnitTestTest1498" computerName="QUANTUS-PC" duration="00:00:00.0076806" startTime="2015-01-22T14:52:54.7982858-02:00" endTime="2015-01-22T14:52:54.8352877-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4eff2c26-6f72-4fa4-a804-90aa40220460">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest1498.UnitTestTest1498()</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e9d3dc58-2cd4-4b41-a9e8-93afda956670" testId="6a2b26cf-c790-d5d4-8242-e61072255536" testName="UnitTestTest2071" computerName="QUANTUS-PC" duration="00:00:00.0004080" startTime="2015-01-22T14:52:54.8472896-02:00" endTime="2015-01-22T14:52:54.8482905-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9d3dc58-2cd4-4b41-a9e8-93afda956670">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest2071.UnitTestTest2071()</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="06863ecb-25bc-4184-9716-e63b75daf17a" testId="531b49fc-ad0a-0639-b9a9-aa513f722e72" testName="UnitTestTest2458" computerName="QUANTUS-PC" duration="00:00:00.0002927" startTime="2015-01-22T14:52:54.8482905-02:00" endTime="2015-01-22T14:52:54.8492901-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="06863ecb-25bc-4184-9716-e63b75daf17a">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest2458.UnitTestTest2458()</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a95c3228-0163-4df5-9718-20d4ef9ff1ce" testId="1af912fc-72d1-4258-9cc5-277e423e6b69" testName="UnitTestTest2492" computerName="QUANTUS-PC" duration="00:00:00.0003382" startTime="2015-01-22T14:52:54.8492901-02:00" endTime="2015-01-22T14:52:54.8492901-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a95c3228-0163-4df5-9718-20d4ef9ff1ce">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest2492.UnitTestTest2492()</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d3baea62-6aae-4a24-890d-d03638177516" testId="e79321f3-1925-4596-5570-4ad55fc3b9a6" testName="UnitTestTest3078" computerName="QUANTUS-PC" duration="00:00:00.0003292" startTime="2015-01-22T14:52:54.8492901-02:00" endTime="2015-01-22T14:52:54.8502901-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3baea62-6aae-4a24-890d-d03638177516">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3078.UnitTestTest3078()</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="03eb2300-e035-4f58-bf5f-b009aef0645b" testId="5453a7ab-e828-7fcf-b9a6-f3fa59d222ae" testName="UnitTestTest3114" computerName="QUANTUS-PC" duration="00:00:00.0003793" startTime="2015-01-22T14:52:54.8502901-02:00" endTime="2015-01-22T14:52:54.8502901-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="03eb2300-e035-4f58-bf5f-b009aef0645b">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3114.UnitTestTest3114()</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b309b657-7159-425e-ad90-b75f6fc98096" testId="5661b974-577a-b10d-d6e3-c20454ac0742" testName="UnitTestTest3277" computerName="QUANTUS-PC" duration="00:00:00.0003083" startTime="2015-01-22T14:52:54.8502901-02:00" endTime="2015-01-22T14:52:54.8512918-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b309b657-7159-425e-ad90-b75f6fc98096">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3277.UnitTestTest3277()</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eeb23fd8-e91c-40d3-9595-e6c1adc4d9fd" testId="bb1d636a-61d4-ba74-5bef-e9812d8cc70c" testName="UnitTestTest3364" computerName="QUANTUS-PC" duration="00:00:00.0002976" startTime="2015-01-22T14:52:54.8512918-02:00" endTime="2015-01-22T14:52:54.8512918-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eeb23fd8-e91c-40d3-9595-e6c1adc4d9fd">
+      <Output>
+        <StdOut>//STACK TRACE:
+   em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3364.UnitTestTest3364()</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="UnitTestTest1498" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="67bbda7d-4cc5-3ff9-06ed-b28f19aa1f88">
+      <Execution id="4eff2c26-6f72-4fa4-a804-90aa40220460" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest1498" name="UnitTestTest1498" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest2071" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="6a2b26cf-c790-d5d4-8242-e61072255536">
+      <Execution id="e9d3dc58-2cd4-4b41-a9e8-93afda956670" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest2071" name="UnitTestTest2071" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest2458" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="531b49fc-ad0a-0639-b9a9-aa513f722e72">
+      <Execution id="06863ecb-25bc-4184-9716-e63b75daf17a" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest2458" name="UnitTestTest2458" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest2492" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="1af912fc-72d1-4258-9cc5-277e423e6b69">
+      <Execution id="a95c3228-0163-4df5-9718-20d4ef9ff1ce" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest2492" name="UnitTestTest2492" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3078" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="e79321f3-1925-4596-5570-4ad55fc3b9a6">
+      <Execution id="d3baea62-6aae-4a24-890d-d03638177516" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3078" name="UnitTestTest3078" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3114" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="5453a7ab-e828-7fcf-b9a6-f3fa59d222ae">
+      <Execution id="03eb2300-e035-4f58-bf5f-b009aef0645b" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3114" name="UnitTestTest3114" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3277" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="5661b974-577a-b10d-d6e3-c20454ac0742">
+      <Execution id="b309b657-7159-425e-ad90-b75f6fc98096" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3277" name="UnitTestTest3277" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3364" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="bb1d636a-61d4-ba74-5bef-e9812d8cc70c">
+      <Execution id="eeb23fd8-e91c-40d3-9595-e6c1adc4d9fd" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3364" name="UnitTestTest3364" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="67bbda7d-4cc5-3ff9-06ed-b28f19aa1f88" executionId="4eff2c26-6f72-4fa4-a804-90aa40220460" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a2b26cf-c790-d5d4-8242-e61072255536" executionId="e9d3dc58-2cd4-4b41-a9e8-93afda956670" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="531b49fc-ad0a-0639-b9a9-aa513f722e72" executionId="06863ecb-25bc-4184-9716-e63b75daf17a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1af912fc-72d1-4258-9cc5-277e423e6b69" executionId="a95c3228-0163-4df5-9718-20d4ef9ff1ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e79321f3-1925-4596-5570-4ad55fc3b9a6" executionId="d3baea62-6aae-4a24-890d-d03638177516" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5453a7ab-e828-7fcf-b9a6-f3fa59d222ae" executionId="03eb2300-e035-4f58-bf5f-b009aef0645b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5661b974-577a-b10d-d6e3-c20454ac0742" executionId="b309b657-7159-425e-ad90-b75f6fc98096" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb1d636a-61d4-ba74-5bef-e9812d8cc70c" executionId="eeb23fd8-e91c-40d3-9595-e6c1adc4d9fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

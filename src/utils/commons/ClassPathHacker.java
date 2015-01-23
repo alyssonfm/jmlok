@@ -1,10 +1,10 @@
 package utils.commons;
 
-import java.io.IOException;
 import java.io.File;
-import java.net.URLClassLoader;
-import java.net.URL;
+import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 /**
  * An modification of the System Class Folder, necessary for operations on Class Folder needed, on
