@@ -15,8 +15,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SpringLayout;
 
-import utils.Constants;
-import utils.FileUtil;
+import utils.commons.Constants;
+import utils.commons.FileUtil;
 
 /**
  * Frame that details stack trace information of nonconformances.

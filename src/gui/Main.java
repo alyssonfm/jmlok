@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -25,13 +26,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 
-import utils.Constants;
+import controller.Controller;
 
 /**
  * Main class to the GUI. Represents the first screen showed to JMLOK user.
@@ -46,6 +48,9 @@ public class Main extends JFrame {
 	 */
 	private static final long serialVersionUID = 9142967374337903926L;
 	
+	private Controller controller;
+	private JRadioButton rdbtnCodeContracts;
+	private JRadioButton rdbtnJml;
 	private JPanel contentPane;
 	private JLabel textFieldSrcFolder;
 	private JLabel textFieldExtLibFolder;
@@ -60,6 +65,7 @@ public class Main extends JFrame {
 	// Parameters for window size.
 	private final int WIDTH = 750;
 	private final int HEIGHT = 210;
+	private final ButtonGroup chooseLanguage = new ButtonGroup();
 	
 	/**
 	 * Display the frame. Initialize the program.
@@ -79,7 +85,7 @@ public class Main extends JFrame {
 	}
 
 	/**
-	 * An class used for thread control, to make GUI changes an the execution of the program
+	 * A class used for thread control, to make GUI changes at the execution of the program
 	 * fluid, with response for user.
 	 * @author Alysson Milanez and Dennis Sousa.
 	 *
@@ -92,7 +98,7 @@ public class Main extends JFrame {
         public Void doInBackground() {
             //Initialize progress property.
             setProgress(0);
-            runningProgram();
+            controller.runProgram(Main.this);
             return null;
         }
 
@@ -113,20 +119,20 @@ public class Main extends JFrame {
 	 */
 	public Main() {
 		// Set window options.
-		setTitle("JMLOK 2.0");
+		setTitle("CodeSpecOK");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 219);
 		setMinimumSize(new Dimension(this.WIDTH, this.HEIGHT));
 		setMaximumSize(new Dimension(1450, this.HEIGHT));
 		setMaximizedBounds(new Rectangle(1450, this.HEIGHT));
-		
+		// Initialize Icons for all Windows
 		List<Image> icons = new ArrayList<Image>();
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(16x16).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(32x32).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(64x64).jpg")).getImage());
 		icons.add((Image) new ImageIcon(getClass().getResource("images/logo(128x128).jpg")).getImage());
 		setIconImages(icons);
-		
+		// Initialize Layout for Window.
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -137,6 +143,7 @@ public class Main extends JFrame {
 		dirLibs = new JFileChooser();
 		dirSources = new JFileChooser();
 		
+		// Labels
 		JLabel lblExternalLibFolder = new JLabel("Choose external libraries folder");
 		springLayout.putConstraint(SpringLayout.EAST, lblExternalLibFolder, 350, SpringLayout.WEST, contentPane);
 		springLayout.putConstraint(SpringLayout.NORTH, lblExternalLibFolder, 50, SpringLayout.NORTH, contentPane);
@@ -154,6 +161,7 @@ public class Main extends JFrame {
 		lblSrcFolder.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblSrcFolder);
 		
+		// TextFields
 		textFieldSrcFolder = new JLabel();
 		springLayout.putConstraint(SpringLayout.NORTH, textFieldSrcFolder, 5, SpringLayout.NORTH, lblSrcFolder);
 		springLayout.putConstraint(SpringLayout.EAST, textFieldSrcFolder, -10, SpringLayout.EAST, contentPane);
@@ -168,14 +176,14 @@ public class Main extends JFrame {
 		textFieldExtLibFolder.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(textFieldExtLibFolder);
 		
+		// Browse Buttons
 		JButton btnBrowseSrcFolder = new JButton("Browse");
 		springLayout.putConstraint(SpringLayout.NORTH, btnBrowseSrcFolder, 2, SpringLayout.NORTH, lblSrcFolder);
 		springLayout.putConstraint(SpringLayout.WEST, btnBrowseSrcFolder, 6, SpringLayout.EAST, lblSrcFolder);
 		btnBrowseSrcFolder.setFont(new Font("Verdana", Font.BOLD, 18));
 		btnBrowseSrcFolder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				browseSrcFolder();
-				
+				browseSrcFolder();		
 			}
 		});
 		contentPane.add(btnBrowseSrcFolder);
@@ -193,6 +201,7 @@ public class Main extends JFrame {
 		});
 		contentPane.add(btnBrowseExtLibFolder);
 		
+		// Time
 		JLabel lblTime = new JLabel("Time to tests generation  ");
 		springLayout.putConstraint(SpringLayout.NORTH, lblTime, 13, SpringLayout.SOUTH, lblExternalLibFolder);
 		lblTime.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -209,6 +218,13 @@ public class Main extends JFrame {
 		contentPane.add(textFieldTime);
 		textFieldTime.setColumns(6);
 		
+		JLabel lblSeconds = new JLabel("seconds");
+		springLayout.putConstraint(SpringLayout.NORTH, lblSeconds, 0, SpringLayout.NORTH, lblTime);
+		springLayout.putConstraint(SpringLayout.WEST, lblSeconds, 520, SpringLayout.WEST, contentPane);
+		lblSeconds.setFont(new Font("Verdana", Font.BOLD, 18));
+		contentPane.add(lblSeconds);
+		
+		// Run Button
 		btnRun = new JButton("Run");
 		springLayout.putConstraint(SpringLayout.WEST, btnRun, -274, SpringLayout.EAST, contentPane);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnRun, -10, SpringLayout.SOUTH, contentPane);
@@ -216,30 +232,27 @@ public class Main extends JFrame {
 		btnRun.setFont(new Font("Verdana", Font.BOLD, 18));
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(textFieldSrcFolder.getText().equals(""))
-					JOptionPane.showMessageDialog(Main.this, "Choose the source folder before running.");
-				else if(!textFieldTime.getText().matches("\\d+"))
-					JOptionPane.showMessageDialog(Main.this, "Please insert a valid number of seconds.");
-				else if(!System.getProperty("os.name").contains("Windows") && !(System.getenv("CLASSPATH").contains("randoop.jar")))
-					JOptionPane.showMessageDialog(Main.this, "The file randoop.jar was not configured using JMLOKSetup. Please runs JMLOKSetup again and put randoop.jar into your choosen ext lib folder.");
-				else{	
+				try {
+					controller = new Controller(rdbtnJml.isSelected(), rdbtnCodeContracts.isSelected());
+					controller.checkProblemsWithInput(srcFolder, textFieldTime.getText());
+					
 					btnRun.setEnabled(false);
-			        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+					setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			        //Instances of javax.swing.SwingWorker are not reusable, so
 			        //we create new instances as needed.
+					controller.validateInput(srcFolder, extFolder, textFieldTime.getText());
+					
 			        task = new Task();
 			        task.execute();
+				} catch (Exception messageException) {
+					JOptionPane.showMessageDialog(Main.this, messageException.getMessage());
 				}
+				
 			}
 		});
 		contentPane.add(btnRun);
 		
-		JLabel lblSeconds = new JLabel("seconds");
-		springLayout.putConstraint(SpringLayout.NORTH, lblSeconds, 0, SpringLayout.NORTH, lblTime);
-		springLayout.putConstraint(SpringLayout.WEST, lblSeconds, 520, SpringLayout.WEST, contentPane);
-		lblSeconds.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(lblSeconds);
-		
+		// Clean Button
 		JButton btnClean = new JButton("Clean");
 		springLayout.putConstraint(SpringLayout.SOUTH, btnClean, -10, SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, btnClean, -51, SpringLayout.EAST, contentPane);
@@ -250,7 +263,7 @@ public class Main extends JFrame {
 		});
 		btnClean.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(btnClean);
-		
+		// Folder images
 		BufferedImage imgLabel = null;
 		try {
 			imgLabel = ImageIO.read(Main.class.getResource("/gui/images/folder.png"));
@@ -258,7 +271,7 @@ public class Main extends JFrame {
 			e.printStackTrace();
 		}
 		Image dFolderImg = imgLabel.getScaledInstance(24, 24, Image.SCALE_SMOOTH);
-
+		
 		JLabel lblIconFolder1 = new JLabel("");
 		lblIconFolder1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIconFolder1.setIcon(new ImageIcon(dFolderImg));		
@@ -278,6 +291,7 @@ public class Main extends JFrame {
 		springLayout.putConstraint(SpringLayout.EAST, lblIconFolder2, 2, SpringLayout.WEST, textFieldExtLibFolder);
 		contentPane.add(lblIconFolder2);
 
+		// Time Icon
 		try {
 			imgLabel = ImageIO.read(Main.class.getResource("/gui/images/time.png"));
 		} catch (IOException e) {
@@ -285,7 +299,6 @@ public class Main extends JFrame {
 		}
 		Image dTimeImg = imgLabel.getScaledInstance(24, 24, Image.SCALE_SMOOTH);
 
-		
 		JLabel labelTimeIcon = new JLabel("");
 		springLayout.putConstraint(SpringLayout.NORTH, labelTimeIcon, 0, SpringLayout.NORTH, textFieldTime);
 		springLayout.putConstraint(SpringLayout.WEST, labelTimeIcon, 2, SpringLayout.EAST, textFieldTime);
@@ -295,25 +308,21 @@ public class Main extends JFrame {
 		labelTimeIcon.setFont(new Font("Dialog", Font.BOLD, 8));
 		labelTimeIcon.setIcon(new ImageIcon(dTimeImg));
 		contentPane.add(labelTimeIcon);
-	}
+		
+		rdbtnJml = new JRadioButton("JML");
+		chooseLanguage.add(rdbtnJml);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJml, 0, SpringLayout.NORTH, btnRun);
+		rdbtnJml.setFont(new Font("Verdana", Font.BOLD, 18));
+		contentPane.add(rdbtnJml);
+		
+		rdbtnCodeContracts = new JRadioButton("Code Contracts");
+		chooseLanguage.add(rdbtnCodeContracts);
+		springLayout.putConstraint(SpringLayout.EAST, rdbtnJml, -46, SpringLayout.WEST, rdbtnCodeContracts);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnCodeContracts, 0, SpringLayout.NORTH, btnRun);
+		springLayout.putConstraint(SpringLayout.EAST, rdbtnCodeContracts, 0, SpringLayout.EAST, lblExternalLibFolder);
+		rdbtnCodeContracts.setFont(new Font("Verdana", Font.BOLD, 18));
+		contentPane.add(rdbtnCodeContracts);
 
-	/**
-	 * Execute the program, after some variables are correctly initialized.
-	 */
-	protected void runningProgram() {
-		// showInterestingMessage();
-		String extLibFolder = extFolder;
-		String time = textFieldTime.getText();
-		if(extLibFolder.equals("")) {
-			if(System.getProperty("os.name").contains("Windows"))
-				extLibFolder = Constants.JMLC_LIB;
-			else
-				extLibFolder = System.getenv("USER_CLASSPATH_LIB");
-		}if(time.equals("")){
-			time = "10";
-		}
-		ThreadExecutingProgram t = new ThreadExecutingProgram(this, srcFolder, extLibFolder, time);
-		t.run();
 	}
 
 	/**
@@ -357,7 +366,7 @@ public class Main extends JFrame {
 	 * Return the path name where running Jar was found to use.
 	 * @return the path name where running Jar was found to use.
 	 */
-	private String jarPath() {
+	public String jarPath() {
 		Path path = null;
 		try {
 			path = Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
@@ -366,5 +375,5 @@ public class Main extends JFrame {
 		}
 		return path.getParent().toString();
 	}
-	
+
 }

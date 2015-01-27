@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="91a8064e-40b9-463c-8c4f-9057d3fc5871" name="denni_000@QUANTUS-PC 2015-01-22 15:02:13" runUser="QUANTUS-PC\denni_000" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2015-01-22T15:02:13.5838471-02:00" queuing="2015-01-22T15:02:13.5838471-02:00" start="2015-01-22T15:02:13.5898474-02:00" finish="2015-01-22T15:02:13.6748230-02:00" />
+  <TestSettings name="default" id="a7120594-60ee-4fbe-98aa-de7e435a8256">
+    <Execution>
+      <TestTypeSpecific />
+    </Execution>
+    <Deployment runDeploymentRoot="denni_000_QUANTUS-PC 2015-01-22 15_02_13" />
+    <Properties />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="3a1b7a24-577c-42af-8e12-3152b702fa93" testId="67bbda7d-4cc5-3ff9-06ed-b28f19aa1f88" testName="UnitTestTest1498" computerName="QUANTUS-PC" duration="00:00:00.0587817" startTime="2015-01-22T15:02:13.4350595-02:00" endTime="2015-01-22T15:02:13.5218681-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a1b7a24-577c-42af-8e12-3152b702fa93">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest1498.UnitTestTest1498 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest1498.UnitTestTest1498()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a97aba3c-c6d1-46c3-ab67-bbb561763412" testId="6a2b26cf-c790-d5d4-8242-e61072255536" testName="UnitTestTest2071" computerName="QUANTUS-PC" duration="00:00:00.0008695" startTime="2015-01-22T15:02:13.5348684-02:00" endTime="2015-01-22T15:02:13.5358692-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a97aba3c-c6d1-46c3-ab67-bbb561763412">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest2071.UnitTestTest2071 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest2071.UnitTestTest2071()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b4633cd4-8875-4e4c-8391-da66dbbc62c6" testId="531b49fc-ad0a-0639-b9a9-aa513f722e72" testName="UnitTestTest2458" computerName="QUANTUS-PC" duration="00:00:00.0006597" startTime="2015-01-22T15:02:13.5358692-02:00" endTime="2015-01-22T15:02:13.5368685-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b4633cd4-8875-4e4c-8391-da66dbbc62c6">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest2458.UnitTestTest2458 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest2458.UnitTestTest2458()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="802ab5d2-d4f1-445a-87bc-6373e93d56e5" testId="1af912fc-72d1-4258-9cc5-277e423e6b69" testName="UnitTestTest2492" computerName="QUANTUS-PC" duration="00:00:00.0007028" startTime="2015-01-22T15:02:13.5368685-02:00" endTime="2015-01-22T15:02:13.5378693-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="802ab5d2-d4f1-445a-87bc-6373e93d56e5">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest2492.UnitTestTest2492 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest2492.UnitTestTest2492()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f92d39b6-443f-4608-9e48-d4203d7d64da" testId="e79321f3-1925-4596-5570-4ad55fc3b9a6" testName="UnitTestTest3078" computerName="QUANTUS-PC" duration="00:00:00.0007541" startTime="2015-01-22T15:02:13.5378693-02:00" endTime="2015-01-22T15:02:13.5388480-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f92d39b6-443f-4608-9e48-d4203d7d64da">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest3078.UnitTestTest3078 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3078.UnitTestTest3078()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="acb1bb57-c8df-418f-9230-e2e0cdd48047" testId="5453a7ab-e828-7fcf-b9a6-f3fa59d222ae" testName="UnitTestTest3114" computerName="QUANTUS-PC" duration="00:00:00.0008050" startTime="2015-01-22T15:02:13.5388480-02:00" endTime="2015-01-22T15:02:13.5398497-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="acb1bb57-c8df-418f-9230-e2e0cdd48047">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest3114.UnitTestTest3114 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3114.UnitTestTest3114()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f9fa56a9-e8b6-4983-b3dc-4ecb3314beba" testId="5661b974-577a-b10d-d6e3-c20454ac0742" testName="UnitTestTest3277" computerName="QUANTUS-PC" duration="00:00:00.0007188" startTime="2015-01-22T15:02:13.5398497-02:00" endTime="2015-01-22T15:02:13.5408699-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9fa56a9-e8b6-4983-b3dc-4ecb3314beba">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest3277.UnitTestTest3277 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3277.UnitTestTest3277()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8480d4a1-f65b-47fa-9d26-723e197ca0b5" testId="bb1d636a-61d4-ba74-5bef-e9812d8cc70c" testName="UnitTestTest3364" computerName="QUANTUS-PC" duration="00:00:00.0006720" startTime="2015-01-22T15:02:13.5408699-02:00" endTime="2015-01-22T15:02:13.5418700-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8480d4a1-f65b-47fa-9d26-723e197ca0b5">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest3364.UnitTestTest3364 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest3364.UnitTestTest3364()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="16f6ed83-591a-4e6d-ba7a-403e812abf99" testId="8fdafee1-e7bf-13be-ac22-39232f82bcc2" testName="UnitTestTest4274" computerName="QUANTUS-PC" duration="00:00:00.0006740" startTime="2015-01-22T15:02:13.5418700-02:00" endTime="2015-01-22T15:02:13.5428684-02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="16f6ed83-591a-4e6d-ba7a-403e812abf99">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method RandoopTest4274.UnitTestTest4274 threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Falha na precondição: !b || (getCount() &lt; _MAX)</Message>
+          <StackTrace>    em System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner)
+   em System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt)
+   em CodeContractsTest.GenCounter.updateCount(Boolean b)
+   em RandoopTest4274.UnitTestTest4274()
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="UnitTestTest1498" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="67bbda7d-4cc5-3ff9-06ed-b28f19aa1f88">
+      <Execution id="3a1b7a24-577c-42af-8e12-3152b702fa93" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest1498" name="UnitTestTest1498" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest2071" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="6a2b26cf-c790-d5d4-8242-e61072255536">
+      <Execution id="a97aba3c-c6d1-46c3-ab67-bbb561763412" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest2071" name="UnitTestTest2071" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest2458" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="531b49fc-ad0a-0639-b9a9-aa513f722e72">
+      <Execution id="b4633cd4-8875-4e4c-8391-da66dbbc62c6" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest2458" name="UnitTestTest2458" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest2492" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="1af912fc-72d1-4258-9cc5-277e423e6b69">
+      <Execution id="802ab5d2-d4f1-445a-87bc-6373e93d56e5" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest2492" name="UnitTestTest2492" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3078" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="e79321f3-1925-4596-5570-4ad55fc3b9a6">
+      <Execution id="f92d39b6-443f-4608-9e48-d4203d7d64da" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3078" name="UnitTestTest3078" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3114" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="5453a7ab-e828-7fcf-b9a6-f3fa59d222ae">
+      <Execution id="acb1bb57-c8df-418f-9230-e2e0cdd48047" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3114" name="UnitTestTest3114" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3277" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="5661b974-577a-b10d-d6e3-c20454ac0742">
+      <Execution id="f9fa56a9-e8b6-4983-b3dc-4ecb3314beba" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3277" name="UnitTestTest3277" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest3364" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="bb1d636a-61d4-ba74-5bef-e9812d8cc70c">
+      <Execution id="8480d4a1-f65b-47fa-9d26-723e197ca0b5" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest3364" name="UnitTestTest3364" />
+    </UnitTest>
+    <UnitTest name="UnitTestTest4274" storage="c:\codespecok\randooptests\randooptestsuite.exe" id="8fdafee1-e7bf-13be-ac22-39232f82bcc2">
+      <Execution id="16f6ed83-591a-4e6d-ba7a-403e812abf99" />
+      <TestMethod codeBase="c:\CodeSpecOK\RandoopTests\RandoopTestSuite.exe" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="RandoopTest4274" name="UnitTestTest4274" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="67bbda7d-4cc5-3ff9-06ed-b28f19aa1f88" executionId="3a1b7a24-577c-42af-8e12-3152b702fa93" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a2b26cf-c790-d5d4-8242-e61072255536" executionId="a97aba3c-c6d1-46c3-ab67-bbb561763412" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="531b49fc-ad0a-0639-b9a9-aa513f722e72" executionId="b4633cd4-8875-4e4c-8391-da66dbbc62c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1af912fc-72d1-4258-9cc5-277e423e6b69" executionId="802ab5d2-d4f1-445a-87bc-6373e93d56e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e79321f3-1925-4596-5570-4ad55fc3b9a6" executionId="f92d39b6-443f-4608-9e48-d4203d7d64da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5453a7ab-e828-7fcf-b9a6-f3fa59d222ae" executionId="acb1bb57-c8df-418f-9230-e2e0cdd48047" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5661b974-577a-b10d-d6e3-c20454ac0742" executionId="f9fa56a9-e8b6-4983-b3dc-4ecb3314beba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb1d636a-61d4-ba74-5bef-e9812d8cc70c" executionId="8480d4a1-f65b-47fa-9d26-723e197ca0b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8fdafee1-e7bf-13be-ac22-39232f82bcc2" executionId="16f6ed83-591a-4e6d-ba7a-403e812abf99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="0" failed="9" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

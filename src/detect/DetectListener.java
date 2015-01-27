@@ -8,9 +8,8 @@ package detect;
 public interface DetectListener extends java.util.EventListener{
 
 	void detectCreatedDirectories(DetectEvent e);
-	void detectCompiledProjectWithJava(DetectEvent e);
-	void detectCompiledProjectWithJML(DetectEvent e);
-	void detectGeneratedTestsWithRandoop(DetectEvent e);
+	void detectCompiledProject(DetectEvent e);
+	void detectGeneratedTests(DetectEvent e);
 	void detectExecutedTests(DetectEvent e);
 	
 	void detectErrorOnGeneratingTests(DetectEvent e);
