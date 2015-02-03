@@ -49,8 +49,6 @@ public class Main extends JFrame {
 	private static final long serialVersionUID = 9142967374337903926L;
 	
 	private Controller controller;
-	private JRadioButton rdbtnCodeContracts;
-	private JRadioButton rdbtnJml;
 	private JPanel contentPane;
 	private JLabel textFieldSrcFolder;
 	private JLabel textFieldExtLibFolder;
@@ -119,7 +117,7 @@ public class Main extends JFrame {
 	 */
 	public Main() {
 		// Set window options.
-		setTitle("CodeSpecOK");
+		setTitle("JMLOK");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 219);
 		setMinimumSize(new Dimension(this.WIDTH, this.HEIGHT));
@@ -308,20 +306,6 @@ public class Main extends JFrame {
 		labelTimeIcon.setFont(new Font("Dialog", Font.BOLD, 8));
 		labelTimeIcon.setIcon(new ImageIcon(dTimeImg));
 		contentPane.add(labelTimeIcon);
-		
-		rdbtnJml = new JRadioButton("JML");
-		chooseLanguage.add(rdbtnJml);
-		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJml, 0, SpringLayout.NORTH, btnRun);
-		rdbtnJml.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(rdbtnJml);
-		
-		rdbtnCodeContracts = new JRadioButton("Code Contracts");
-		chooseLanguage.add(rdbtnCodeContracts);
-		springLayout.putConstraint(SpringLayout.EAST, rdbtnJml, -46, SpringLayout.WEST, rdbtnCodeContracts);
-		springLayout.putConstraint(SpringLayout.NORTH, rdbtnCodeContracts, 0, SpringLayout.NORTH, btnRun);
-		springLayout.putConstraint(SpringLayout.EAST, rdbtnCodeContracts, 0, SpringLayout.EAST, lblExternalLibFolder);
-		rdbtnCodeContracts.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(rdbtnCodeContracts);
 
 	}
 
