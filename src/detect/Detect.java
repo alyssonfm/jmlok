@@ -1,7 +1,9 @@
 package detect;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -36,13 +38,16 @@ public class Detect {
 	private File tempDir = new File(Constants.TEMP_DIR);
 	private File javaBin = new File(Constants.JML_SOURCE_BIN);
 	private File jmlBin = new File(Constants.JML_BIN);
+	private File testCSharpOutput = new File(Constants.RANDOOP_OUTPUT_FOLDER);
 	private File testSource = new File(Constants.TEST_DIR);
 	private File testBin = new File(Constants.TEST_BIN);
 	private long startTime;
 	private List<DetectListener> detectListeners;
 	private String sourceFolder;
 	private String librariesFolder;
+	private String projectName;
 	private String timeout;
+	private String resultOfTests;
 	private int compiler;
 	
 	private enum StagesDetect{
@@ -65,9 +70,6 @@ public class Detect {
 			break;
 		case Constants.OPENJML_COMPILER:
 			contractLib = Constants.OPENJML_SRC;
-			break;
-		case Constants.CODECONTRACTS_COMPILER:
-			// Doesn't need a library for contract compilation.
 			break;
 		default:
 			break;
@@ -111,6 +113,7 @@ public class Detect {
 		try {
 			sourceFolder = srcFolder;
 			librariesFolder = libFolder;
+			projectName = srcFolder.substring(srcFolder.lastIndexOf(Constants.FILE_SEPARATOR)).trim();
 
 			getClassListFile(sourceFolder);
 			initTimer();
@@ -119,12 +122,13 @@ public class Detect {
 			runStage("Creating directories", "\nDirectories created in", StagesDetect.CREATED_DIRECTORIES);
 			runStage("\nCompiling the project", "Project compiled in", StagesDetect.COMPILED_PROJECT);
 
-			if(!FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals("")){
-				runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
-				runStage("Running test into contract-based code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
-			}else{
+			if(FileUtil.getListPathPrinted(Constants.JML_BIN, FileUtil.DIRECTORIES).equals(""))
 				throw new Exception("Couldn't compile the files.");
-			}
+				
+			runStage("Generating tests", "Tests generated in", StagesDetect.GENERATED_TESTS);
+			runStage("Running test into contract-based code", "Tests ran in", StagesDetect.EXECUTED_TESTS);
+			
+			throw new Exception("Unimplemented");
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -156,7 +160,7 @@ public class Detect {
 			compileProject(sourceFolder, librariesFolder);
 			break;
 		case GENERATED_TESTS:
-			generateTests(librariesFolder, timeout);
+			generateTestsForJava(librariesFolder, timeout);
 			break;
 		case EXECUTED_TESTS:
 			runTests(librariesFolder);
@@ -171,12 +175,9 @@ public class Detect {
 	}
 
 	private void compileProject(String sourceFolder, String librariesFolder) throws Exception {
-		if(compiler == Constants.CODECONTRACTS_COMPILER)
-			codeContractsCompile(sourceFolder, librariesFolder);
-		else{
-			javaCompile(sourceFolder, librariesFolder);
-			jmlCompile(sourceFolder);
-		}
+		javaCompile(sourceFolder, librariesFolder);
+		jmlCompile(sourceFolder);
+
 		triggersEvent(StagesDetect.COMPILED_PROJECT);
 	}
 	
@@ -212,7 +213,8 @@ public class Detect {
 			testBin.mkdirs();
 		}
 	}
-	
+		
+		
 	/**
 	 * Method used to clean all directories - for the case of several executions of the tool.
 	 */
@@ -222,6 +224,7 @@ public class Detect {
 			FileUtils.cleanDirectory(jmlBin);
 			FileUtils.cleanDirectory(testSource);
 			FileUtils.cleanDirectory(testBin);
+		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -248,36 +251,8 @@ public class Detect {
 		runProject(buff, p, buildFile, "javaCompile.xml", "compile_project", consoleLogger);
 	}
 
-	/**
-	 * Method to C# compilation of the files (needed for tests generation).
-	 * @param sourceFolder = the path to source files.
-	 * @throws Exception problem with ANT projects.
-	 */
-	public void codeContractsCompile(String sourceFolder, String librariesFolder) throws Exception {
-		final StringBuilder buff = new StringBuilder();
-
-		// Run ant file
-		Project p = new Project();
-		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("csharpCompile.xml");
-		p.setUserProperty("source_folder", sourceFolder);
-		p.setUserProperty("output_file", Constants.CODECONTRACTS_SOURCE_BIN);
- 		runProject(buff, p, buildFile, "csharpCompile.xml", "compile_project", consoleLogger);
-	}
-
-	/**
-	 * Method used to generate the tests to conformance checking.
-	 * @param libFolder = the path to external libraries needed to tests generation and compilation.
-	 * @param timeout = the time to tests generation.
-	 * @throws Exception When the XML cannot be read.
-	 */
-	public void generateTests(String libFolder, String timeout) throws Exception{
-		if(this.compiler == Constants.CODECONTRACTS_COMPILER)
-			generateTestsForCSharp(libFolder, timeout);
-		else
-			generateTestsForJava(libFolder, timeout);
-	}
 	
+
 	/**
 	 * Method used to generate the tests to conformance checking on Java projects.
 	 * @param libFolder = the path to external libraries needed to tests generation and compilation.
@@ -296,7 +271,7 @@ public class Detect {
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("generateTests.xml");
+		File buildFile = accessFile("generateTestsJava.xml");
 		p.setUserProperty("classes", Constants.CLASSES);
 		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
@@ -308,36 +283,7 @@ public class Detect {
 		runProject(buff, p, buildFile, "generateTestsJava.xml", "compile_tests", consoleLogger);
 	}
 	
-	/**
-	 * Method used to generate the tests to conformance checking for CSharp projects.
-	 * @param libFolder = the path to external libraries needed to tests generation and compilation.
-	 * @param timeout = the time to tests generation.
-	 * @throws Exception When the XML cannot be read.
-	 */
-	public void generateTestsForCSharp(String libFolder, String timeout) throws Exception{
-		final StringBuilder buff = new StringBuilder();
-		contractLib = contractLib + libFolder;
-		
-		// Run Randoop
-		String pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib" 
-					  + Constants.FILE_SEPARATOR + "randoop.jar";
-		runRandoop(libFolder, timeout, pathToRandoop);
-		
-		// Run ant file
-		Project p = new Project();
-		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("generateTests.xml");
-		p.setUserProperty("classes", Constants.CLASSES);
-		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
-		p.setUserProperty("tests_src", Constants.TEST_DIR);
-		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		p.setUserProperty("tests_folder", Constants.TESTS);
-		p.setUserProperty("lib", libFolder);
-		p.setUserProperty("jmlLib", contractLib);
-		p.setUserProperty("timeout", timeout);
-		runProject(buff, p, buildFile, "generateTestsCSharp.xml", "compile_tests", consoleLogger);
-	}
-	
+
 	/**
 	 * Uses a command to run Randoop to generate tests.
 	 * @param libFolder = the path to external libraries needed to tests generation and compilation.
@@ -455,10 +401,7 @@ public class Detect {
 	 * @throws Exception problems with ANT project.
 	 */
 	private void runTests(String libFolder) throws Exception{
-		if(this.compiler == Constants.CODECONTRACTS_COMPILER)
-			runTestsOnCSharp(libFolder);
-		else
-			runTestsOnJava(libFolder);
+		runTestsOnJava(libFolder);
 	}
 	
 	/**
@@ -471,7 +414,7 @@ public class Detect {
 		
 		// Run ant file
 		Project p = new Project();
-		DefaultLogger consoleLogger = createLogger(buff);
+		DefaultLogger consoleLogger = createLogger(buff);	
 		File buildFile = accessFile("runTests.xml");
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
@@ -481,31 +424,10 @@ public class Detect {
 			p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		runProject(buff, p, buildFile, "runTests.xml", "run_tests", consoleLogger);
+		runProject(buff, p, buildFile, "runTestsJava.xml", "run_tests", consoleLogger);
 	}
 	
-	/**
-	 * Method used to run the tests on CSharp project.
-	 * @param libFolder = the path to external libraries needed to tests execution.
-	 * @throws Exception problems with ANT project.
-	 */
-	private void runTestsOnCSharp(String libFolder) throws Exception{
-		final StringBuilder buff = new StringBuilder();
-		
-		// Run ant file
-		Project p = new Project();
-		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("runTests.xml");
-		p.setUserProperty("lib", libFolder);
-		p.setUserProperty("jmlBin", Constants.JML_BIN);
-		if(compiler == Constants.JMLC_COMPILER) 
-			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
-		else if(compiler == Constants.OPENJML_COMPILER) 
-			p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
-		p.setUserProperty("tests_src", Constants.TEST_DIR);
-		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		runProject(buff, p, buildFile, "runTests.xml", "run_tests", consoleLogger);
-	}
+
 	
 	/**
 	 * Run specify ANT project.

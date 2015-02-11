@@ -3,7 +3,6 @@ package controller;
 
 import gui.CategorizationScreenAdvisorFrame;
 import gui.DetectionScreenAdvisorFrame;
-import gui.Main;
 
 import java.awt.EventQueue;
 import java.io.File;
@@ -18,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
 import utils.commons.ClassPathHacker;
@@ -29,83 +31,134 @@ import detect.Detect;
 
 public class Controller {
 	
-	private static Set<Nonconformance> errors;
-	private static Set<Nonconformance> nonconformities;
-	private static String source;
+	private Set<Nonconformance> errors;
+	private Set<Nonconformance> nonconformities;
+	private int compiler;
+	private int os;
+	private String srcFolder;
+	private String extLibFolder;
+	private String time;
 	
 	/**
-	 * Check if the folder chosen have a valid name
-	 * @param String name of chosen folder
-	 * @throws Exception if is null or empty
+	 * Constructor for Controller, it initialize the compiler and OS options
+	 * for execution on CodeSpecOK Tool.
 	 */
-	public void checkSrcFolderField(String folder) throws Exception{
-		if (folder.equals("") || folder == null) throw new Exception("Choose the source folder before running.");
+	public Controller() {
+		chooseOS();
 	}
 	
 	/**
-	 * Check if the folder selected is valid and exist. If is a empty string, will use default values
-	 * @param extLibFolder
-	 * @return 
-	 * @throws Exception 
+	 * Check errors to avoid problems on future tool process.
+	 * @param srcFolder Input for source folder.
+	 * @param time Input for time in seconds.
+	 * @throws Exception If any information are incorrect for our instructions of use.
 	 */
-	public String checkLibField(String extLibFolder, int compiler) throws Exception {
-		if(extLibFolder.equals("") && compiler == Constants.JMLC_COMPILER) {
-			if (Constants.JMLC_LIB == null) throw new Exception("Please, set the JMLDIR system variable.");
-			else if(System.getProperty("os.name").contains("Windows"))
-				extLibFolder = Constants.JMLC_LIB;
-			else
-//				extLibFolder = System.getenv("USER_CLASSPATH_LIB");
-				extLibFolder = "";
-		}
-		return extLibFolder;
+	public void checkProblemsWithInput(String srcFolder, String time) throws Exception {
+		checkSrcFolderField(srcFolder);
+		checkTimeField(time);
+		checkRandoopRequirements();
 	}
 	
 	/**
-	 * Check if the Operational System that user is using is Microsoft Windows
-	 * @throws Exception 
+	 * Check whether source folder wasn't present on input.
+	 * @param srcFolder Source folder input.
+	 * @throws Exception When source folder input is a empty or a null String.
 	 */
-	public void checkOS() throws Exception{
-		if(!System.getProperty("os.name").contains("Windows") && !(System.getenv("CLASSPATH").contains("randoop.jar"))){
+	private void checkSrcFolderField(String srcFolder) throws Exception{
+		if (srcFolder.equals("") || srcFolder == null) throw new Exception("Choose the source folder before running.");
+	}
+	
+	/**
+	 * Check a configuration problem on non-Windows OS, whereas randoop.jar needs to be on
+	 * the CLASSPATH to be ran on Java.
+	 * @throws Exception When Randoop is not on CLASSPATH if Windows isn't the OS.
+	 */
+	private void checkRandoopRequirements() throws Exception{
+		if(this.os != Constants.WINDOWS_OS 
+		&& !(System.getenv("CLASSPATH").contains("randoop.jar"))){
 			throw new Exception("The file randoop.jar was not configured using JMLOKSetup. "
 					+ "Please runs JMLOKSetup again and put randoop.jar into your choosen ext lib folder.");
 		}
 	}
 	
 	/**
-	 * Check if the format of the String is compatible to integers.
-	 * @param String time
-	 * @throws TimeException if time is not valid value
+	 * Uses a regex to check if the input of time contain only digits. 
+	 * @param time String informing time in seconds for tool execution.
+	 * @throws TimeException if time is not valid value.
 	 */
-	public void checkTimeField(String time) throws Exception{
-		if (time.equals(""));
-		else if(!(time.matches("\\d+"))) throw new Exception("Please insert a valid number of seconds.");
+	private void checkTimeField(String time) throws Exception{
+		if(!(time.matches("\\d+"))) throw new Exception("Please insert a valid number of seconds.");
 	}
 	
 	/**
-	 * Check if the value for time is empty and in this case, assigns a default value == 10
-	 * @param String time
-	 * @return if time.equals("") ==> time == 10
-	 * @return if !time.equals("") ==> time
+	 * Turn all input values to correct form and then prepare Controller for execution.
+	 * @param srcFolder Source Folder input.
+	 * @param extLibFolder External Libraries Folder input.
+	 * @param time Time input in seconds.
 	 */
-	public String timeValue(String time){
+	public void validateInput(String srcFolder, String extLibFolder, String time){
+		this.srcFolder = srcFolder;
+		this.extLibFolder = correctLibFolder(extLibFolder);
+		this.time = correctTimeValue(time);
+	}
+	
+	/**
+	 * Check if the folder selected is valid and exist. If is a empty string, will use default values
+	 * @param extLibFolder The value of libraries folder input.
+	 * @return The default value for libraries folder or itself.
+	 */
+	private String correctLibFolder(String extLibFolder) {
+		if(extLibFolder.equals("")) {
+			if(this.os == Constants.WINDOWS_OS)
+				if(this.compiler == Constants.JMLC_COMPILER){
+					extLibFolder = Constants.JMLC_LIB;
+				}else{
+					extLibFolder = "";
+				}
+			else
+				extLibFolder = System.getenv("USER_CLASSPATH_LIB");
+		}
+		return extLibFolder;
+	}
+	
+	/**
+	 * Check if the time value isn't empty, and then return it or the default value.
+	 * @param time Input value for time in seconds.
+	 * @return correct time for Time value.
+	 */
+	private String correctTimeValue(String time){
 		if(time.equals("")){
 			time = "10";
 		}
 		return time;
 	}
 	
-	/**
-	 * Receive how parameters two booleans and returns the index of correct compiler
-	 * @param state  of the radio button for select jml compiler
-	 * @param state  of the radio button for select c# compiler
-	 * @return the compiled selected by the user
-	 */
-	public int chooseCompiler(boolean jml, boolean cc) throws Exception{
-		if (jml) return Constants.JMLC_COMPILER;
-		else if (cc) return Constants.CODECONTRACTS_COMPILER;
-		else throw new Exception("Please, select the compiler");
-	}
 
+	/**
+	 * Discover which OS the program is being accessed.
+	 * @return the OS used during execution.
+	 */
+	private void chooseOS() {
+		if(System.getProperty("os.name").contains("Windows")){
+			this.os = Constants.WINDOWS_OS;
+		}else{
+			this.os = Constants.LINUX_OS;
+		}
+	}
+	
+	/**
+	 * Run JMLOK Program, with another Thread to allow freezing GUI while program runs.
+	 * @param mainFrame The main screen where all messages and windows will show in front of.
+	 */
+	public void runProgram(JFrame mainFrame){
+		try {
+			ThreadExecutingProgram t = new ThreadExecutingProgram(mainFrame, this);
+			t.run();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(mainFrame, e.getMessage());
+		}
+	}
+	
 	/**
 	 * Prepare the for the detect phase of the program.
 	 * @param compiler The compiler that will be used. 
@@ -114,10 +167,9 @@ public class Controller {
 	 * @param time The time (in seconds) to generate tests (with Randoop).
 	 * @throws Exception When some XML cannot be read.
 	 */
-	public static void prepareToDetectPhase(int compiler, String sourceFolder, String lib, String time) throws Exception{
-		setSystemVariableClassPath(lib);
-		 source = sourceFolder;
-		 showDetectionScreen(compiler, lib, time);
+	public void prepareToDetectPhase() throws Exception{
+		setSystemVariableClassPath();
+		showDetectionScreen();
 	}
 
 	/**
@@ -127,7 +179,7 @@ public class Controller {
 	public String jarPath() {
 		Path path = null;
 		try {
-			path = Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			path = Paths.get(Controller.class.getProtectionDomain().getCodeSource().getLocation().toURI());
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
@@ -136,23 +188,20 @@ public class Controller {
 	
 	/**
 	 * Shows the Detection Screen, with console, and button showing.
-	 * @param compiler The compiler that will be used. 
-	 * @param lib The library folder in which the analysis depend of. 
-	 * @param time The time (in seconds) to generate tests (with Randoop).
 	 * @throws Exception When some XML cannot be read.
 	 */
-	public static void showDetectionScreen(int compiler, String lib, String time) throws Exception {
+	public void showDetectionScreen() throws Exception {
 		final ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream ps = new PrintStream(baos);
 		PrintStream old = System.out;
 		System.setOut(ps);
 		
-	    final Detect d = new Detect(compiler);
+	    final Detect d = new Detect(this.compiler);
 	    EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					DetectionScreenAdvisorFrame frame;
-					frame = new DetectionScreenAdvisorFrame(d, baos);
+					frame = new DetectionScreenAdvisorFrame(d, baos, Controller.this);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -160,7 +209,7 @@ public class Controller {
 			}
 		});
 	    
-	    errors = d.detect(source, lib, time);
+	    errors = d.detect(this.srcFolder, this.extLibFolder, this.time);
 		// System.out.flush();
 	    System.setOut(old);
 	}
@@ -168,12 +217,12 @@ public class Controller {
 	/**
 	 * Show the Categorization Screen with all of the fields filled.
 	 */
-	public static void showCategorizationScreen() {
-		final List<Nonconformance> nonconformance = fulfillCategorizePhase(errors, source);
+	public void showCategorizationScreen() {
+		final List<Nonconformance> nonconformance = fulfillCategorizePhase(errors, this.srcFolder);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CategorizationScreenAdvisorFrame frame = new CategorizationScreenAdvisorFrame(nonconformance);
+					CategorizationScreenAdvisorFrame frame = new CategorizationScreenAdvisorFrame(nonconformance, Controller.this);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -184,13 +233,12 @@ public class Controller {
 	
 	/**
 	 * Set an hack to add jars on SystemClassLoader.
-	 * @param libFolder The name of the library folder containing jars.
 	 */
-	private static void setSystemVariableClassPath(String libFolder) {
+	private void setSystemVariableClassPath() {
 		boolean isWindows = System.getProperty("os.name").contains("Windows");
 		String separator = (isWindows)?";":":";
 		// ClassLoader must know source directory
-		String pathVar = "." + separator  + FileUtil.getListPathPrinted(libFolder, FileUtil.JAR_FILES);
+		String pathVar = "." + separator  + FileUtil.getListPathPrinted(this.extLibFolder, FileUtil.JAR_FILES);
 		for(String jar : pathVar.split(separator)){
 			try {
 				ClassPathHacker.addFile(jar);
@@ -206,7 +254,7 @@ public class Controller {
 	 * @param source The source folder where the errors where detected.
 	 * @return an list of nonconformances already categorized.
 	 */
-	private static List<Nonconformance> fulfillCategorizePhase(Set<Nonconformance> errors, String source) {
+	private List<Nonconformance> fulfillCategorizePhase(Set<Nonconformance> errors, String source) {
 		Categorize c = new Categorize();
 		List<Nonconformance> x = new ArrayList<Nonconformance>();
 		nonconformities = c.categorize(errors, source);
@@ -220,7 +268,7 @@ public class Controller {
 	 * @param path The path where the file will be copied.
 	 * @throws IOException When the path is invalid.
 	 */
-	public static void saveResultsInXML(String path) throws IOException {
+	public void saveResultsInXML(String path) throws IOException {
 		Path source = (new File(Constants.RESULTS)).toPath();
 		Path target = (new File(path + Constants.FILE_SEPARATOR + "results.xml")).toPath();
 		Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);

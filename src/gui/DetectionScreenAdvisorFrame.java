@@ -51,11 +51,15 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 	private SwingWorker<Object, Object> worker;
 	protected int seconds = 1000;
 	protected double velNumPerSec = 2;
+	private Controller controller;
 	
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public DetectionScreenAdvisorFrame(Detect d, ByteArrayOutputStream caos) {
+	public DetectionScreenAdvisorFrame(Detect d, ByteArrayOutputStream caos, Controller controller) {
+		this.controller = controller;
+		
 		setDetectionSuceeded(true);
 		// Prepare window opening		
 		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(Constants.MAIN_FONT));
@@ -233,7 +237,7 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 	 * Calls categorization Screen.
 	 */
 	protected void callsCategorization() {
-		Controller.showCategorizationScreen();
+		this.controller.showCategorizationScreen();
 		setVisible(false);
 	}
 

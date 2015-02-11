@@ -14,9 +14,10 @@ public class Constants {
 	//Constant to get the file separator of the System.
 	public static final String FILE_SEPARATOR = System.getProperty("file.separator");
 	//Constants to folders created path.
-	public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "codespecok";
+	//public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "codespecok";
+	public static final String TEMP_DIR = "C:" + FILE_SEPARATOR + "CodeSpecOK";
 	public static final String JML_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "bin";
-	public static final String CODECONTRACTS_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "cSharpBin";
+	public static final String RANDOOP_OUTPUT_FOLDER = TEMP_DIR + FILE_SEPARATOR + "RandoopTests";
 	public static final String JML_BIN = TEMP_DIR + FILE_SEPARATOR + "jmlBin";
 	public static final String TESTS = TEMP_DIR + FILE_SEPARATOR + "tests";
 	public static final String TEST_DIR = TESTS + FILE_SEPARATOR + "src";
@@ -26,12 +27,15 @@ public class Constants {
 	//Constants to result of Randoop execution under SUT.
 	public static final String TEST_FILE = TEST_DIR + FILE_SEPARATOR + "RandoopTest0.java";
 	public static final String TEST_RESULTS = TEST_DIR + FILE_SEPARATOR + "TEST-RandoopTest.xml";
+	public static final String TEST_ERRORS = RANDOOP_OUTPUT_FOLDER + FILE_SEPARATOR + "TEST-RandoopTest.txt";
 	//Constant to file that contains the result more cleaned. The nonconformances detected by the tool.
 	public static final String RESULTS = TEMP_DIR+FILE_SEPARATOR+"results.xml";
 	//Constants to choose the jml compiler to be used.
 	public static final int JMLC_COMPILER = 0;
 	public static final int OPENJML_COMPILER = 1;
-	public static final int CODECONTRACTS_COMPILER = 2;
+	public static final int WINDOWS_OS = 0;
+	public static final int LINUX_OS = 1;
+	public static final int MAC_OS = 2;
 	//Constants that indicates the path to jml compilers.
 	public static final String OPENJML_SRC = "C:" + FILE_SEPARATOR + "openjml";
 	public static final String JMLC_LIB = System.getenv("JMLDIR");

@@ -11,10 +11,14 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -22,15 +26,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
-
-
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
 
 import controller.Controller;
 
@@ -47,10 +48,7 @@ public class Main extends JFrame {
 	 */
 	private static final long serialVersionUID = 9142967374337903926L;
 	
-	private int compiler;
-	private Controller control = new Controller();
-	private JRadioButton rdbtnCodeContracts;
-	private JRadioButton rdbtnJml;
+	private Controller controller;
 	private JPanel contentPane;
 	private JLabel textFieldSrcFolder;
 	private JLabel textFieldExtLibFolder;
@@ -98,7 +96,7 @@ public class Main extends JFrame {
         public Void doInBackground() {
             //Initialize progress property.
             setProgress(0);
-            runningProgram();
+            controller.runProgram(Main.this);
             return null;
         }
 
@@ -119,7 +117,7 @@ public class Main extends JFrame {
 	 */
 	public Main() {
 		// Set window options.
-		setTitle("CodeSpecOK");
+		setTitle("JMLOK");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 219);
 		setMinimumSize(new Dimension(this.WIDTH, this.HEIGHT));
@@ -233,18 +231,19 @@ public class Main extends JFrame {
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					control.checkSrcFolderField(textFieldSrcFolder.getText());
-					control.checkTimeField(textFieldTime.getText());
-					control.checkOS();
+					controller = new Controller();
+					controller.checkProblemsWithInput(srcFolder, textFieldTime.getText());
+					
 					btnRun.setEnabled(false);
 					setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			        //Instances of javax.swing.SwingWorker are not reusable, so
 			        //we create new instances as needed.
+					controller.validateInput(srcFolder, extFolder, textFieldTime.getText());
+					
 			        task = new Task();
 			        task.execute();
-
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(Main.this, e2.getMessage());
+				} catch (Exception messageException) {
+					JOptionPane.showMessageDialog(Main.this, messageException.getMessage());
 				}
 				
 			}
@@ -307,37 +306,7 @@ public class Main extends JFrame {
 		labelTimeIcon.setFont(new Font("Dialog", Font.BOLD, 8));
 		labelTimeIcon.setIcon(new ImageIcon(dTimeImg));
 		contentPane.add(labelTimeIcon);
-		
-		rdbtnJml = new JRadioButton("JML");
-		chooseLanguage.add(rdbtnJml);
-		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJml, 0, SpringLayout.NORTH, btnRun);
-		rdbtnJml.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(rdbtnJml);
-		
-		rdbtnCodeContracts = new JRadioButton("Code Contracts");
-		chooseLanguage.add(rdbtnCodeContracts);
-		springLayout.putConstraint(SpringLayout.EAST, rdbtnJml, -46, SpringLayout.WEST, rdbtnCodeContracts);
-		springLayout.putConstraint(SpringLayout.NORTH, rdbtnCodeContracts, 0, SpringLayout.NORTH, btnRun);
-		springLayout.putConstraint(SpringLayout.EAST, rdbtnCodeContracts, 0, SpringLayout.EAST, lblExternalLibFolder);
-		rdbtnCodeContracts.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(rdbtnCodeContracts);
 
-	}
-
-	/**
-	 * Execute the program, after some variables are correctly initialized.
-	 */
-	protected void runningProgram() {
-		try {
-			compiler = control.chooseCompiler(rdbtnJml.isSelected(), rdbtnCodeContracts.isSelected());
-			String extLibFolder = control.checkLibField(extFolder, compiler);
-			String time = control.timeValue(textFieldTime.getText());
-			ThreadExecutingProgram t = new ThreadExecutingProgram(this, srcFolder, extLibFolder, time, compiler);
-			t.run();
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(Main.this, e.getMessage());
-		}
-		
 	}
 
 	/**
@@ -355,7 +324,7 @@ public class Main extends JFrame {
 	protected void browseExtLibFolder() {
 		dirLibs.setApproveButtonText("Select");
 		dirLibs.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		dirLibs.setCurrentDirectory(new File(control.jarPath()));
+		dirLibs.setCurrentDirectory(new File(jarPath()));
 		if (dirLibs.showOpenDialog(Main.this) == JFileChooser.APPROVE_OPTION) {
 			extFolder = dirLibs.getSelectedFile().getAbsolutePath();
 			int begin = extFolder.lastIndexOf(File.separator);
@@ -369,7 +338,7 @@ public class Main extends JFrame {
 	protected void browseSrcFolder() {
 		dirSources.setApproveButtonText("Select");
 		dirSources.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		dirSources.setCurrentDirectory(new File(control.jarPath()));
+		dirSources.setCurrentDirectory(new File(jarPath()));
 		if (dirSources.showOpenDialog(Main.this) == JFileChooser.APPROVE_OPTION) {
 			srcFolder = dirSources.getSelectedFile().getAbsolutePath();
 			int begin = srcFolder.lastIndexOf(File.separator);
@@ -377,5 +346,18 @@ public class Main extends JFrame {
 		}
 	}
 	
+	/**
+	 * Return the path name where running Jar was found to use.
+	 * @return the path name where running Jar was found to use.
+	 */
+	public String jarPath() {
+		Path path = null;
+		try {
+			path = Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+		return path.getParent().toString();
+	}
 
 }

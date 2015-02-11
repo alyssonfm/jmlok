@@ -17,6 +17,7 @@ public class ThreadExecutingProgram extends Thread {
 	private String timeout;
 	private JFrame main;
 	private int compiler;
+	private Controller control;
 
 	/**
 	 * Initialize the thread.
@@ -35,7 +36,7 @@ public class ThreadExecutingProgram extends Thread {
 	@Override
 	public void run() {
 		try {
-			Controller.prepareToDetectPhase(compiler, srcFolder, libFolder, timeout);
+			control.prepareToDetectPhase();
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this.main, e.getMessage());
 			e.printStackTrace();

@@ -54,7 +54,10 @@ public class NCCreator {
 	 * @return - the of list the distinct nonconformances that were detected by the JMLOK tool.
 	 */
 	public Set<Nonconformance> listNonconformances(int compiler){
-		File results = new File(Constants.TEST_RESULTS);
+		File results;
+			
+		results = new File(Constants.TEST_RESULTS);
+
 		Set<Nonconformance> result;
 		if(compiler == Constants.JMLC_COMPILER){
 			result = getErrorsFromXML(results);
@@ -64,7 +67,8 @@ public class NCCreator {
 		this.ncCount = result.size();
 		return result;
 	}
-	
+
+
 	/**
 	 * Method used to get the nonconformances from the result file of Randoop, when the jmlc is used as compiler.
 	 * @param file = the path to result file of Randoop.

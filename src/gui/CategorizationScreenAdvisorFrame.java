@@ -71,10 +71,15 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 
 	private JTree tree;
 
+	private Controller controller;
+
 	/**
 	 * Create the frame.
+	 * @param controller 
 	 */
-	public CategorizationScreenAdvisorFrame(final List<Nonconformance> nonconformance) {
+	public CategorizationScreenAdvisorFrame(final List<Nonconformance> nonconformance, Controller controller) {
+		this.controller = controller;
+		
 		initializingStringForSelectionList(nonconformance);
 		// Initialize Screen Options
 		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(Constants.MAIN_FONT));
@@ -347,7 +352,7 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 			path = dirLibs.getSelectedFile().getAbsolutePath();
 		}
 		try {
-			Controller.saveResultsInXML(path);
+			this.controller.saveResultsInXML(path);
 			JOptionPane.showMessageDialog(this, "Results saved.");
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this, "Invalid Directory.");
