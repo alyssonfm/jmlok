@@ -42,9 +42,7 @@ public class Detect {
 	private List<DetectListener> detectListeners;
 	private String sourceFolder;
 	private String librariesFolder;
-	private String projectName;
 	private String timeout;
-	private String resultOfTests;
 	private int compiler;
 
 	private enum StagesDetect {
@@ -125,8 +123,6 @@ public class Detect {
 		try {
 			sourceFolder = srcFolder;
 			librariesFolder = libFolder;
-			projectName = srcFolder.substring(
-					srcFolder.lastIndexOf(Constants.FILE_SEPARATOR)).trim();
 			getClassListFile(sourceFolder);
 			initTimer();
 			timeout = time;
@@ -141,7 +137,6 @@ public class Detect {
 					StagesDetect.GENERATED_TESTS);
 			runStage("Running test into contract-based code", "Tests ran in",
 					StagesDetect.EXECUTED_TESTS);
-			throw new Exception("Unimplemented");
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -482,7 +477,7 @@ public class Detect {
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("runTests.xml");
+		File buildFile = accessFile("runTestsJava.xml");
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
 		if (compiler == Constants.JMLC_COMPILER)

@@ -24,7 +24,6 @@ public class Constants {
 	//Constant to file that has the class names. 
 	public static final String CLASSES = TEMP_DIR + FILE_SEPARATOR  + "classes.txt";
 	//Constants to result of Randoop execution under SUT.
-	public static final String TEST_FILE = TEST_DIR + FILE_SEPARATOR + "RandoopTest0.java";
 	public static final String TEST_RESULTS = TEST_DIR + FILE_SEPARATOR + "TEST-RandoopTest.xml";
 	public static final String TEST_ERRORS = RANDOOP_OUTPUT_FOLDER + FILE_SEPARATOR + "TEST-RandoopTest.txt";
 	//Constant to file that contains the result more cleaned. The nonconformances detected by the tool.
