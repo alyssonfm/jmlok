@@ -13,7 +13,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -37,7 +36,6 @@ import javax.swing.text.Highlighter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
-
 import utils.commons.Constants;
 import utils.commons.FileUtil;
 import utils.datastructure.Nonconformance;
@@ -45,17 +43,15 @@ import controller.Controller;
 
 /**
  * Shown an Screen for Categorization info of the program.
- * 
+ *
  * @author Alysson Milanez and Dennis Sousa.
  * @version 1.0
  */
 public class CategorizationScreenAdvisorFrame extends JFrame {
-
 	/**
-	 * 
-	 */
+*
+*/
 	private static final long serialVersionUID = 1L;
-
 	private List<Nonconformance> nc;
 	private String[] namesNC;
 	private JPanel contentPane;
@@ -68,21 +64,21 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 	// Constants defining window size.
 	private static final int WIDTH = 790;
 	private static final int HEIGHT = 410;
-
 	private JTree tree;
-
 	private Controller controller;
 
 	/**
 	 * Create the frame.
-	 * @param controller 
+	 * 
+	 * @param controller
 	 */
-	public CategorizationScreenAdvisorFrame(final List<Nonconformance> nonconformance, Controller controller) {
+	public CategorizationScreenAdvisorFrame(
+			final List<Nonconformance> nonconformance, Controller controller) {
 		this.controller = controller;
-		
 		initializingStringForSelectionList(nonconformance);
 		// Initialize Screen Options
-		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(Constants.MAIN_FONT));
+		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(
+				Constants.MAIN_FONT));
 		dirLibs = new JFileChooser();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, WIDTH, HEIGHT);
@@ -108,21 +104,18 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		JLabel lblNumberNonconformances = new JLabel("nonconformances.");
 		lblNumberNonconformances.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblNumberNonconformances);
-
 		JLabel lblNumberNonconformancesToSet = new JLabel(nc.size() + "");
 		springLayout.putConstraint(SpringLayout.NORTH,
 				lblNumberNonconformances, 0, SpringLayout.NORTH,
 				lblNumberNonconformancesToSet);
-		springLayout.putConstraint(SpringLayout.WEST,
-				lblNumberNonconformances, 6, SpringLayout.EAST,
-				lblNumberNonconformancesToSet);
+		springLayout.putConstraint(SpringLayout.WEST, lblNumberNonconformances,
+				6, SpringLayout.EAST, lblNumberNonconformancesToSet);
 		springLayout.putConstraint(SpringLayout.NORTH,
 				lblNumberNonconformancesToSet, 0, SpringLayout.NORTH,
 				contentPane);
 		lblNumberNonconformancesToSet
 				.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblNumberNonconformancesToSet);
-
 		JLabel lblNumberNonconformances1 = new JLabel("Were detected");
 		springLayout.putConstraint(SpringLayout.NORTH,
 				lblNumberNonconformances1, 0, SpringLayout.NORTH, contentPane);
@@ -133,7 +126,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 				lblNumberNonconformances1);
 		lblNumberNonconformances1.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblNumberNonconformances1);
-
 		JLabel lblNonconformances = new JLabel("Nonconformances");
 		springLayout.putConstraint(SpringLayout.NORTH, lblNonconformances, 6,
 				SpringLayout.SOUTH, lblNumberNonconformances);
@@ -180,7 +172,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		// Set Test Cases Area
 		textAreaTestCases = new JTextArea();
 		textAreaTestCases.setEditable(false);
-
 		JScrollPane scrollPaneTestCase = new JScrollPane();
 		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTestCase, -45,
 				SpringLayout.SOUTH, contentPane);
@@ -188,7 +179,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 				SpringLayout.EAST, contentPane);
 		scrollPaneTestCase.setViewportView(textAreaTestCases);
 		contentPane.add(scrollPaneTestCase);
-
 		// create the root node
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Location");
 		// create the child nodes
@@ -226,7 +216,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		springLayout.putConstraint(SpringLayout.WEST, lblLikelyCause, 36,
 				SpringLayout.EAST, lblNonconformances);
 		contentPane.add(lblLikelyCause);
-
 		labelLikelyCauseSetter = new JLabel("");
 		springLayout.putConstraint(SpringLayout.WEST, labelLikelyCauseSetter,
 				0, SpringLayout.WEST, scrollPaneTree);
@@ -238,7 +227,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		springLayout.putConstraint(SpringLayout.NORTH, labelLikelyCauseSetter,
 				0, SpringLayout.SOUTH, lblLikelyCause);
 		contentPane.add(labelLikelyCauseSetter);
-		
 		JLabel lblTestCase = new JLabel("Test Case");
 		springLayout.putConstraint(SpringLayout.WEST, lblTestCase, 10,
 				SpringLayout.EAST, scrollPaneTree);
@@ -288,7 +276,7 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		btnStackTrace.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(btnStackTrace);
 		// Exit Button
-		JButton btnExit = new JButton("    Exit    ");
+		JButton btnExit = new JButton(" Exit ");
 		springLayout.putConstraint(SpringLayout.NORTH, btnExit, 6,
 				SpringLayout.SOUTH, scrollPaneTestCase);
 		springLayout.putConstraint(SpringLayout.HORIZONTAL_CENTER, btnExit, 0,
@@ -309,7 +297,9 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 
 	/**
 	 * Initialize array of names to put on JList from list of nonconformances.
-	 * @param nonconformance List of nonconformances to be put on JList.
+	 * 
+	 * @param nonconformance
+	 *            List of nonconformances to be put on JList.
 	 */
 	private void initializingStringForSelectionList(
 			List<Nonconformance> nonconformance) {
@@ -318,12 +308,13 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		for (int i = 0; i < nc.size(); i++) {
 			namesNC[i] = (i + 1) + " - " + nc.get(i).getType().getName();
 		}
-
 	}
 
 	/**
 	 * Show stack trace frame.
-	 * @param list List of stack trace order.
+	 * 
+	 * @param list
+	 *            List of stack trace order.
 	 */
 	private void showStackTrace(final List<String> list) {
 		EventQueue.invokeLater(new Runnable() {
@@ -361,6 +352,7 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 
 	/**
 	 * Return path of where jar had run.
+	 * 
 	 * @return path of where jar had run.
 	 */
 	private String jarPath() {
@@ -379,10 +371,14 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 	 */
 	private void setChangesFromSelectionOnTheList() {
 		// Set Principal Info
-		changeNode(1, nc.get(listNonconformances.getSelectedIndex()).getClassName());
-		changeNode(2, nc.get(listNonconformances.getSelectedIndex()).getMethodName());
-		labelLikelyCauseSetter.setText(nc.get(listNonconformances.getSelectedIndex()).getCause());
-		labelLikelyCauseSetter.setToolTipText(nc.get(listNonconformances.getSelectedIndex()).getCause());
+		changeNode(1, nc.get(listNonconformances.getSelectedIndex())
+				.getClassName());
+		changeNode(2, nc.get(listNonconformances.getSelectedIndex())
+				.getMethodName());
+		labelLikelyCauseSetter.setText(nc.get(
+				listNonconformances.getSelectedIndex()).getCause());
+		labelLikelyCauseSetter.setToolTipText(nc.get(
+				listNonconformances.getSelectedIndex()).getCause());
 		if (nc.get(listNonconformances.getSelectedIndex()).getPackageName() == "") {
 			changeNode(0, "<default>");
 		} else {
@@ -390,13 +386,18 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 					.getPackageName());
 		}
 		// Test Case and Highlight
-		textAreaTestCases.setText(nc.get(listNonconformances.getSelectedIndex()).getTestCaseCode());
+		textAreaTestCases.setText(nc
+				.get(listNonconformances.getSelectedIndex()).getTestCaseCode());
 		textAreaTestCases.setHighlighter(highLit);
-		String stringToHighlight = nc.get(listNonconformances.getSelectedIndex()).getSampleLineOfError().trim();
-		int counter = nc.get(listNonconformances.getSelectedIndex()).getCountOcurrencesLineOfError();
+		String stringToHighlight = nc
+				.get(listNonconformances.getSelectedIndex())
+				.getSampleLineOfError().trim();
+		int counter = nc.get(listNonconformances.getSelectedIndex())
+				.getCountOcurrencesLineOfError();
 		int beginIndex = textAreaTestCases.getText().indexOf(stringToHighlight);
-		while(counter-- > 0)
-			beginIndex = textAreaTestCases.getText().indexOf(stringToHighlight, beginIndex + stringToHighlight.length());
+		while (counter-- > 0)
+			beginIndex = textAreaTestCases.getText().indexOf(stringToHighlight,
+					beginIndex + stringToHighlight.length());
 		int endIndex = beginIndex + stringToHighlight.length();
 		try {
 			highLit.addHighlight(beginIndex, endIndex, painter);
@@ -408,14 +409,16 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 		}
 	}
 
 	/**
 	 * Change information for selected nodes.
-	 * @param index indicating depth of node desired.
-	 * @param text indicating new information to node.
+	 * 
+	 * @param index
+	 *            indicating depth of node desired.
+	 * @param text
+	 *            indicating new information to node.
 	 */
 	private void changeNode(int index, String text) {
 		DefaultTreeModel model = (DefaultTreeModel) tree.getModel();
@@ -447,12 +450,10 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		this.setVisible(false);
 	}
 
-	
 	/**
 	 * Overrides DefaultTreeCellRenderer to puts more functionalities.
 	 */
 	private class MyRenderer extends DefaultTreeCellRenderer {
-
 		private static final long serialVersionUID = 1L;
 		Icon packageIcon;
 		Icon classIcon;
@@ -468,7 +469,8 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		}
 
 		/**
-		 * Override cellRenderer to permit another functionalities for cells of JTree.
+		 * Override cellRenderer to permit another functionalities for cells of
+		 * JTree.
 		 */
 		public Component getTreeCellRendererComponent(JTree tree, Object value,
 				boolean sel, boolean expanded, boolean leaf, int row,
@@ -476,16 +478,14 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 			super.getTreeCellRendererComponent(tree, value, sel, expanded,
 					leaf, row, hasFocus);
 			DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
-
 			setToolTipText(node.getUserObject().toString());
-			if(node.getDepth() == 2){
+			if (node.getDepth() == 2) {
 				setIcon(packageIcon);
-			}else if (node.getDepth() == 1){
+			} else if (node.getDepth() == 1) {
 				setIcon(classIcon);
-			}else if (node.getDepth() == 0){
+			} else if (node.getDepth() == 0) {
 				setIcon(methodIcon);
 			}
-
 			return this;
 		}
 	}

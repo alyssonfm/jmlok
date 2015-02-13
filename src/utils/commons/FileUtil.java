@@ -25,14 +25,14 @@ public class FileUtil {
 	public static String DIRECTORIES = "files";
 	
 	/**
-	 * Returns a list of path names from files in a same paste, separated by a
+	 * Returns a list of path names from files in a same folder, separated by a
 	 * ';'.
 	 * 
 	 * @param libFolder
 	 *            Folder to list its files.
 	 * @param formatSearched
 	 *            format to be searched.
-	 * @return String containing list of path names from files in a same paste,
+	 * @return String containing list of path names from files in a same folder,
 	 *         separated by a ';', for Windows and separated by a ':' for
 	 *         others.
 	 */

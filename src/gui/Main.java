@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -26,7 +25,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
@@ -63,7 +61,6 @@ public class Main extends JFrame {
 	// Parameters for window size.
 	private final int WIDTH = 750;
 	private final int HEIGHT = 210;
-	private final ButtonGroup chooseLanguage = new ButtonGroup();
 	
 	/**
 	 * Display the frame. Initialize the program.
@@ -231,7 +228,7 @@ public class Main extends JFrame {
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					controller = new Controller(rdbtnJml.isSelected(), rdbtnCodeContracts.isSelected());
+					controller = new Controller();
 					controller.checkProblemsWithInput(srcFolder, textFieldTime.getText());
 					
 					btnRun.setEnabled(false);

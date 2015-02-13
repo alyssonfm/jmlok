@@ -14,10 +14,8 @@ public class Constants {
 	//Constant to get the file separator of the System.
 	public static final String FILE_SEPARATOR = System.getProperty("file.separator");
 	//Constants to folders created path.
-	//public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "codespecok";
-	public static final String TEMP_DIR = "C:" + FILE_SEPARATOR + "CodeSpecOK";
+	public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "jmlok";
 	public static final String JML_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "bin";
-	public static final String CODECONTRACTS_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "CSharpBin";
 	public static final String RANDOOP_OUTPUT_FOLDER = TEMP_DIR + FILE_SEPARATOR + "RandoopTests";
 	public static final String JML_BIN = TEMP_DIR + FILE_SEPARATOR + "jmlBin";
 	public static final String TESTS = TEMP_DIR + FILE_SEPARATOR + "tests";
@@ -34,7 +32,6 @@ public class Constants {
 	//Constants to choose the jml compiler to be used.
 	public static final int JMLC_COMPILER = 0;
 	public static final int OPENJML_COMPILER = 1;
-	public static final int CODECONTRACTS_COMPILER = 2;
 	public static final int WINDOWS_OS = 0;
 	public static final int LINUX_OS = 1;
 	public static final int MAC_OS = 2;
