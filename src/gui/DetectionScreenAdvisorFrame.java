@@ -107,6 +107,7 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		contentPane.add(scrollPane);
 		// Interaction Button
 		btnNexts = new JButton("Nonconformances");
+		btnNexts.setFont(new Font("Verdana", Font.BOLD, 15));
 		springLayout.putConstraint(SpringLayout.NORTH, btnNexts, 0,
 				SpringLayout.NORTH, lblDetectionPhaseIs);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnNexts, 0,

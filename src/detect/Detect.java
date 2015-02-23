@@ -66,9 +66,6 @@ public class Detect {
 		case Constants.JMLC_COMPILER:
 			contractLib = Constants.JMLC_LIB;
 			break;
-		case Constants.OPENJML_COMPILER:
-			contractLib = Constants.OPENJML_SRC;
-			break;
 		default:
 			break;
 		}
@@ -392,16 +389,11 @@ public class Detect {
 		final StringBuilder buff = new StringBuilder();
 		if (DetectUtil.hasDirectories(sourceFolder)) {
 			if (compiler == Constants.JMLC_COMPILER) {
-				runJMLCompiler(sourceFolder, buff, "jmlcCompiler.xml", true);
-			} else if (compiler == Constants.OPENJML_COMPILER) {
-				runJMLCompiler(sourceFolder, buff, "openjmlCompiler.xml", false);
+				runJMLCompiler(sourceFolder, buff, "jmlcCompiler.xml");
 			}
 		} else {
 			if (compiler == Constants.JMLC_COMPILER) {
-				runJMLCompiler(sourceFolder, buff, "jmlcCompiler2.xml", true);
-			} else if (compiler == Constants.OPENJML_COMPILER) {
-				runJMLCompiler(sourceFolder, buff, "openjmlCompiler2.xml",
-						false);
+				runJMLCompiler(sourceFolder, buff, "jmlcCompiler2.xml");
 			}
 		}
 	}
@@ -415,20 +407,18 @@ public class Detect {
 	 *            = where error an log will be printed.
 	 * @param nameFile
 	 *            = name of .xml to be executed.
-	 * @param isJMLC
-	 *            = true if JML compiler used will be jmlc, false, if OpenJML.
 	 * @throws Exception
 	 *             problems with ANT projects.
 	 */
 	private void runJMLCompiler(String sourceFolder, final StringBuilder buff,
-			String nameFile, boolean isJMLC) throws Exception {
+			String nameFile) throws Exception {
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
 		File buildFile = setJMLProperties(sourceFolder, nameFile, p);
-		if (isJMLC)
-			p.setUserProperty("jmlcExec",
-					(isWindows) ? (Constants.JMLC_SRC + "jmlc.bat")
-							: (Constants.JMLC_SRC + "jmlc-unix"));
+
+		p.setUserProperty("jmlcExec",
+				(isWindows) ? (Constants.JMLC_SRC + "jmlc.bat")
+						: (Constants.JMLC_SRC + "jmlc-unix"));
 		runProject(buff, p, buildFile, nameFile, "jmlc", consoleLogger);
 	}
 
@@ -482,8 +472,6 @@ public class Detect {
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
 		if (compiler == Constants.JMLC_COMPILER)
 			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
-		else if (compiler == Constants.OPENJML_COMPILER)
-			p.setUserProperty("jmlCompiler", Constants.OPENJML_SRC);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
 		runProject(buff, p, buildFile, "runTestsJava.xml", "run_tests",

@@ -53,18 +53,6 @@ public class PopupStackTraceSwowerFrame extends JFrame {
 		SpringLayout springLayout = new SpringLayout();
 		getContentPane().setLayout(springLayout);
 		
-		
-		// Configure exit button.
-		JButton btnNewButton = new JButton("Exit");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				exit();
-			}
-		});
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, -10, SpringLayout.SOUTH, getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, -10, SpringLayout.EAST, getContentPane());
-		getContentPane().add(btnNewButton);
-		
 		// Configure stack trace label.
 		JLabel lblStackTrace = new JLabel("Stack Trace");
 		springLayout.putConstraint(SpringLayout.WEST, lblStackTrace, 16, SpringLayout.WEST, getContentPane());
@@ -72,10 +60,10 @@ public class PopupStackTraceSwowerFrame extends JFrame {
 		getContentPane().add(lblStackTrace);
 		
 		// Configure text area for stack trace info.
-		JScrollPane scrollPane = new JScrollPane();		
+		JScrollPane scrollPane = new JScrollPane();
 		springLayout.putConstraint(SpringLayout.NORTH, scrollPane, 6, SpringLayout.SOUTH, lblStackTrace);
 		springLayout.putConstraint(SpringLayout.WEST, scrollPane, 16, SpringLayout.WEST, getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPane, -13, SpringLayout.NORTH, btnNewButton);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPane, -46, SpringLayout.SOUTH, getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, scrollPane, -27, SpringLayout.EAST, getContentPane());
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
@@ -83,13 +71,6 @@ public class PopupStackTraceSwowerFrame extends JFrame {
 		// Set text for stack trace info.
 		textArea.setText(getStackTraceString(list));
 		textArea.setEditable(false);
-	}
-	
-	/**
-	 * Exit function, independent for other frames.
-	 */
-	private void exit() {
-		this.setVisible(false);
 	}
 
 	/**
