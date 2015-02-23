@@ -42,13 +42,14 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 	private SpringLayout springLayout;
 	private ByteArrayOutputStream baos;
 	private JTextArea textArea;
-	private JButton btnNexts;
+	private JButton btnNonconformances;
 	private JProgressBar progressBar;
 	private JLabel lblDetectionPhaseIs;
 	private SwingWorker<Object, Object> worker;
 	protected int seconds = 1000;
 	protected double velNumPerSec = 2;
 	private Controller controller;
+	private JButton btnCategorization;
 
 	/**
 	 * Create the frame.
@@ -86,16 +87,14 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		// Phase label
 		lblDetectionPhaseIs = new JLabel("Current Stage: "
 				+ "Creating Directories");
-		springLayout.putConstraint(SpringLayout.NORTH, lblDetectionPhaseIs, 10,
-				SpringLayout.NORTH, contentPane);
-		springLayout.putConstraint(SpringLayout.EAST, lblDetectionPhaseIs, 405,
-				SpringLayout.WEST, contentPane);
-		springLayout.putConstraint(SpringLayout.WEST, lblDetectionPhaseIs, 30,
+		springLayout.putConstraint(SpringLayout.NORTH, lblDetectionPhaseIs, 8, SpringLayout.NORTH, contentPane);
+		springLayout.putConstraint(SpringLayout.EAST, lblDetectionPhaseIs, 378,
 				SpringLayout.WEST, contentPane);
 		lblDetectionPhaseIs.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblDetectionPhaseIs);
 		// Text Area Space
 		JScrollPane scrollPane = new JScrollPane();
+		springLayout.putConstraint(SpringLayout.WEST, lblDetectionPhaseIs, 0, SpringLayout.WEST, scrollPane);
 		springLayout.putConstraint(SpringLayout.NORTH, scrollPane, 45,
 				SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.WEST, scrollPane, 12,
@@ -106,16 +105,17 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 				SpringLayout.EAST, contentPane);
 		contentPane.add(scrollPane);
 		// Interaction Button
-		btnNexts = new JButton("Nonconformances");
-		btnNexts.setFont(new Font("Verdana", Font.BOLD, 15));
-		springLayout.putConstraint(SpringLayout.NORTH, btnNexts, 0,
-				SpringLayout.NORTH, lblDetectionPhaseIs);
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNexts, 0,
-				SpringLayout.SOUTH, lblDetectionPhaseIs);
-		springLayout.putConstraint(SpringLayout.EAST, btnNexts, -39,
-				SpringLayout.EAST, contentPane);
-		contentPane.add(btnNexts);
-		btnNexts.setVisible(false);
+		btnNonconformances = new JButton("Nonconformances");
+		springLayout.putConstraint(SpringLayout.NORTH, btnNonconformances, 8, SpringLayout.NORTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNonconformances, -6, SpringLayout.NORTH, scrollPane);
+		springLayout.putConstraint(SpringLayout.EAST, btnNonconformances, -10, SpringLayout.EAST, contentPane);
+		btnNonconformances.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNonconformances.setFont(new Font("Verdana", Font.BOLD, 12));
+		contentPane.add(btnNonconformances);
+		btnNonconformances.setVisible(false);
 		// Text Area
 		textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
@@ -133,6 +133,20 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 				SpringLayout.EAST, scrollPane);
 		progressBar.setStringPainted(true);
 		contentPane.add(progressBar);
+		
+		btnCategorization = new JButton("Categorize");
+		springLayout.putConstraint(SpringLayout.WEST, btnNonconformances, 1, SpringLayout.EAST, btnCategorization);
+		springLayout.putConstraint(SpringLayout.WEST, btnCategorization, 6, SpringLayout.EAST, lblDetectionPhaseIs);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnCategorization, -6, SpringLayout.NORTH, scrollPane);
+		springLayout.putConstraint(SpringLayout.EAST, btnCategorization, -171, SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.NORTH, btnCategorization, 0, SpringLayout.NORTH, lblDetectionPhaseIs);
+		btnCategorization.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCategorization.setFont(new Font("Verdana", Font.BOLD, 12));
+		btnCategorization.setVisible(false);
+		contentPane.add(btnCategorization);
 		// Start monitoring progress
 		addListeners(d);
 		startProgressWorker();
@@ -187,20 +201,27 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 	 */
 	public void modifyButton() {
 		if (isDetectionSuceeded()) {
-			btnNexts.addActionListener(new ActionListener() {
+			btnCategorization.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					callsCategorization();
 				}
 			});
+			
+			btnNonconformances.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					callsNonconformances();
+				}
+			});
 		} else {
-			btnNexts.addActionListener(new ActionListener() {
+			btnNonconformances.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					exit();
 				}
 			});
-			btnNexts.setText("Exit");
+			btnNonconformances.setText("Exit");
 		}
-		btnNexts.setVisible(true);
+		btnNonconformances.setVisible(true);
+		btnCategorization.setVisible(true);
 	}
 
 	/**
@@ -260,6 +281,14 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		setVisible(false);
 	}
 
+	/**
+	 * Calls the detection screen.
+	 */
+	protected void callsNonconformances(){
+		this.controller.showNonconformancesScreen();
+		setVisible(false);
+	}
+	
 	/**
 	 * Calls categorization Screen.
 	 */

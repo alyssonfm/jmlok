@@ -72,7 +72,7 @@ public class ViewNonconformances extends JFrame {
 	 * @param controller
 	 */
 	public ViewNonconformances(
-			final List<Nonconformance> nonconformance, Controller controller) {
+			final List<Nonconformance> nonconformance, final Controller controller) {
 		this.controller = controller;
 		initializingStringForSelectionList(nonconformance);
 		// Initialize Screen Options
@@ -256,6 +256,8 @@ public class ViewNonconformances extends JFrame {
 		btnCategorize.setFont(new Font("Verdana", Font.BOLD, 18));
 		btnCategorize.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				controller.showCategorizationScreen();
+				setVisible(false);
 			}
 		});
 		contentPane.add(btnCategorize);

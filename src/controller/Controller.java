@@ -3,6 +3,7 @@ package controller;
 import gui.CategorizationScreenAdvisorFrame;
 import gui.DetectionScreenAdvisorFrame;
 import gui.ThreadExecutingProgram;
+import gui.ViewNonconformances;
 
 import java.awt.EventQueue;
 import java.io.File;
@@ -101,7 +102,7 @@ public class Controller {
 	 *             if time is not valid value.
 	 */
 	private void checkTimeField(String time) throws Exception {
-		if (!(time.matches("\\d+")))
+		if (!(time.matches("\\d+")) && !time.equals(""))
 			throw new Exception("Please insert a valid number of seconds.");
 	}
 
@@ -264,6 +265,25 @@ public class Controller {
 			public void run() {
 				try {
 					CategorizationScreenAdvisorFrame frame = new CategorizationScreenAdvisorFrame(
+							nonconformance, Controller.this);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	/**
+	 * Show the Categorization Screen with all of the fields filled.
+	 */
+	public void showNonconformancesScreen() {
+		final List<Nonconformance> nonconformance = fulfillCategorizePhase(
+				errors, this.srcFolder);
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ViewNonconformances frame = new ViewNonconformances(
 							nonconformance, Controller.this);
 					frame.setVisible(true);
 				} catch (Exception e) {
