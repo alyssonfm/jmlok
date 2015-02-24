@@ -73,6 +73,7 @@ public class ViewNonconformances extends JFrame {
 	 */
 	public ViewNonconformances(
 			final List<Nonconformance> nonconformance, final Controller controller) {
+		setTitle("Detected Nonconformances");
 		this.controller = controller;
 		initializingStringForSelectionList(nonconformance);
 		// Initialize Screen Options
@@ -229,9 +230,9 @@ public class ViewNonconformances extends JFrame {
 		contentPane.add(btnSaveResults);
 		// Stack Trace Button
 		JButton btnStackTrace = new JButton("Stack Trace");
+		springLayout.putConstraint(SpringLayout.WEST, btnStackTrace, 71, SpringLayout.EAST, btnSaveResults);
 		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTree, -6, SpringLayout.NORTH, btnStackTrace);
 		springLayout.putConstraint(SpringLayout.NORTH, btnStackTrace, 0, SpringLayout.NORTH, btnSaveResults);
-		springLayout.putConstraint(SpringLayout.WEST, btnStackTrace, 71, SpringLayout.EAST, btnSaveResults);
 		btnStackTrace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (listNonconformances.isSelectionEmpty())
@@ -249,10 +250,10 @@ public class ViewNonconformances extends JFrame {
 		contentPane.add(btnStackTrace);
 		
 		JButton btnCategorize = new JButton("Categorize");
-		springLayout.putConstraint(SpringLayout.EAST, btnStackTrace, -90, SpringLayout.WEST, btnCategorize);
+		springLayout.putConstraint(SpringLayout.EAST, btnStackTrace, -85, SpringLayout.WEST, btnCategorize);
+		springLayout.putConstraint(SpringLayout.WEST, btnCategorize, -219, SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.EAST, btnCategorize, -49, SpringLayout.EAST, contentPane);
 		springLayout.putConstraint(SpringLayout.NORTH, btnCategorize, 6, SpringLayout.SOUTH, scrollPaneTestCase);
-		springLayout.putConstraint(SpringLayout.WEST, btnCategorize, -214, SpringLayout.EAST, contentPane);
-		springLayout.putConstraint(SpringLayout.EAST, btnCategorize, -44, SpringLayout.EAST, contentPane);
 		btnCategorize.setFont(new Font("Verdana", Font.BOLD, 18));
 		btnCategorize.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
