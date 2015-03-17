@@ -79,7 +79,7 @@ public class ViewNonconformances extends JFrame {
 		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(
 				Constants.MAIN_FONT));
 		dirLibs = new JFileChooser();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 790, 456);
 		setMinimumSize(new Dimension(WIDTH, HEIGHT));
 		// Initialize Icons
