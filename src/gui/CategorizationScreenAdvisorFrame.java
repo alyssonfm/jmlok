@@ -80,9 +80,9 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(
 				Constants.MAIN_FONT));
 		dirLibs = new JFileChooser();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, WIDTH, HEIGHT);
-		setMinimumSize(new Dimension(WIDTH, HEIGHT));
+		setMinimumSize(new Dimension(790, 410));
 		// Initialize Icons
 		List<Image> icons = new ArrayList<Image>();
 		icons.add((Image) FileUtil.createImageIcon("images/logo(16x16).jpg")
@@ -117,28 +117,18 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 				.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblNumberNonconformancesToSet);
 		JLabel lblNumberNonconformances1 = new JLabel("Were detected");
-		springLayout.putConstraint(SpringLayout.NORTH,
-				lblNumberNonconformances1, 0, SpringLayout.NORTH, contentPane);
-		springLayout.putConstraint(SpringLayout.WEST,
-				lblNumberNonconformances1, 10, SpringLayout.WEST, contentPane);
-		springLayout.putConstraint(SpringLayout.WEST,
-				lblNumberNonconformancesToSet, 10, SpringLayout.EAST,
-				lblNumberNonconformances1);
+		springLayout.putConstraint(SpringLayout.WEST, lblNumberNonconformancesToSet, 10, SpringLayout.EAST, lblNumberNonconformances1);
+		springLayout.putConstraint(SpringLayout.NORTH, lblNumberNonconformances1, 0, SpringLayout.NORTH, lblNumberNonconformances);
 		lblNumberNonconformances1.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblNumberNonconformances1);
 		JLabel lblNonconformances = new JLabel("Nonconformances");
-		springLayout.putConstraint(SpringLayout.NORTH, lblNonconformances, 6,
-				SpringLayout.SOUTH, lblNumberNonconformances);
-		springLayout.putConstraint(SpringLayout.WEST, lblNonconformances, 30,
-				SpringLayout.WEST, contentPane);
+		springLayout.putConstraint(SpringLayout.NORTH, lblNonconformances, 6, SpringLayout.SOUTH, lblNumberNonconformances);
+		springLayout.putConstraint(SpringLayout.WEST, lblNonconformances, 0, SpringLayout.WEST, lblNumberNonconformances1);
 		lblNonconformances.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblNonconformances);
 		// Location Label
 		JLabel lblLocation = new JLabel("Location");
-		springLayout.putConstraint(SpringLayout.NORTH, lblLocation, 6,
-				SpringLayout.SOUTH, lblNumberNonconformances);
-		springLayout.putConstraint(SpringLayout.WEST, lblLocation, 36,
-				SpringLayout.EAST, lblNonconformances);
+		springLayout.putConstraint(SpringLayout.NORTH, lblLocation, 0, SpringLayout.NORTH, lblNonconformances);
 		lblLocation.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblLocation);
 		// Initialize List
@@ -159,12 +149,10 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 				Constants.HILIT_COLOR);
 		// Set List Area
 		JScrollPane scrollPaneListNC = new JScrollPane();
-		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneListNC, 2,
-				SpringLayout.SOUTH, lblNonconformances);
-		springLayout.putConstraint(SpringLayout.WEST, scrollPaneListNC, 10,
+		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneListNC, 2, SpringLayout.SOUTH, lblNonconformances);
+		springLayout.putConstraint(SpringLayout.WEST, scrollPaneListNC, 30,
 				SpringLayout.WEST, contentPane);
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneListNC, -45,
-				SpringLayout.SOUTH, contentPane);
+		springLayout.putConstraint(SpringLayout.WEST, lblNumberNonconformances1, 0, SpringLayout.WEST, scrollPaneListNC);
 		springLayout.putConstraint(SpringLayout.EAST, scrollPaneListNC, 240,
 				SpringLayout.WEST, contentPane);
 		scrollPaneListNC.setViewportView(listNonconformances);
@@ -173,8 +161,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		textAreaTestCases = new JTextArea();
 		textAreaTestCases.setEditable(false);
 		JScrollPane scrollPaneTestCase = new JScrollPane();
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTestCase, -45,
-				SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTestCase, -5,
 				SpringLayout.EAST, contentPane);
 		scrollPaneTestCase.setViewportView(textAreaTestCases);
@@ -192,15 +178,13 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		expandAllJTree();
 		// Create Tree
 		JScrollPane scrollPaneTree = new JScrollPane();
-		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTree, 5,
-				SpringLayout.SOUTH, lblLocation);
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTree, 160,
-				SpringLayout.SOUTH, lblLocation);
-		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTestCase, 15,
-				SpringLayout.EAST, scrollPaneTree);
-		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTree, 30,
+		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTree, 240,
 				SpringLayout.EAST, scrollPaneListNC);
-		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTree, 260,
+		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTestCase, 30,
+				SpringLayout.EAST, scrollPaneTree);
+		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTree, 5, SpringLayout.SOUTH, lblLocation);
+		springLayout.putConstraint(SpringLayout.WEST, lblLocation, 0, SpringLayout.WEST, scrollPaneTree);
+		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTree, 30,
 				SpringLayout.EAST, scrollPaneListNC);
 		// Set Renderer options to Tree
 		ToolTipManager.sharedInstance().registerComponent(tree);
@@ -210,38 +194,33 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		contentPane.add(scrollPaneTree);
 		// Likely Cause Area
 		JLabel lblLikelyCause = new JLabel("Likely Cause");
-		springLayout.putConstraint(SpringLayout.NORTH, lblLikelyCause, 5,
-				SpringLayout.SOUTH, scrollPaneTree);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTree, -11, SpringLayout.NORTH, lblLikelyCause);
+		springLayout.putConstraint(SpringLayout.WEST, lblLikelyCause, 9, SpringLayout.EAST, scrollPaneListNC);
+		springLayout.putConstraint(SpringLayout.NORTH, lblLikelyCause, 217,
+				SpringLayout.NORTH, contentPane);
 		lblLikelyCause.setFont(new Font("Verdana", Font.BOLD, 18));
-		springLayout.putConstraint(SpringLayout.WEST, lblLikelyCause, 36,
-				SpringLayout.EAST, lblNonconformances);
 		contentPane.add(lblLikelyCause);
 		labelLikelyCauseSetter = new JLabel("");
+		springLayout.putConstraint(SpringLayout.NORTH, labelLikelyCauseSetter, 28, SpringLayout.SOUTH, scrollPaneTree);
 		springLayout.putConstraint(SpringLayout.WEST, labelLikelyCauseSetter,
 				0, SpringLayout.WEST, scrollPaneTree);
-		springLayout.putConstraint(SpringLayout.SOUTH, labelLikelyCauseSetter,
-				23, SpringLayout.SOUTH, lblLikelyCause);
+		springLayout.putConstraint(SpringLayout.SOUTH, labelLikelyCauseSetter, -99, SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, labelLikelyCauseSetter,
 				270, SpringLayout.EAST, scrollPaneListNC);
 		labelLikelyCauseSetter.setFont(new Font("Verdana", Font.BOLD, 18));
-		springLayout.putConstraint(SpringLayout.NORTH, labelLikelyCauseSetter,
-				0, SpringLayout.SOUTH, lblLikelyCause);
 		contentPane.add(labelLikelyCauseSetter);
 		JLabel lblTestCase = new JLabel("Test Case");
-		springLayout.putConstraint(SpringLayout.WEST, lblTestCase, 10,
-				SpringLayout.EAST, scrollPaneTree);
-		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTestCase, 2,
-				SpringLayout.SOUTH, lblTestCase);
-		springLayout.putConstraint(SpringLayout.NORTH, lblTestCase, 6,
-				SpringLayout.SOUTH, lblNumberNonconformancesToSet);
+		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTestCase, 2, SpringLayout.SOUTH, lblTestCase);
+		springLayout.putConstraint(SpringLayout.NORTH, lblTestCase, 0, SpringLayout.NORTH, lblNonconformances);
+		springLayout.putConstraint(SpringLayout.WEST, lblTestCase, 0, SpringLayout.WEST, scrollPaneTestCase);
 		lblTestCase.setFont(new Font("Verdana", Font.BOLD, 18));
-		springLayout.putConstraint(SpringLayout.SOUTH, lblTestCase, 0,
-				SpringLayout.SOUTH, lblNonconformances);
 		contentPane.add(lblTestCase);
 		// Save Results Button
 		JButton btnSaveResults = new JButton("Save Results");
-		springLayout.putConstraint(SpringLayout.NORTH, btnSaveResults, 6,
-				SpringLayout.SOUTH, scrollPaneListNC);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneListNC, -21, SpringLayout.NORTH, btnSaveResults);
+		springLayout.putConstraint(SpringLayout.WEST, btnSaveResults, -220, SpringLayout.EAST, scrollPaneListNC);
+		springLayout.putConstraint(SpringLayout.EAST, btnSaveResults, 0, SpringLayout.EAST, scrollPaneListNC);
+		springLayout.putConstraint(SpringLayout.NORTH, btnSaveResults, 323, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.HORIZONTAL_CENTER,
 				btnSaveResults, 0, SpringLayout.HORIZONTAL_CENTER,
 				scrollPaneListNC);
@@ -250,12 +229,14 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 				saveResults();
 			}
 		});
-		springLayout.putConstraint(SpringLayout.EAST, btnSaveResults, 0,
-				SpringLayout.EAST, lblNonconformances);
 		btnSaveResults.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(btnSaveResults);
 		// Stack Trace Button
 		JButton btnStackTrace = new JButton("Stack Trace");
+		springLayout.putConstraint(SpringLayout.NORTH, btnStackTrace, 323, SpringLayout.NORTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTestCase, -11, SpringLayout.NORTH, btnStackTrace);
+		springLayout.putConstraint(SpringLayout.WEST, btnStackTrace, 32, SpringLayout.WEST, scrollPaneTestCase);
+		springLayout.putConstraint(SpringLayout.EAST, btnStackTrace, -29, SpringLayout.EAST, contentPane);
 		btnStackTrace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (listNonconformances.isSelectionEmpty())
@@ -269,25 +250,8 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 							.getStackTraceOrder());
 			}
 		});
-		springLayout.putConstraint(SpringLayout.NORTH, btnStackTrace, 0,
-				SpringLayout.NORTH, btnSaveResults);
-		springLayout.putConstraint(SpringLayout.WEST, btnStackTrace, 103,
-				SpringLayout.EAST, btnSaveResults);
 		btnStackTrace.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(btnStackTrace);
-		// Exit Button
-		JButton btnExit = new JButton(" Exit ");
-		springLayout.putConstraint(SpringLayout.NORTH, btnExit, 6,
-				SpringLayout.SOUTH, scrollPaneTestCase);
-		springLayout.putConstraint(SpringLayout.HORIZONTAL_CENTER, btnExit, 0,
-				SpringLayout.HORIZONTAL_CENTER, scrollPaneTestCase);
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				closeWindow();
-			}
-		});
-		btnExit.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(btnExit);
 		// Select one option of list
 		if (nc.size() > 0) {
 			listNonconformances.setSelectedIndex(0);
@@ -441,13 +405,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 			tree.expandRow(row);
 			row++;
 		}
-	}
-
-	/**
-	 * Close the Screen.
-	 */
-	protected void closeWindow() {
-		this.setVisible(false);
 	}
 
 	/**

@@ -39,7 +39,7 @@ public class PopupStackTraceSwowerFrame extends JFrame {
 		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(Constants.MAIN_FONT));
 		
 		// Set layout.
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, WIDTH, HEIGHT);
 		setMinimumSize(new Dimension(WIDTH, HEIGHT));
 		
