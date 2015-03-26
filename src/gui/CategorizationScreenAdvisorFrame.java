@@ -161,6 +161,7 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		textAreaTestCases = new JTextArea();
 		textAreaTestCases.setEditable(false);
 		JScrollPane scrollPaneTestCase = new JScrollPane();
+		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTestCase, 0, SpringLayout.NORTH, scrollPaneListNC);
 		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTestCase, -5,
 				SpringLayout.EAST, contentPane);
 		scrollPaneTestCase.setViewportView(textAreaTestCases);
@@ -178,6 +179,8 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		expandAllJTree();
 		// Create Tree
 		JScrollPane scrollPaneTree = new JScrollPane();
+		scrollPaneTree.setEnabled(false);
+		scrollPaneTree.setBounds(0, 0, 200, 100);
 		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTree, 240,
 				SpringLayout.EAST, scrollPaneListNC);
 		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTestCase, 30,
@@ -189,7 +192,6 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		// Set Renderer options to Tree
 		ToolTipManager.sharedInstance().registerComponent(tree);
 		tree.setCellRenderer(new MyRenderer());
-		tree.setRootVisible(false);
 		scrollPaneTree.setViewportView(tree);
 		contentPane.add(scrollPaneTree);
 		// Likely Cause Area
@@ -201,26 +203,25 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		lblLikelyCause.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblLikelyCause);
 		labelLikelyCauseSetter = new JLabel("");
-		springLayout.putConstraint(SpringLayout.NORTH, labelLikelyCauseSetter, 28, SpringLayout.SOUTH, scrollPaneTree);
+		springLayout.putConstraint(SpringLayout.NORTH, labelLikelyCauseSetter, 28, SpringLayout.SOUTH, lblLikelyCause);
 		springLayout.putConstraint(SpringLayout.WEST, labelLikelyCauseSetter,
 				0, SpringLayout.WEST, scrollPaneTree);
-		springLayout.putConstraint(SpringLayout.SOUTH, labelLikelyCauseSetter, -99, SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, labelLikelyCauseSetter,
 				270, SpringLayout.EAST, scrollPaneListNC);
 		labelLikelyCauseSetter.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(labelLikelyCauseSetter);
 		JLabel lblTestCase = new JLabel("Test Case");
-		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTestCase, 2, SpringLayout.SOUTH, lblTestCase);
 		springLayout.putConstraint(SpringLayout.NORTH, lblTestCase, 0, SpringLayout.NORTH, lblNonconformances);
-		springLayout.putConstraint(SpringLayout.WEST, lblTestCase, 0, SpringLayout.WEST, scrollPaneTestCase);
+		springLayout.putConstraint(SpringLayout.WEST, lblTestCase, 155, SpringLayout.EAST, lblLocation);
 		lblTestCase.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblTestCase);
 		// Save Results Button
 		JButton btnSaveResults = new JButton("Save Results");
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneListNC, -21, SpringLayout.NORTH, btnSaveResults);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneListNC, -11, SpringLayout.NORTH, btnSaveResults);
+		springLayout.putConstraint(SpringLayout.NORTH, btnSaveResults, -39, SpringLayout.SOUTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnSaveResults, -8, SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.WEST, btnSaveResults, -220, SpringLayout.EAST, scrollPaneListNC);
 		springLayout.putConstraint(SpringLayout.EAST, btnSaveResults, 0, SpringLayout.EAST, scrollPaneListNC);
-		springLayout.putConstraint(SpringLayout.NORTH, btnSaveResults, 323, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.HORIZONTAL_CENTER,
 				btnSaveResults, 0, SpringLayout.HORIZONTAL_CENTER,
 				scrollPaneListNC);
@@ -233,10 +234,10 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		contentPane.add(btnSaveResults);
 		// Stack Trace Button
 		JButton btnStackTrace = new JButton("Stack Trace");
-		springLayout.putConstraint(SpringLayout.NORTH, btnStackTrace, 323, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTestCase, -11, SpringLayout.NORTH, btnStackTrace);
-		springLayout.putConstraint(SpringLayout.WEST, btnStackTrace, 32, SpringLayout.WEST, scrollPaneTestCase);
-		springLayout.putConstraint(SpringLayout.EAST, btnStackTrace, -29, SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.HORIZONTAL_CENTER, btnStackTrace, 0, SpringLayout.HORIZONTAL_CENTER, scrollPaneTestCase);
+		springLayout.putConstraint(SpringLayout.NORTH, btnStackTrace, -39, SpringLayout.SOUTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnStackTrace, -8, SpringLayout.SOUTH, contentPane);
 		btnStackTrace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (listNonconformances.isSelectionEmpty())

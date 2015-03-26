@@ -132,7 +132,8 @@ public class ViewNonconformances extends JFrame {
 		contentPane.add(lblNonconformances);
 		// Location Label
 		JLabel lblLocation = new JLabel("Location");
-		springLayout.putConstraint(SpringLayout.NORTH, lblLocation, 0, SpringLayout.NORTH, lblNonconformances);
+		springLayout.putConstraint(SpringLayout.NORTH, lblLocation, 6, SpringLayout.SOUTH, lblNumberNonconformances);
+		springLayout.putConstraint(SpringLayout.WEST, lblLocation, 57, SpringLayout.EAST, lblNonconformances);
 		lblLocation.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(lblLocation);
 		// Initialize List
@@ -152,28 +153,23 @@ public class ViewNonconformances extends JFrame {
 		highLit = new DefaultHighlighter();
 		painter = new DefaultHighlighter.DefaultHighlightPainter(
 				Constants.HILIT_COLOR);
+		
+		JLabel lblTestCase = new JLabel("Test Case");
+		springLayout.putConstraint(SpringLayout.NORTH, lblTestCase, 0, SpringLayout.NORTH, lblNonconformances);
+		lblTestCase.setFont(new Font("Verdana", Font.BOLD, 18));
+		contentPane.add(lblTestCase);
 		// Set List Area
 		JScrollPane scrollPaneListNC = new JScrollPane();
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneListNC, 311, SpringLayout.SOUTH, lblNonconformances);
+		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneListNC, 2, SpringLayout.SOUTH, lblNonconformances);
 		scrollPaneListNC.setBounds(10, 20, 225, 310);
 		scrollPaneListNC.setSize(225,  310);
-		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneListNC, 2, SpringLayout.SOUTH, lblNonconformances);
+		scrollPaneListNC.setPreferredSize(new Dimension(0, scrollPaneListNC.getHeight()));
 		springLayout.putConstraint(SpringLayout.WEST, scrollPaneListNC, 10,
 				SpringLayout.WEST, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, scrollPaneListNC, 240,
 				SpringLayout.WEST, contentPane);
 		scrollPaneListNC.setViewportView(listNonconformances);
 		contentPane.add(scrollPaneListNC);
-		// Set Test Cases Area
-		textAreaTestCases = new JTextArea();
-		textAreaTestCases.setSize(225,  310);
-		textAreaTestCases.setEditable(false);
-		JScrollPane scrollPaneTestCase = new JScrollPane();
-		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTestCase, -5, SpringLayout.EAST, contentPane);
-		scrollPaneTestCase.setBounds(10, 20, 225, 310);
-		scrollPaneTestCase.setSize(225, 310);
-		scrollPaneTestCase.setViewportView(textAreaTestCases);
-		contentPane.add(scrollPaneTestCase);
 		// create the root node
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Location");
 		// create the child nodes
@@ -187,36 +183,12 @@ public class ViewNonconformances extends JFrame {
 		tree.setBounds(10, 20, 225, 310);
 		tree.setSize(225,  310);
 		expandAllJTree();
-		
-		// Create Tree
-		JScrollPane scrollPaneTree = new JScrollPane();
-		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTree, 2, SpringLayout.SOUTH, lblLocation);
-		springLayout.putConstraint(SpringLayout.WEST, lblLocation, 0, SpringLayout.WEST, scrollPaneTree);
-		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTestCase, 10, SpringLayout.EAST, scrollPaneTree);
-		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTree, 10, SpringLayout.EAST, scrollPaneListNC);
-		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTree, -264, SpringLayout.EAST, contentPane);
-		scrollPaneTree.setSize(225, 310);
-		// Set Renderer options to Tree
-		
-		ToolTipManager.sharedInstance().registerComponent(tree);
-		tree.setCellRenderer(new MyRenderer());
-		tree.setRootVisible(false);
-		scrollPaneTree.setColumnHeaderView(tree);
-		contentPane.add(scrollPaneTree);
-		JLabel lblTestCase = new JLabel("Test Case");
-		springLayout.putConstraint(SpringLayout.WEST, lblTestCase, 175, SpringLayout.EAST, lblLocation);
-		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTestCase, 2, SpringLayout.SOUTH, lblTestCase);
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTestCase, 311, SpringLayout.SOUTH, lblTestCase);
-		springLayout.putConstraint(SpringLayout.NORTH, lblTestCase, 0, SpringLayout.NORTH, lblNonconformances);
-		springLayout.putConstraint(SpringLayout.SOUTH, lblTestCase, -356, SpringLayout.SOUTH, contentPane);
-		lblTestCase.setFont(new Font("Verdana", Font.BOLD, 18));
-		contentPane.add(lblTestCase);
 		// Save Results Button
 		JButton btnSaveResults = new JButton("Save Results");
-		springLayout.putConstraint(SpringLayout.EAST, btnSaveResults, 212, SpringLayout.WEST, contentPane);
-		springLayout.putConstraint(SpringLayout.NORTH, btnSaveResults, 369,
-				SpringLayout.NORTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnSaveResults, 0, SpringLayout.SOUTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneListNC, -6, SpringLayout.NORTH, btnSaveResults);
 		springLayout.putConstraint(SpringLayout.WEST, btnSaveResults, 37, SpringLayout.WEST, contentPane);
+		springLayout.putConstraint(SpringLayout.EAST, btnSaveResults, 212, SpringLayout.WEST, contentPane);
 		springLayout.putConstraint(SpringLayout.HORIZONTAL_CENTER,
 				btnSaveResults, 0, SpringLayout.HORIZONTAL_CENTER,
 				scrollPaneListNC);
@@ -227,11 +199,25 @@ public class ViewNonconformances extends JFrame {
 		});
 		btnSaveResults.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(btnSaveResults);
+		
+		// Create Tree
+		JScrollPane scrollPaneTree = new JScrollPane();
+		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTree, 2, SpringLayout.SOUTH, lblLocation);
+		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTree, 10, SpringLayout.EAST, scrollPaneListNC);
+		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTree, 255, SpringLayout.EAST, scrollPaneListNC);
+		scrollPaneTree.setSize(225, 310);
+		// Set Renderer options to Tree
+		
+		ToolTipManager.sharedInstance().registerComponent(tree);
+		tree.setCellRenderer(new MyRenderer());
+		tree.setRootVisible(false);
+		scrollPaneTree.setViewportView(tree);
+		contentPane.add(scrollPaneTree);
 		// Stack Trace Button
 		JButton btnStackTrace = new JButton("Stack Trace");
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTree, -6, SpringLayout.NORTH, btnStackTrace);
-		springLayout.putConstraint(SpringLayout.NORTH, btnStackTrace, 0, SpringLayout.NORTH, btnSaveResults);
 		springLayout.putConstraint(SpringLayout.WEST, btnStackTrace, 71, SpringLayout.EAST, btnSaveResults);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnStackTrace, 0, SpringLayout.SOUTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTree, -6, SpringLayout.NORTH, btnStackTrace);
 		btnStackTrace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (listNonconformances.isSelectionEmpty())
@@ -247,12 +233,24 @@ public class ViewNonconformances extends JFrame {
 		});
 		btnStackTrace.setFont(new Font("Verdana", Font.BOLD, 18));
 		contentPane.add(btnStackTrace);
+		// Set Test Cases Area
+		textAreaTestCases = new JTextArea();
+		textAreaTestCases.setSize(225,  310);
+		textAreaTestCases.setEditable(false);
+		JScrollPane scrollPaneTestCase = new JScrollPane();
+		springLayout.putConstraint(SpringLayout.NORTH, scrollPaneTestCase, 2, SpringLayout.SOUTH, lblTestCase);
+		springLayout.putConstraint(SpringLayout.WEST, scrollPaneTestCase, 10, SpringLayout.EAST, scrollPaneTree);
+		springLayout.putConstraint(SpringLayout.EAST, scrollPaneTestCase, -5, SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.WEST, lblTestCase, 0, SpringLayout.WEST, scrollPaneTestCase);
+		scrollPaneTestCase.setBounds(10, 20, 225, 310);
+		scrollPaneTestCase.setSize(225, 310);
+		scrollPaneTestCase.setViewportView(textAreaTestCases);
+		contentPane.add(scrollPaneTestCase);
 		
 		JButton btnCategorize = new JButton("Categorize");
-		springLayout.putConstraint(SpringLayout.EAST, btnStackTrace, -90, SpringLayout.WEST, btnCategorize);
-		springLayout.putConstraint(SpringLayout.NORTH, btnCategorize, 6, SpringLayout.SOUTH, scrollPaneTestCase);
-		springLayout.putConstraint(SpringLayout.WEST, btnCategorize, -214, SpringLayout.EAST, contentPane);
-		springLayout.putConstraint(SpringLayout.EAST, btnCategorize, -44, SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPaneTestCase, -6, SpringLayout.NORTH, btnCategorize);
+		springLayout.putConstraint(SpringLayout.HORIZONTAL_CENTER, btnCategorize, 0, SpringLayout.HORIZONTAL_CENTER, scrollPaneTestCase);
+		springLayout.putConstraint(SpringLayout.NORTH, btnCategorize, 0, SpringLayout.NORTH, btnSaveResults);
 		btnCategorize.setFont(new Font("Verdana", Font.BOLD, 18));
 		btnCategorize.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
