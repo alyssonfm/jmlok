@@ -63,7 +63,7 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		// Prepare window opening
 		FileUtil.setUIFont(new javax.swing.plaf.FontUIResource(
 				Constants.MAIN_FONT));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 700, 458);
 		setMinimumSize(new Dimension(DetectionScreenAdvisorFrame.WIDTH,
 				DetectionScreenAdvisorFrame.HEIGHT));

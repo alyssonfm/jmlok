@@ -180,6 +180,7 @@ public class ViewNonconformances extends JFrame {
 		DefaultMutableTreeNode methodNode = new DefaultMutableTreeNode("");
 		classNode.add(methodNode);
 		tree = new JTree(root);
+		tree.setRootVisible(false);
 		tree.setBounds(10, 20, 225, 310);
 		tree.setSize(225,  310);
 		expandAllJTree();
@@ -210,7 +211,6 @@ public class ViewNonconformances extends JFrame {
 		
 		ToolTipManager.sharedInstance().registerComponent(tree);
 		tree.setCellRenderer(new MyRenderer());
-		tree.setRootVisible(false);
 		scrollPaneTree.setViewportView(tree);
 		contentPane.add(scrollPaneTree);
 		// Stack Trace Button

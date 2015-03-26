@@ -176,6 +176,7 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		DefaultMutableTreeNode methodNode = new DefaultMutableTreeNode("");
 		classNode.add(methodNode);
 		tree = new JTree(root);
+		tree.setRootVisible(false);
 		expandAllJTree();
 		// Create Tree
 		JScrollPane scrollPaneTree = new JScrollPane();
