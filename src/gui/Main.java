@@ -129,7 +129,7 @@ public class Main extends JFrame {
 		UIManager.put("FileChooser.saveButtonToolTipText", "Save");
 		UIManager.put("FileChooser.openButtonToolTipText", "Open");
 		UIManager.put("FileChooser.lookInLabelText", "Folder:");
-		UIManager.put("FileChooser.fileNameLabelText","Folder name: "); 
+		UIManager.put("FileChooser.folderNameLabelText","Folder name: "); 
 		UIManager.put("FileChooser.filesOfTypeLabelText", "Type:");		 
 		UIManager.put("FileChooser.upFolderToolTipText", "Up folder");
 		UIManager.put("FileChooser.homeFolderToolTipText", "Home folder");
