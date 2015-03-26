@@ -1,6 +1,6 @@
-JMLOK
+JMLOK2
 ==========
 
-JMLOK is a tool for conformance checking and nonconformances categorization in contract-based programs.
+JMLOK2 is a tool for detecting and classifying nonconformances in contract-based programs, tailored by Java/JML.
 
-The tool supports Java/JML programs.
+More details can be found in tool's website: http://massoni.computacao.ufcg.edu.br/home/jmlok

@@ -416,6 +416,7 @@ public class Main extends JFrame {
 	 */
 	protected void browseSrcFolder() {
 		dirSources.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		dirSources.setDialogTitle("Open");
 		if (dirSources.showOpenDialog(Main.this) == JFileChooser.APPROVE_OPTION) {
 			srcFolder = dirSources.getSelectedFile().getAbsolutePath();
 			int begin = srcFolder.lastIndexOf(File.separator);
