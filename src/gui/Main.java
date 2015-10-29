@@ -137,7 +137,7 @@ public class Main extends JFrame {
 		UIManager.put("FileChooser.listViewButtonToolTipText", "List");
 		UIManager.put("FileChooser.detailsViewButtonToolTipText", "Details");
 		UIManager.put("FileChooser.acceptAllFileFilterText", "All files");
-		setTitle("JMLOK");
+		setTitle("JmlOk2");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 219);
 		setMinimumSize(new Dimension(this.WIDTH, this.HEIGHT));

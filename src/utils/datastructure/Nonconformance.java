@@ -88,7 +88,7 @@ public class Nonconformance {
 			this.setTestFile(testFile);
 			this.setNumberedTest(numberedTest);
 			this.setErrorMessage(message);
-			this.setClassName(summary); 
+			this.setClassName(message); 
 			this.setMethodName(summary);
 			this.setPackageName();
 			// Necessary for Categorization details
@@ -226,13 +226,12 @@ public class Nonconformance {
 	 */
 	public void setClassName(String message) {
 		String result = "";
-		String aux = message;
-		String[] text = aux.split(" ");
+		String aux = "";
 		if (isJmlRac()) {
-			if(!this.type.equals(CategoryType.EVALUATION)){
-				result = text[2].substring(0, text[2].indexOf("."));
-			}else 
-				result = text[3].substring(text[3].indexOf("\"")+1, text[3].indexOf(".j"));
+			int first = message.indexOf("(")+1;
+			int lastIndex = message.indexOf(")");
+			aux = message.substring(first, lastIndex);
+		 result = aux.substring(0, aux.indexOf("."));
 		}
 		this.className = result;
 	}

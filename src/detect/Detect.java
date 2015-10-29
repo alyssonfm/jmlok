@@ -294,7 +294,7 @@ public class Detect {
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("generateTestsJava.xml");
+		File buildFile = accessFile("generateTests.xml");
 		p.setUserProperty("classes", Constants.CLASSES);
 		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
@@ -303,7 +303,7 @@ public class Detect {
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlLib", contractLib);
 		p.setUserProperty("timeout", timeout);
-		runProject(buff, p, buildFile, "generateTestsJava.xml",
+		runProject(buff, p, buildFile, "generateTests.xml",
 				"compile_tests", consoleLogger);
 	}
 
@@ -467,14 +467,14 @@ public class Detect {
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = accessFile("runTestsJava.xml");
+		File buildFile = accessFile("runTests.xml");
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
 		if (compiler == Constants.JMLC_COMPILER)
 			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		runProject(buff, p, buildFile, "runTestsJava.xml", "run_tests",
+		runProject(buff, p, buildFile, "runTests.xml", "run_tests",
 				consoleLogger);
 	}
 

@@ -38,6 +38,7 @@ public class GenerateResult {
 	 */
 	private static Element createsElement(Document doc, Nonconformance n){
 		Element nonconformance = doc.createElement("Nonconformance");
+		nonconformance.setAttribute("package", n.getPackageName());
 		nonconformance.setAttribute("class", n.getClassName());
 		nonconformance.setAttribute("method", n.getMethodName());
 		nonconformance.setAttribute("type", n.getType().getName());
