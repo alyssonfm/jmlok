@@ -1,7 +1,7 @@
 <project name="jmlcCompiler" default="jmlc" basedir="..">
 	<target name="jmlc">
 		<echo>
-            Compilando com JMLC
+			Compiling with JMLc compiler
         </echo>
 		<exec command="${jmlcExec}">		
 			<arg value="${source_folder}"/>			

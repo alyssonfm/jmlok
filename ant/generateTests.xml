@@ -1,6 +1,6 @@
 <project name="generateTests" default="compile_tests" basedir="..">
 	<target name="compile_tests">
-			<echo>Compiling the tests</echo>
+			<echo>Generating and compiling the tests</echo>
 			<javac fork="yes" memorymaximumsize="4096m" includes="*.java" debug="on" srcdir="${tests_src}" destdir="${tests_bin}" includeantruntime="false">
 				<classpath>
 					<fileset dir="${lib}">

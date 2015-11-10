@@ -1,7 +1,7 @@
 <project name="jmlcCompiler" default="jmlc" basedir="..">
 	<target name="jmlc">
 		<echo>
-             Compiling with JML compiler
+             Compiling with JMLc compiler
         </echo>
 		<exec command="${jmlcExec}">		
 			<arg value="--recursive" />
