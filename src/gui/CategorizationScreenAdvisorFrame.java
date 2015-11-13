@@ -8,9 +8,12 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Icon;
@@ -258,6 +261,12 @@ public class CategorizationScreenAdvisorFrame extends JFrame {
 		if (nc.size() > 0) {
 			listNonconformances.setSelectedIndex(0);
 			setChangesFromSelectionOnTheList();
+		}
+		Path source = (new File(Constants.RESULTS)).toPath();
+		try {
+			Files.copy(source, source, StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 	}
 
