@@ -88,9 +88,9 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		lblDetectionPhaseIs = new JLabel("Current Stage: "
 				+ "Creating Directories");
 		springLayout.putConstraint(SpringLayout.NORTH, lblDetectionPhaseIs, 8, SpringLayout.NORTH, contentPane);
-		springLayout.putConstraint(SpringLayout.EAST, lblDetectionPhaseIs, 378,
+		springLayout.putConstraint(SpringLayout.EAST, lblDetectionPhaseIs, 330,
 				SpringLayout.WEST, contentPane);
-		lblDetectionPhaseIs.setFont(new Font("Verdana", Font.BOLD, 18));
+		lblDetectionPhaseIs.setFont(new Font("Verdana", Font.BOLD, 16));
 		contentPane.add(lblDetectionPhaseIs);
 		// Text Area Space
 		JScrollPane scrollPane = new JScrollPane();
@@ -105,10 +105,10 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 				SpringLayout.EAST, contentPane);
 		contentPane.add(scrollPane);
 		// Interaction Button
-		btnNonconformances = new JButton("Nonconformances");
-		springLayout.putConstraint(SpringLayout.NORTH, btnNonconformances, 8, SpringLayout.NORTH, contentPane);
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNonconformances, -6, SpringLayout.NORTH, scrollPane);
-		springLayout.putConstraint(SpringLayout.EAST, btnNonconformances, -10, SpringLayout.EAST, contentPane);
+		btnNonconformances = new JButton("View Nonconformances");
+		springLayout.putConstraint(SpringLayout.NORTH, btnNonconformances, 5, SpringLayout.NORTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNonconformances, -9, SpringLayout.NORTH, scrollPane);
+		springLayout.putConstraint(SpringLayout.EAST, btnNonconformances, -12, SpringLayout.EAST, contentPane);
 		btnNonconformances.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -135,10 +135,11 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		contentPane.add(progressBar);
 		
 		btnCategorization = new JButton("Categorize");
-		springLayout.putConstraint(SpringLayout.WEST, btnNonconformances, 1, SpringLayout.EAST, btnCategorization);
-		springLayout.putConstraint(SpringLayout.SOUTH, btnCategorization, -6, SpringLayout.NORTH, scrollPane);
-		springLayout.putConstraint(SpringLayout.EAST, btnCategorization, -171, SpringLayout.EAST, contentPane);
-		springLayout.putConstraint(SpringLayout.NORTH, btnCategorization, 0, SpringLayout.NORTH, lblDetectionPhaseIs);
+		springLayout.putConstraint(SpringLayout.WEST, btnNonconformances, 14, SpringLayout.EAST, btnCategorization);
+		springLayout.putConstraint(SpringLayout.WEST, btnCategorization, 28, SpringLayout.EAST, lblDetectionPhaseIs);
+		springLayout.putConstraint(SpringLayout.EAST, btnCategorization, -213, SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.NORTH, btnCategorization, 5, SpringLayout.NORTH, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnCategorization, -9, SpringLayout.NORTH, scrollPane);
 		btnCategorization.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
