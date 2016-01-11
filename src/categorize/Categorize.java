@@ -155,7 +155,7 @@ public class Categorize {
 			this.examine.setPrincipalClassName(e.getPackageName() + "." + e.getClassName());
 		this.examine.setMethodCalling(e.getMethodCalling());
 		if(!e.getMethodCalling().contains("<init>") && !e.getMethodCalling().contains("defaultConstructor")){
-			if(e.getErrorMessage().contains("@pre"))
+			if(e.getErrorMessage().contains("@pre") || e.getErrorMessage().contains("<clinit>"))
 				return Cause.NULL_RELATED.getName();
 			else{
 				if(this.examine.checkWeakPrecondition(e.getMethodName()))

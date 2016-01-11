@@ -135,8 +135,8 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 		contentPane.add(progressBar);
 		
 		btnCategorization = new JButton("Categorize");
-		springLayout.putConstraint(SpringLayout.WEST, btnNonconformances, 14, SpringLayout.EAST, btnCategorization);
-		springLayout.putConstraint(SpringLayout.WEST, btnCategorization, 28, SpringLayout.EAST, lblDetectionPhaseIs);
+		springLayout.putConstraint(SpringLayout.WEST, btnNonconformances, 4, SpringLayout.EAST, btnCategorization);
+		springLayout.putConstraint(SpringLayout.WEST, btnCategorization, 6, SpringLayout.EAST, lblDetectionPhaseIs);
 		springLayout.putConstraint(SpringLayout.EAST, btnCategorization, -213, SpringLayout.EAST, contentPane);
 		springLayout.putConstraint(SpringLayout.NORTH, btnCategorization, 5, SpringLayout.NORTH, contentPane);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnCategorization, -9, SpringLayout.NORTH, scrollPane);

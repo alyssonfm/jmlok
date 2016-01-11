@@ -249,7 +249,7 @@ public class Main extends JFrame {
 		contentPane.add(btnBrowseExtLibFolder);
 
 		// Time
-		JLabel lblTime = new JLabel("Time to tests generation  ");
+		JLabel lblTime = new JLabel("Time to test generation  ");
 		springLayout.putConstraint(SpringLayout.NORTH, lblTime, 13,
 				SpringLayout.SOUTH, lblExternalLibFolder);
 		lblTime.setHorizontalAlignment(SwingConstants.RIGHT);
