@@ -15,6 +15,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import utils.commons.Constants;
+import utils.commons.ContractAwareCompiler;
 import utils.datastructure.Nonconformance;
 
 /**
@@ -58,15 +59,26 @@ public class NCCreator {
 	 * @return - the of list the distinct nonconformances that were detected by
 	 *         the JMLOK tool.
 	 */
-	public Set<Nonconformance> listNonconformances(int compiler) {
+	public Set<Nonconformance> listNonconformances(ContractAwareCompiler compiler) {
 		File results;
 		results = new File(Constants.TEST_RESULTS);
 		Set<Nonconformance> result;
-		if (compiler == Constants.JMLC_COMPILER) {
+		switch (compiler) {
+		case JMLC:
 			result = getErrorsFromXML(results);
+			break;
+		case DBCJDOC:
+			result = getErrorsFromXML(results);
+			break;
+		default:
+			result = getErrorsFromFile(results);
+			break;
+		}
+		/*if (compiler == ContractAwareCompiler.JMLC) {
+			
 		} else {
 			result = getErrorsFromFile(results);
-		}
+		}*/
 		this.ncCount = result.size();
 		return result;
 	}

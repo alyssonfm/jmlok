@@ -25,7 +25,9 @@ import org.apache.commons.io.output.ByteArrayOutputStream;
 
 import utils.commons.ClassPathHacker;
 import utils.commons.Constants;
+import utils.commons.ContractAwareCompiler;
 import utils.commons.FileUtil;
+import utils.commons.OperatingSystem;
 import utils.datastructure.Nonconformance;
 import categorize.Categorize;
 import detect.Detect;
@@ -33,22 +35,23 @@ import detect.Detect;
 public class Controller {
 	private Set<Nonconformance> errors;
 	private Set<Nonconformance> nonconformities;
-	private int compiler;
-	private int os;
+	private ContractAwareCompiler compiler;
+	private OperatingSystem os;
 	private String srcFolder;
 	private String extLibFolder;
 	private String time;
 
 	/**
-	 * Constructor for Controller, it initialize the compiler and OS options for
-	 * execution on CodeSpecOK Tool.
+	 * Constructor for Controller, it initializes the compiler and OS options for
+	 * execution of JmlOk2 tool.
 	 */
-	public Controller() {
+	public Controller(ContractAwareCompiler comp) {
+		this.compiler = comp;
 		chooseOS();
 	}
 
 	/**
-	 * Check errors to avoid problems on future tool process.
+	 * Check errors to avoid problems through the tool's process.
 	 * 
 	 * @param srcFolder
 	 *            Input for source folder.
@@ -79,13 +82,13 @@ public class Controller {
 
 	/**
 	 * Check a configuration problem on non-Windows OS, whereas randoop.jar
-	 * needs to be on the CLASSPATH to be ran on Java.
+	 * needs to be in the CLASSPATH to be ran on Java.
 	 * 
 	 * @throws Exception
-	 *             When Randoop is not on CLASSPATH if Windows isn't the OS.
+	 *             When Randoop is not in CLASSPATH if Windows isn't the OS.
 	 */
 	private void checkRandoopRequirements() throws Exception {
-		if (this.os != Constants.WINDOWS_OS
+		if (this.os != OperatingSystem.WINDOWS
 				&& !(System.getenv("CLASSPATH").contains("randoop.jar"))) {
 			throw new Exception(
 					"The file randoop.jar was not configured using JMLOKSetup. "
@@ -133,8 +136,8 @@ public class Controller {
 	 */
 	private String correctLibFolder(String extLibFolder) {
 		if (extLibFolder.equals("")) {
-			if (this.os == Constants.WINDOWS_OS)
-				if (this.compiler == Constants.JMLC_COMPILER) {
+			if (this.os == OperatingSystem.WINDOWS)
+				if (this.compiler == ContractAwareCompiler.JMLC) {
 					extLibFolder = Constants.JMLC_LIB;
 				} else {
 					extLibFolder = "";
@@ -167,9 +170,9 @@ public class Controller {
 	 */
 	private void chooseOS() {
 		if (System.getProperty("os.name").contains("Windows")) {
-			this.os = Constants.WINDOWS_OS;
+			this.os = OperatingSystem.WINDOWS;
 		} else {
-			this.os = Constants.LINUX_OS;
+			this.os = OperatingSystem.LINUX;
 		}
 	}
 

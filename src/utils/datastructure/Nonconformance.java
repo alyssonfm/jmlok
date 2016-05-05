@@ -326,10 +326,10 @@ public class Nonconformance {
 	}
 
 	/**
-	 * Get number of ocurrences of instruction that generated Error, before it
+	 * Get number of occurrences of instruction that generated Error, before it
 	 * crashes.
 	 * 
-	 * @return number of ocurrences of instruction that generated Error, before
+	 * @return number of occurrences of instruction that generated Error, before
 	 *         it crashes.
 	 */
 	public int getCountOcurrencesLineOfError() {
@@ -337,11 +337,11 @@ public class Nonconformance {
 	}
 
 	/**
-	 * Set number of ocurrences of instruction that generated Error, before it
+	 * Set number of occurrences of instruction that generated Error, before it
 	 * crashes.
 	 * 
 	 * @param countOcurrencesLineOfError
-	 *            number of ocurrences of instruction that generated Error,
+	 *            number of occurrences of instruction that generated Error,
 	 *            before it crashes.
 	 */
 	public void setCountOcurrencesLineOfError(int countOcurrencesLineOfError) {

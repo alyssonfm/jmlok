@@ -20,6 +20,7 @@ import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectHelper;
 
 import utils.commons.Constants;
+import utils.commons.ContractAwareCompiler;
 import utils.commons.FileUtil;
 import utils.datastructure.Nonconformance;
 import utils.detect.DetectUtil;
@@ -43,7 +44,7 @@ public class Detect {
 	private String sourceFolder;
 	private String librariesFolder;
 	private String timeout;
-	private int compiler;
+	private ContractAwareCompiler compiler;
 
 	private enum StagesDetect {
 		CREATED_DIRECTORIES, COMPILED_PROJECT, GENERATED_TESTS, EXECUTED_TESTS, ERROR_ON_DETECTION
@@ -56,14 +57,14 @@ public class Detect {
 	 * @param comp
 	 *            = the integer that indicates which compiler will be used.
 	 */
-	public Detect(int comp) {
+	public Detect(ContractAwareCompiler comp) {
 		// Create directories
 		while (!tempDir.exists()) {
 			tempDir.mkdirs();
 		}
 		this.compiler = comp;
 		switch (this.compiler) {
-		case Constants.JMLC_COMPILER:
+		case JMLC:
 			contractLib = Constants.JMLC_LIB;
 			break;
 		default:
@@ -189,7 +190,7 @@ public class Detect {
 	private void compileProject(String sourceFolder, String librariesFolder)
 			throws Exception {
 		javaCompile(sourceFolder, librariesFolder);
-		jmlCompile(sourceFolder);
+		jmlCompile(sourceFolder, librariesFolder);
 		triggersEvent(StagesDetect.COMPILED_PROJECT);
 	}
 
@@ -289,7 +290,7 @@ public class Detect {
 		contractLib = contractLib + libFolder;
 		// Run Randoop
 		String pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib"
-				+ Constants.FILE_SEPARATOR + "randoop.jar";
+				+ Constants.FILE_SEPARATOR + "randoop(1).jar";
 		runRandoop(libFolder, timeout, pathToRandoop);
 		// Run ant file
 		Project p = new Project();
@@ -385,17 +386,39 @@ public class Detect {
 	 * @throws Exception
 	 *             problem with ANT projects.
 	 */
-	public void jmlCompile(String sourceFolder) throws Exception {
+	public void jmlCompile(String sourceFolder, String libsFolder) throws Exception {
 		final StringBuilder buff = new StringBuilder();
 		if (DetectUtil.hasDirectories(sourceFolder)) {
-			if (compiler == Constants.JMLC_COMPILER) {
+			if (compiler == ContractAwareCompiler.JMLC) {
 				runJMLCompiler(sourceFolder, buff, "jmlcCompiler.xml");
+			} else if(compiler == ContractAwareCompiler.DBCJDOC){
+				runDBCJDocCompiler(sourceFolder, buff, "dbcjdocCompiler.xml", libsFolder);
 			}
 		} else {
-			if (compiler == Constants.JMLC_COMPILER) {
+			if (compiler == ContractAwareCompiler.JMLC) {
 				runJMLCompiler(sourceFolder, buff, "jmlcCompiler2.xml");
+			} else if(compiler == ContractAwareCompiler.DBCJDOC){
+				runDBCJDocCompiler(sourceFolder, buff, "dbcjdocCompiler.xml", libsFolder);
 			}
 		}
+	}
+	
+	/**
+	 * Method for running the dbcjdoc compiler
+	 * @param sourceFolder - the source of files to be compiled.
+	 * @param buff - where an error log will be printed.
+	 * @param nameFile - name of the .xml file to be executed.
+	 * @throws Exception - in case of having problems on running ANT projects. 
+	 */
+	private void runDBCJDocCompiler(String sourceFolder, final StringBuilder buff,
+			String nameFile, String libs) throws Exception {
+		Project p = new Project();
+		DefaultLogger consoleLogger = createLogger(buff);
+		String aspectJMLLib = getJARPath() + Constants.FILE_SEPARATOR + "aspectjml-lib";
+		p.setUserProperty("aspectjml.lib", aspectJMLLib);
+		p.setUserProperty("app.lib", libs);
+		File buildFile = setJMLProperties(sourceFolder, nameFile, p);
+		runProject(buff, p, buildFile, nameFile, "ajmlc-dbcjdoc", consoleLogger);
 	}
 
 	/**
@@ -404,7 +427,7 @@ public class Detect {
 	 * @param sourceFolder
 	 *            = the source of files to be compiled.
 	 * @param buff
-	 *            = where error an log will be printed.
+	 *            = where an error log will be printed.
 	 * @param nameFile
 	 *            = name of .xml to be executed.
 	 * @throws Exception
@@ -414,11 +437,10 @@ public class Detect {
 			String nameFile) throws Exception {
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		File buildFile = setJMLProperties(sourceFolder, nameFile, p);
-
 		p.setUserProperty("jmlcExec",
 				(isWindows) ? (Constants.JMLC_SRC + "jmlc.bat")
 						: (Constants.JMLC_SRC + "jmlc-unix"));
+		File buildFile = setJMLProperties(sourceFolder, nameFile, p);
 		runProject(buff, p, buildFile, nameFile, "jmlc", consoleLogger);
 	}
 
@@ -464,17 +486,20 @@ public class Detect {
 	 */
 	private void runTestsOnJava(String libFolder) throws Exception {
 		final StringBuilder buff = new StringBuilder();
+		String task = "";
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
 		File buildFile = accessFile("runTests.xml");
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
-		if (compiler == Constants.JMLC_COMPILER)
+		if (compiler == ContractAwareCompiler.JMLC){
 			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
+			task = "run_tests";
+		} else task = "run_testsDBCJDoc";
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
-		runProject(buff, p, buildFile, "runTests.xml", "run_tests",
+		runProject(buff, p, buildFile, "runTests.xml", task,
 				consoleLogger);
 	}
 

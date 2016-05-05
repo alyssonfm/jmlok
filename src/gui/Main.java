@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.imageio.ImageIO;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -34,7 +35,9 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import utils.commons.Constants;
+import utils.commons.ContractAwareCompiler;
 import controller.Controller;
+import javax.swing.JRadioButton;
 
 /**
  * Main class to the GUI. Represents the first screen showed to JMLOK user.
@@ -288,10 +291,33 @@ public class Main extends JFrame {
 		springLayout.putConstraint(SpringLayout.EAST, btnRun, -184,
 				SpringLayout.EAST, contentPane);
 		btnRun.setFont(new Font("Verdana", Font.BOLD, 18));
+		
+		final JRadioButton rdbtnJmlcCompiler = new JRadioButton("JMLC compiler");
+		rdbtnJmlcCompiler.setSelected(true);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJmlcCompiler, 0, SpringLayout.NORTH, btnRun);
+		rdbtnJmlcCompiler.setFont(new Font("Verdana", Font.BOLD, 18));
+		
+		
+		final JRadioButton rdbtnDbcjdocCompiler = new JRadioButton("DBCJDoc compiler");
+		springLayout.putConstraint(SpringLayout.WEST, rdbtnDbcjdocCompiler, 217, SpringLayout.WEST, contentPane);
+		springLayout.putConstraint(SpringLayout.SOUTH, rdbtnDbcjdocCompiler, -10, SpringLayout.SOUTH, contentPane);
+		springLayout.putConstraint(SpringLayout.EAST, rdbtnJmlcCompiler, -21, SpringLayout.WEST, rdbtnDbcjdocCompiler);
+		rdbtnDbcjdocCompiler.setFont(new Font("Verdana", Font.BOLD, 18));
+		
+		
+		//Group the radio buttons.
+	    ButtonGroup group = new ButtonGroup();
+	    group.add(rdbtnJmlcCompiler);
+	    group.add(rdbtnDbcjdocCompiler);
+	    
+	    contentPane.add(rdbtnDbcjdocCompiler);
+	    contentPane.add(rdbtnJmlcCompiler);
+		
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					controller = new Controller();
+					if(rdbtnDbcjdocCompiler.isSelected()) controller = new Controller(ContractAwareCompiler.DBCJDOC);
+					else controller = new Controller(ContractAwareCompiler.JMLC);
 					controller.checkProblemsWithInput(textFieldSrcFolder.getText(),
 							textFieldTime.getText());
 
@@ -441,5 +467,4 @@ public class Main extends JFrame {
 		}
 		return path.getParent().toString();
 	}
-
 }
