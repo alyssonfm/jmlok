@@ -284,21 +284,19 @@ public class Main extends JFrame {
 
 		// Run Button
 		btnRun = new JButton("Run");
-		springLayout.putConstraint(SpringLayout.WEST, btnRun, -274,
-				SpringLayout.EAST, contentPane);
-		springLayout.putConstraint(SpringLayout.SOUTH, btnRun, -10,
-				SpringLayout.SOUTH, contentPane);
-		springLayout.putConstraint(SpringLayout.EAST, btnRun, -184,
+		springLayout.putConstraint(SpringLayout.EAST, btnRun, -155,
 				SpringLayout.EAST, contentPane);
 		btnRun.setFont(new Font("Verdana", Font.BOLD, 18));
 		
 		final JRadioButton rdbtnJmlcCompiler = new JRadioButton("JMLC compiler");
-		rdbtnJmlcCompiler.setSelected(true);
-		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJmlcCompiler, 0, SpringLayout.NORTH, btnRun);
+		springLayout.putConstraint(SpringLayout.SOUTH, rdbtnJmlcCompiler, -10, SpringLayout.SOUTH, contentPane);
 		rdbtnJmlcCompiler.setFont(new Font("Verdana", Font.BOLD, 18));
 		
 		
-		final JRadioButton rdbtnDbcjdocCompiler = new JRadioButton("DBCJDoc compiler");
+		final JRadioButton rdbtnDbcjdocCompiler = new JRadioButton("ContractJDoc compiler");
+		springLayout.putConstraint(SpringLayout.WEST, btnRun, 9, SpringLayout.EAST, rdbtnDbcjdocCompiler);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnRun, 0, SpringLayout.SOUTH, rdbtnDbcjdocCompiler);
+		rdbtnDbcjdocCompiler.setSelected(true);
 		springLayout.putConstraint(SpringLayout.WEST, rdbtnDbcjdocCompiler, 217, SpringLayout.WEST, contentPane);
 		springLayout.putConstraint(SpringLayout.SOUTH, rdbtnDbcjdocCompiler, -10, SpringLayout.SOUTH, contentPane);
 		springLayout.putConstraint(SpringLayout.EAST, rdbtnJmlcCompiler, -21, SpringLayout.WEST, rdbtnDbcjdocCompiler);
@@ -316,7 +314,7 @@ public class Main extends JFrame {
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					if(rdbtnDbcjdocCompiler.isSelected()) controller = new Controller(ContractAwareCompiler.DBCJDOC);
+					if(rdbtnDbcjdocCompiler.isSelected()) controller = new Controller(ContractAwareCompiler.CONTRACTJDOC);
 					else controller = new Controller(ContractAwareCompiler.JMLC);
 					controller.checkProblemsWithInput(textFieldSrcFolder.getText(),
 							textFieldTime.getText());
@@ -341,10 +339,8 @@ public class Main extends JFrame {
 
 		// Clean Button
 		JButton btnClean = new JButton("Clean");
-		springLayout.putConstraint(SpringLayout.SOUTH, btnClean, -10,
-				SpringLayout.SOUTH, contentPane);
-		springLayout.putConstraint(SpringLayout.EAST, btnClean, -51,
-				SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.WEST, btnClean, 143, SpringLayout.EAST, rdbtnDbcjdocCompiler);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnClean, 0, SpringLayout.SOUTH, rdbtnDbcjdocCompiler);
 		btnClean.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				resetProgram();

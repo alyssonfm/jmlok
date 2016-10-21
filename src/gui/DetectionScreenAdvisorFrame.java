@@ -46,8 +46,8 @@ public class DetectionScreenAdvisorFrame extends JFrame {
 	private JProgressBar progressBar;
 	private JLabel lblDetectionPhaseIs;
 	private SwingWorker<Object, Object> worker;
-	protected int seconds = 1000;
-	protected double velNumPerSec = 2;
+	protected int seconds = 131072;
+	protected double velNumPerSec = 1024;
 	private Controller controller;
 	private JButton btnCategorization;
 

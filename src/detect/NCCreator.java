@@ -60,18 +60,22 @@ public class NCCreator {
 	 *         the JMLOK tool.
 	 */
 	public Set<Nonconformance> listNonconformances(ContractAwareCompiler compiler) {
-		File results;
+		File results, resultsError;
 		results = new File(Constants.TEST_RESULTS);
+		resultsError = new File(Constants.ERROR_TEST_RESULTS);
 		Set<Nonconformance> result;
 		switch (compiler) {
 		case JMLC:
 			result = getErrorsFromXML(results);
+			result.addAll(getErrorsFromXML(resultsError));
 			break;
-		case DBCJDOC:
+		case CONTRACTJDOC:
 			result = getErrorsFromXML(results);
+			result.addAll(getErrorsFromXML(resultsError));
 			break;
 		default:
 			result = getErrorsFromFile(results);
+			result.addAll(getErrorsFromFile(resultsError));
 			break;
 		}
 		/*if (compiler == ContractAwareCompiler.JMLC) {
@@ -93,6 +97,7 @@ public class NCCreator {
 	 */
 	private Set<Nonconformance> getErrorsFromXML(File file) {
 		Set<Nonconformance> result = new HashSet<Nonconformance>();
+		if(!file.exists()) return result;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setNamespaceAware(false);
 		DocumentBuilder docBuilder;

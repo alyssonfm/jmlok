@@ -25,6 +25,7 @@ public class Constants {
 	public static final String CLASSES = TEMP_DIR + FILE_SEPARATOR  + "classes.txt";
 	//Constants to the result of Randoop execution under SUT.
 	public static final String TEST_RESULTS = TEST_DIR + FILE_SEPARATOR + "TEST-RegressionTest.xml";
+	public static final String ERROR_TEST_RESULTS = TEST_DIR + FILE_SEPARATOR + "TEST-ErrorTest.xml";
 	//Constant to the file that contains the result more cleaned. The nonconformances detected by the tool.
 	public static final String RESULTS = TEMP_DIR+FILE_SEPARATOR+"results.xml";
 	//Constants that indicates the path to jml compilers.

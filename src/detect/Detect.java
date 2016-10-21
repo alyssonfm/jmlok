@@ -33,7 +33,7 @@ import utils.detect.DetectUtil;
  */
 public class Detect {
 	private boolean isWindows = false;
-	private String contractLib;
+	private String contractLib = "";
 	private File tempDir = new File(Constants.TEMP_DIR);
 	private File javaBin = new File(Constants.JML_SOURCE_BIN);
 	private File jmlBin = new File(Constants.JML_BIN);
@@ -263,11 +263,14 @@ public class Detect {
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
+		//String aspectJMLLib = getJARPath() + Constants.FILE_SEPARATOR + "aspectjml-lib";
 		File buildFile = accessFile("javaCompile.xml");
 		p.setUserProperty("source_folder", sourceFolder);
 		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlLib", contractLib);
+		//p.setUserProperty("aspectjml.lib", aspectJMLLib);
+		//p.setUserProperty("app.lib", libFolder);
 		runProject(buff, p, buildFile, "javaCompile.xml", "compile_project",
 				consoleLogger);
 	}
@@ -368,7 +371,7 @@ public class Detect {
 			System.out.println("Error reading: "
 					+ pathToRandoop
 					+ "\n"
-					+ "Couldn't run Randoop. Verify if command below works."
+					+ "Couldn't run Randoop. Verify if the command below works."
 					+ "Command Used -> "
 					+ DetectUtil.getCommandToUseRandoop(
 							timeout,
@@ -391,26 +394,26 @@ public class Detect {
 		if (DetectUtil.hasDirectories(sourceFolder)) {
 			if (compiler == ContractAwareCompiler.JMLC) {
 				runJMLCompiler(sourceFolder, buff, "jmlcCompiler.xml");
-			} else if(compiler == ContractAwareCompiler.DBCJDOC){
-				runDBCJDocCompiler(sourceFolder, buff, "dbcjdocCompiler.xml", libsFolder);
+			} else if(compiler == ContractAwareCompiler.CONTRACTJDOC){
+				runContractJDocCompiler(sourceFolder, buff, "contractjdocCompiler.xml", libsFolder);
 			}
 		} else {
 			if (compiler == ContractAwareCompiler.JMLC) {
 				runJMLCompiler(sourceFolder, buff, "jmlcCompiler2.xml");
-			} else if(compiler == ContractAwareCompiler.DBCJDOC){
-				runDBCJDocCompiler(sourceFolder, buff, "dbcjdocCompiler.xml", libsFolder);
+			} else if(compiler == ContractAwareCompiler.CONTRACTJDOC){
+				runContractJDocCompiler(sourceFolder, buff, "contractjdocCompiler.xml", libsFolder);
 			}
 		}
 	}
 	
 	/**
-	 * Method for running the dbcjdoc compiler
+	 * Method for running the contractjdoc compiler
 	 * @param sourceFolder - the source of files to be compiled.
 	 * @param buff - where an error log will be printed.
 	 * @param nameFile - name of the .xml file to be executed.
 	 * @throws Exception - in case of having problems on running ANT projects. 
 	 */
-	private void runDBCJDocCompiler(String sourceFolder, final StringBuilder buff,
+	private void runContractJDocCompiler(String sourceFolder, final StringBuilder buff,
 			String nameFile, String libs) throws Exception {
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
@@ -418,7 +421,7 @@ public class Detect {
 		p.setUserProperty("aspectjml.lib", aspectJMLLib);
 		p.setUserProperty("app.lib", libs);
 		File buildFile = setJMLProperties(sourceFolder, nameFile, p);
-		runProject(buff, p, buildFile, nameFile, "ajmlc-dbcjdoc", consoleLogger);
+		runProject(buff, p, buildFile, nameFile, "ajmlc-contractjdoc", consoleLogger);
 	}
 
 	/**
@@ -473,18 +476,6 @@ public class Detect {
 	 *             problems with ANT project.
 	 */
 	private void runTests(String libFolder) throws Exception {
-		runTestsOnJava(libFolder);
-	}
-
-	/**
-	 * Method used to run the tests with the JML oracles.
-	 * 
-	 * @param libFolder
-	 *            = the path to external libraries needed to tests execution.
-	 * @throws Exception
-	 *             problems with ANT project.
-	 */
-	private void runTestsOnJava(String libFolder) throws Exception {
 		final StringBuilder buff = new StringBuilder();
 		String task = "";
 		// Run ant file
@@ -496,7 +487,9 @@ public class Detect {
 		if (compiler == ContractAwareCompiler.JMLC){
 			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
 			task = "run_tests";
-		} else task = "run_testsDBCJDoc";
+		} else {
+			task = "run_testsDBCJDoc";
+		}
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
 		runProject(buff, p, buildFile, "runTests.xml", task,
