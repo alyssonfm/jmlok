@@ -293,7 +293,7 @@ public class Detect {
 		contractLib = contractLib + libFolder;
 		// Run Randoop
 		String pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib"
-				+ Constants.FILE_SEPARATOR + "randoop(1).jar";
+				+ Constants.FILE_SEPARATOR + "randoop2.jar";
 		runRandoop(libFolder, timeout, pathToRandoop);
 		// Run ant file
 		Project p = new Project();
@@ -484,6 +484,8 @@ public class Detect {
 		File buildFile = accessFile("runTests.xml");
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
+		String aspectJMLLib = "aspectjml-lib";
+		p.setUserProperty("aspectjml.lib", aspectJMLLib);
 		if (compiler == ContractAwareCompiler.JMLC){
 			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
 			task = "run_tests";

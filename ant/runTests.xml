@@ -23,10 +23,13 @@
 		</target>
 	
 	<target name="run_testsDBCJDoc">
-			<echo>Running JUnit to test the DBCJDoc code</echo>
-			<junit printsummary="yes" haltonfailure="yes" fork="true" maxmemory="4096m">			
+			<echo>Running JUnit to test the ContractJDoc code</echo>
+			<junit printsummary="yes" haltonfailure="yes" fork="true">			
 				<classpath>
 					<fileset dir="${lib}">
+						<include name="**/*.jar" />
+					</fileset>
+					<fileset dir="${aspectjml.lib}">
 						<include name="**/*.jar" />
 					</fileset>
 					<pathelement location="${jmlBin}" />

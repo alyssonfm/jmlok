@@ -2,7 +2,7 @@
 
 	<target name="compile_project">
 			<echo>Compiling the project</echo>
-			<javac fork="yes" memoryMaximumSize="4096m" debug="on" srcdir="${source_folder}/" destdir="${source_bin}/" includeantruntime="false">
+			<javac debug="on" srcdir="${source_folder}/" destdir="${source_bin}/" includeantruntime="false">
 				<classpath>
 					<pathelement path="${jmlLib}" />
 					<fileset dir="${lib}">
