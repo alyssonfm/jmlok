@@ -30,6 +30,7 @@ import utils.commons.FileUtil;
 import utils.commons.OperatingSystem;
 import utils.datastructure.Nonconformance;
 import categorize.Categorize;
+import categorize.Examinator;
 import detect.Detect;
 
 public class Controller {
@@ -281,13 +282,11 @@ public class Controller {
 	 * Show the Categorization Screen with all of the fields filled.
 	 */
 	public void showNonconformancesScreen() {
-		final List<Nonconformance> nonconformance = fulfillCategorizePhase(
-				errors, this.srcFolder);
+		final List<Nonconformance> nonconformance = fulfillDetectionPhase(errors);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ViewNonconformances frame = new ViewNonconformances(
-							nonconformance, Controller.this);
+					ViewNonconformances frame = new ViewNonconformances(nonconformance, Controller.this);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -323,16 +322,32 @@ public class Controller {
 	 *            The set of test errors to categorize.
 	 * @param source
 	 *            The source folder where the errors where detected.
-	 * @return an list of nonconformances already categorized.
+	 * @return a list of nonconformances already categorized.
 	 */
-	private List<Nonconformance> fulfillCategorizePhase(
-			Set<Nonconformance> errors, String source) {
+	private List<Nonconformance> fulfillCategorizePhase(Set<Nonconformance> errors, String source) {
 		Categorize c = new Categorize();
 		List<Nonconformance> x = new ArrayList<Nonconformance>();
 		nonconformities = c.categorize(errors, source);
 		for (Nonconformance n : nonconformities)
 			x.add(n);
 		return x;
+	}
+	
+	/**
+	 * Used for fulfill the Detection phase.
+	 * 
+	 * @param errors
+	 *            The set of test errors to categorize.
+	 * @return a list of nonconformances.
+	 */
+	private List<Nonconformance> fulfillDetectionPhase(Set<Nonconformance> errors) {
+		List<Nonconformance> noncs = new ArrayList<Nonconformance>();
+		Examinator ex = new Examinator(this.srcFolder);
+		for (Nonconformance n : errors)
+			n.setTestCaseCode(ex.showsMethodCode(n));
+		for (Nonconformance n : errors)
+			noncs.add(n);
+		return noncs;
 	}
 
 	/**

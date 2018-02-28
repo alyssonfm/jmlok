@@ -72,7 +72,7 @@ public class DetectUtil {
 	public static String getCommandToUseRandoop(String timeout,
 			String pathToRandoop, String liblist) {
 		String bruteCommand = "java -cp \"" + pathToRandoop + ";"
-				+ Constants.JML_SOURCE_BIN
+				+ Constants.JML_BIN
 				+ ((liblist.equals("")) ? ("") : (";" + liblist))
 				+ "\" randoop.main.Main gentests --classlist="
 				+ Constants.CLASSES + " --timelimit=" + timeout

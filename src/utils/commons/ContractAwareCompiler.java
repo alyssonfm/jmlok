@@ -8,5 +8,5 @@ package utils.commons;
  * @version 1.0
  */
 public enum ContractAwareCompiler {
-	JMLC, CONTRACTJDOC
+	JMLC, CONTRACTJDOC, ASPECTJ
 }

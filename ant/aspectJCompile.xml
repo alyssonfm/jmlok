@@ -1,0 +1,19 @@
+<project xmlns:aspectj="antlib:org.aspectj" name="AspectJCompile" default="compile_project" basedir="..">
+
+	<target name="compile_project">
+			<echo>Compiling the project with AspectJ</echo>
+			<aspectj:iajc fork="true" verbose="false" source="1.8" destDir="${jmlBin}/">
+				<sourceroots>
+								<pathelement location="${source_folder}" />
+				</sourceroots>			
+				<classpath>
+					<fileset dir="${lib}">
+						<include name="**/*.jar" />
+					</fileset>
+					<fileset dir="${aspectjml.lib}">
+						<include name="aspectjrt.jar" />
+					</fileset>
+				</classpath>
+			</aspectj:iajc>
+	</target>
+</project>

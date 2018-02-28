@@ -140,8 +140,7 @@ public class ViewNonconformances extends JFrame {
 		listNonconformances = new JList<String>();
 		listNonconformances.setSize(225,  310);
 		listNonconformances.setListData(namesNC);
-		listNonconformances
-				.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		listNonconformances.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		listNonconformances
 				.addListSelectionListener(new ListSelectionListener() {
 					@Override
@@ -353,18 +352,13 @@ public class ViewNonconformances extends JFrame {
 					.getPackageName());
 		}
 		// Test Case and Highlight
-		textAreaTestCases.setText(nc
-				.get(listNonconformances.getSelectedIndex()).getTestCaseCode());
+		textAreaTestCases.setText(nc.get(listNonconformances.getSelectedIndex()).getTestCaseCode());
 		textAreaTestCases.setHighlighter(highLit);
-		String stringToHighlight = nc
-				.get(listNonconformances.getSelectedIndex())
-				.getSampleLineOfError().trim();
-		int counter = nc.get(listNonconformances.getSelectedIndex())
-				.getCountOcurrencesLineOfError();
+		String stringToHighlight = nc.get(listNonconformances.getSelectedIndex()).getSampleLineOfError().trim();
+		int counter = nc.get(listNonconformances.getSelectedIndex()).getCountOcurrencesLineOfError();
 		int beginIndex = textAreaTestCases.getText().indexOf(stringToHighlight);
 		while (counter-- > 0)
-			beginIndex = textAreaTestCases.getText().indexOf(stringToHighlight,
-					beginIndex + stringToHighlight.length());
+			beginIndex = textAreaTestCases.getText().indexOf(stringToHighlight, beginIndex + stringToHighlight.length());
 		int endIndex = beginIndex + stringToHighlight.length();
 		try {
 			highLit.addHighlight(beginIndex, endIndex, painter);

@@ -14,7 +14,7 @@ public class Constants {
 	//Constant to get the file separator of the System.
 	public static final String FILE_SEPARATOR = System.getProperty("file.separator");
 	//Constants to folders created path.
-	public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + FILE_SEPARATOR + "jmlok";
+	public static final String TEMP_DIR = System.getProperty("java.io.tmpdir") + "jmlok";
 	public static final String JML_SOURCE_BIN = TEMP_DIR + FILE_SEPARATOR + "bin";
 	public static final String RANDOOP_OUTPUT_FOLDER = TEMP_DIR + FILE_SEPARATOR + "RandoopTests";
 	public static final String JML_BIN = TEMP_DIR + FILE_SEPARATOR + "jmlBin";

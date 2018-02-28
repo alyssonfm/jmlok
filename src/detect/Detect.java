@@ -190,7 +190,7 @@ public class Detect {
 	private void compileProject(String sourceFolder, String librariesFolder)
 			throws Exception {
 		javaCompile(sourceFolder, librariesFolder);
-		jmlCompile(sourceFolder, librariesFolder);
+		//jmlCompile(sourceFolder, librariesFolder);
 		triggersEvent(StagesDetect.COMPILED_PROJECT);
 	}
 
@@ -239,6 +239,7 @@ public class Detect {
 		try {
 			FileUtils.cleanDirectory(javaBin);
 			FileUtils.cleanDirectory(jmlBin);
+			FileUtils.copyFile(new File("C:\\Users\\ContractOk\\Desktop\\Jodamoney\\src\\org\\joda\\money\\MoneyData.csv"), new File("C:\\Users\\ContractOk\\AppData\\Local\\Temp\\jmlok\\jmlBin\\org\\joda\\money\\MoneyData.csv"));
 			FileUtils.cleanDirectory(testSource);
 			FileUtils.cleanDirectory(testBin);
 		} catch (IOException e) {
@@ -263,15 +264,17 @@ public class Detect {
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
-		//String aspectJMLLib = getJARPath() + Constants.FILE_SEPARATOR + "aspectjml-lib";
-		File buildFile = accessFile("javaCompile.xml");
+		String aspectJMLLib = getJARPath() + Constants.FILE_SEPARATOR + "aspectjml-lib";
+		//File buildFile = accessFile("javaCompile.xml");
+		File buildFile = accessFile("aspectJCompile.xml");
 		p.setUserProperty("source_folder", sourceFolder);
 		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlLib", contractLib);
-		//p.setUserProperty("aspectjml.lib", aspectJMLLib);
+		p.setUserProperty("jmlBin", Constants.JML_BIN);
+		p.setUserProperty("aspectjml.lib", aspectJMLLib);
 		//p.setUserProperty("app.lib", libFolder);
-		runProject(buff, p, buildFile, "javaCompile.xml", "compile_project",
+		runProject(buff, p, buildFile, "aspectJCompile.xml", "compile_project",
 				consoleLogger);
 	}
 
@@ -293,18 +296,21 @@ public class Detect {
 		contractLib = contractLib + libFolder;
 		// Run Randoop
 		String pathToRandoop = getJARPath() + Constants.FILE_SEPARATOR + "lib"
-				+ Constants.FILE_SEPARATOR + "randoop2.jar";
+				+ Constants.FILE_SEPARATOR + "randoop(1).jar";
+		String junitPath = getJARPath() + Constants.FILE_SEPARATOR + "lib"
+				+ Constants.FILE_SEPARATOR + "junit.jar";
 		runRandoop(libFolder, timeout, pathToRandoop);
 		// Run ant file
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
 		File buildFile = accessFile("generateTests.xml");
 		p.setUserProperty("classes", Constants.CLASSES);
-		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
+		p.setUserProperty("source_bin", Constants.JML_BIN);
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
 		p.setUserProperty("tests_folder", Constants.TESTS);
 		p.setUserProperty("lib", libFolder);
+		p.setUserProperty("junitPath", junitPath);
 		p.setUserProperty("jmlLib", contractLib);
 		p.setUserProperty("timeout", timeout);
 		runProject(buff, p, buildFile, "generateTests.xml",
@@ -486,12 +492,13 @@ public class Detect {
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
 		String aspectJMLLib = "aspectjml-lib";
 		p.setUserProperty("aspectjml.lib", aspectJMLLib);
-		if (compiler == ContractAwareCompiler.JMLC){
+		/*if (compiler == ContractAwareCompiler.JMLC){
 			p.setUserProperty("jmlCompiler", Constants.JMLC_SRC);
 			task = "run_tests";
 		} else {
-			task = "run_testsDBCJDoc";
-		}
+			task = "run_testsContractJDoc";
+		}*/
+		task = "run_testsAspectJ";
 		p.setUserProperty("tests_src", Constants.TEST_DIR);
 		p.setUserProperty("tests_bin", Constants.TEST_BIN);
 		runProject(buff, p, buildFile, "runTests.xml", task,

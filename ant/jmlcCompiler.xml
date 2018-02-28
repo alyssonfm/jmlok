@@ -10,6 +10,8 @@
 			<arg value="-d" />			
 			<arg value="${jmlBin}" />
 			
+			<arg value="-G" />
+			
 		</exec>
 	</target>
 </project>

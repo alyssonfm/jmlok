@@ -142,7 +142,7 @@ public class Main extends JFrame {
 		UIManager.put("FileChooser.acceptAllFileFilterText", "All files");
 		setTitle("JmlOk2");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 750, 219);
+		setBounds(100, 100, 750, 312);
 		setMinimumSize(new Dimension(this.WIDTH, this.HEIGHT));
 		setMaximumSize(new Dimension(1450, this.HEIGHT));
 		setMaximizedBounds(new Rectangle(1450, this.HEIGHT));
@@ -284,37 +284,44 @@ public class Main extends JFrame {
 
 		// Run Button
 		btnRun = new JButton("Run");
-		springLayout.putConstraint(SpringLayout.EAST, btnRun, -155,
-				SpringLayout.EAST, contentPane);
 		btnRun.setFont(new Font("Verdana", Font.BOLD, 18));
 		
 		final JRadioButton rdbtnJmlcCompiler = new JRadioButton("JMLC compiler");
-		springLayout.putConstraint(SpringLayout.SOUTH, rdbtnJmlcCompiler, -10, SpringLayout.SOUTH, contentPane);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnJmlcCompiler, 24, SpringLayout.SOUTH, lblTime);
+		springLayout.putConstraint(SpringLayout.WEST, rdbtnJmlcCompiler, 0, SpringLayout.WEST, lblExternalLibFolder);
 		rdbtnJmlcCompiler.setFont(new Font("Verdana", Font.BOLD, 18));
 		
 		
 		final JRadioButton rdbtnDbcjdocCompiler = new JRadioButton("ContractJDoc compiler");
-		springLayout.putConstraint(SpringLayout.WEST, btnRun, 9, SpringLayout.EAST, rdbtnDbcjdocCompiler);
+		springLayout.putConstraint(SpringLayout.WEST, btnRun, 205, SpringLayout.EAST, rdbtnDbcjdocCompiler);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnRun, 0, SpringLayout.SOUTH, rdbtnDbcjdocCompiler);
-		rdbtnDbcjdocCompiler.setSelected(true);
-		springLayout.putConstraint(SpringLayout.WEST, rdbtnDbcjdocCompiler, 217, SpringLayout.WEST, contentPane);
-		springLayout.putConstraint(SpringLayout.SOUTH, rdbtnDbcjdocCompiler, -10, SpringLayout.SOUTH, contentPane);
-		springLayout.putConstraint(SpringLayout.EAST, rdbtnJmlcCompiler, -21, SpringLayout.WEST, rdbtnDbcjdocCompiler);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnDbcjdocCompiler, 7, SpringLayout.SOUTH, rdbtnJmlcCompiler);
+		springLayout.putConstraint(SpringLayout.WEST, rdbtnDbcjdocCompiler, 0, SpringLayout.WEST, lblExternalLibFolder);
 		rdbtnDbcjdocCompiler.setFont(new Font("Verdana", Font.BOLD, 18));
+		
+		final JRadioButton rdbtnAspectJCompiler = new JRadioButton("AspectJ compiler");
+		rdbtnAspectJCompiler.setSelected(true);
+		springLayout.putConstraint(SpringLayout.NORTH, rdbtnAspectJCompiler, 6, SpringLayout.SOUTH, rdbtnDbcjdocCompiler);
+		springLayout.putConstraint(SpringLayout.WEST, rdbtnAspectJCompiler, 0, SpringLayout.WEST, lblExternalLibFolder);
+		rdbtnAspectJCompiler.setFont(new Font("Verdana", Font.BOLD, 18));
+		
 		
 		
 		//Group the radio buttons.
 	    ButtonGroup group = new ButtonGroup();
 	    group.add(rdbtnJmlcCompiler);
 	    group.add(rdbtnDbcjdocCompiler);
+	    group.add(rdbtnAspectJCompiler);
 	    
 	    contentPane.add(rdbtnDbcjdocCompiler);
 	    contentPane.add(rdbtnJmlcCompiler);
+	    contentPane.add(rdbtnAspectJCompiler);
 		
 		btnRun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					if(rdbtnDbcjdocCompiler.isSelected()) controller = new Controller(ContractAwareCompiler.CONTRACTJDOC);
+					else if(rdbtnAspectJCompiler.isSelected()) controller = new Controller(ContractAwareCompiler.ASPECTJ);
 					else controller = new Controller(ContractAwareCompiler.JMLC);
 					controller.checkProblemsWithInput(textFieldSrcFolder.getText(),
 							textFieldTime.getText());
@@ -339,8 +346,9 @@ public class Main extends JFrame {
 
 		// Clean Button
 		JButton btnClean = new JButton("Clean");
-		springLayout.putConstraint(SpringLayout.WEST, btnClean, 143, SpringLayout.EAST, rdbtnDbcjdocCompiler);
 		springLayout.putConstraint(SpringLayout.SOUTH, btnClean, 0, SpringLayout.SOUTH, rdbtnDbcjdocCompiler);
+		springLayout.putConstraint(SpringLayout.EAST, btnClean, -23, SpringLayout.EAST, contentPane);
+		springLayout.putConstraint(SpringLayout.EAST, btnRun, -44, SpringLayout.WEST, btnClean);
 		btnClean.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				resetProgram();

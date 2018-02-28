@@ -73,17 +73,65 @@ public class NCCreator {
 			result = getErrorsFromXML(results);
 			result.addAll(getErrorsFromXML(resultsError));
 			break;
+		case ASPECTJ:
+			result = getErrorsFromXMLAspectJ(results);
+			result.addAll(getErrorsFromXMLAspectJ(resultsError));
+			break;
 		default:
 			result = getErrorsFromFile(results);
 			result.addAll(getErrorsFromFile(resultsError));
 			break;
 		}
-		/*if (compiler == ContractAwareCompiler.JMLC) {
-			
-		} else {
-			result = getErrorsFromFile(results);
-		}*/
 		this.ncCount = result.size();
+		return result;
+	}	
+
+	/**
+	 * Method used to get the nonconformances from the result file of Randoop,
+	 * when the jmlc is used as compiler.
+	 * 
+	 * @param file
+	 *            = the path to result file of Randoop.
+	 * @return - the list of nonconformances present in the test result file.
+	 */
+	private Set<Nonconformance> getErrorsFromXMLAspectJ(File file) {
+		Set<Nonconformance> result = new HashSet<Nonconformance>();
+		if(!file.exists()) return result;
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		dbf.setNamespaceAware(false);
+		DocumentBuilder docBuilder;
+		try {
+			docBuilder = dbf.newDocumentBuilder();
+			Document xml = docBuilder.parse(file);
+			NodeList list = xml.getDocumentElement().getElementsByTagName(
+					"testcase");
+			for (int i = 0; i < list.getLength(); i++) {
+				Element testcase = (Element) list.item(i);
+				if (testcase.hasChildNodes()) {
+					NodeList subNodes = testcase.getChildNodes();
+					for (int j = 0; j < subNodes.getLength(); j++) {
+						if (subNodes.item(j) instanceof Element) {
+							Element problem = (Element) subNodes.item(j);
+							if (problem.getTagName().equals("failure")) {
+								String name = testcase.getAttribute("name");
+								String testFile = testcase.getAttribute("classname") + ".java";
+								String detailedErrorMessage = problem.getFirstChild().toString();
+								Nonconformance te = new Nonconformance(name, testFile, detailedErrorMessage);
+								if (te.isNonconformance()) {
+									result.add(te);
+								}
+							}
+						}
+					}
+				}
+			}
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 
@@ -104,8 +152,7 @@ public class NCCreator {
 		try {
 			docBuilder = dbf.newDocumentBuilder();
 			Document xml = docBuilder.parse(file);
-			NodeList list = xml.getDocumentElement().getElementsByTagName(
-					"testcase");
+			NodeList list = xml.getDocumentElement().getElementsByTagName("testcase");
 			for (int i = 0; i < list.getLength(); i++) {
 				Element testcase = (Element) list.item(i);
 				if (testcase.hasChildNodes()) {
@@ -115,16 +162,11 @@ public class NCCreator {
 							Element problem = (Element) subNodes.item(j);
 							if (problem.getTagName().equals("error")) {
 								String name = testcase.getAttribute("name");
-								String testFile = testcase
-										.getAttribute("classname") + ".java";
+								String testFile = testcase.getAttribute("classname") + ".java";
 								String errorType = problem.getAttribute("type");
-								String message = problem
-										.getAttribute("message");
-								String detailedErrorMessage = problem
-										.getFirstChild().toString();
-								Nonconformance te = new Nonconformance(name,
-										testFile, message, errorType,
-										detailedErrorMessage);
+								String message = problem.getAttribute("message");
+								String detailedErrorMessage = problem.getFirstChild().toString();
+								Nonconformance te = new Nonconformance(name,testFile, message, errorType,detailedErrorMessage);
 								if (te.isNonconformance()) {
 									result.add(te);
 								}
@@ -169,7 +211,7 @@ public class NCCreator {
 						text.append("\n");
 					}
 					Nonconformance te = new Nonconformance(text.toString(),
-							line, "");
+							line);
 					if (te.isNonconformance()) {
 						result.add(te);
 					}

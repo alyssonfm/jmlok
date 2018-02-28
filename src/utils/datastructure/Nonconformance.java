@@ -62,15 +62,54 @@ public class Nonconformance {
 	 * The alternative constructor of this class. Takes only two arguments as parameter.
 	 * For OpenJML use only.
 	 * @param summary - the message of the error.
-	 * @param type - the type of the error.
 	 * @param message - the details from the error log.
 	 */
-	public Nonconformance(String summary, String type, String message){
+	public Nonconformance(String summary, String message){
 		// this.setOpenJMLType(type);
-		this.setType(type);
+		// this.setType(type);
 		this.setErrorMessage(message);
 		this.setClassName(summary);
 		this.setMethodName(summary);
+	}
+	
+	/**
+	 * The alternative constructor for this class. Takes only three arguments as parameter.
+	 * @param testName = the name of current test.
+	 * @param testFile = the name of the .java used for finding this test error.
+	 * @param message = more detailed info about the test error.
+	 */
+	public Nonconformance(String testName, String testFile, String message){
+		this.setJmlRac(false);
+		this.setTestFile(testFile);
+		this.setNumberedTest(testName);
+		String[] text = message.split("\n");
+		if(text.length <= 5  && text[1].contains("ajc$before$")) this.setMeaningless(true);
+		if(text[1].contains("ajc$before$") || text[1].contains("ajc$afterReturning$")) {
+			this.setJmlRac(true);
+		}
+		if(this.isNonconformance()) {
+			if(text[1].contains("ajc$before$")) this.type = CategoryType.PRECONDITION;
+			else if(text[1].contains("ajc$afterReturning$")) this.type = CategoryType.POSTCONDITION;
+			String[] aux = text[2].split(" ");
+			String methodInfo = aux[aux.length-1];
+			String lineNumberJava = methodInfo.substring(methodInfo.indexOf("(")+1, methodInfo.indexOf(")"));
+			lineNumberJava = lineNumberJava.substring(lineNumberJava.indexOf(":")+1);
+			methodInfo = methodInfo.substring(0, methodInfo.indexOf("("));
+			String packageInfo = methodInfo.substring(0, methodInfo.lastIndexOf("."));
+			methodInfo = methodInfo.substring(methodInfo.lastIndexOf(".")+1);
+			String classInfo = packageInfo.substring(packageInfo.lastIndexOf(".")+1);
+			packageInfo = packageInfo.substring(0, packageInfo.lastIndexOf("."));
+			this.setClassName(text[2]);
+			this.methodName = methodInfo;
+			this.packageName = packageInfo;
+			this.className = classInfo;
+			this.errorMessage = message;
+			this.lineNumberOnJavaThatRevealsNC = Integer.valueOf(lineNumberJava);
+			this.setLineNumberOnTestThatRevealsNC();
+			this.setSampleLineOfError();
+			this.stackTraceOrder = new ArrayList<String>();
+		}
+		
 	}
 
 	/**
@@ -231,7 +270,7 @@ public class Nonconformance {
 			int first = message.indexOf("(")+1;
 			int lastIndex = message.indexOf(")");
 			aux = message.substring(first, lastIndex);
-		 result = aux.substring(0, aux.indexOf("."));
+			result = aux.substring(0, aux.indexOf("."));
 		}
 		this.className = result;
 	}
@@ -316,8 +355,7 @@ public class Nonconformance {
 	public void setSampleLineOfError() {
 		int[] arr = {0};
 		try {
-			this.sampleLineOfError = AcessingTestCases
-					.lineSampleWhoOriginatedError(this.testFile, this.lineNumberOnTestThatRevealsNC,
+			this.sampleLineOfError = AcessingTestCases.lineSampleWhoOriginatedError(this.testFile, this.lineNumberOnTestThatRevealsNC,
 							this.numberedTest, arr);
 			this.setCountOcurrencesLineOfError(arr[0]);
 		} catch (IOException e) {

@@ -8,6 +8,7 @@
 					</fileset>
 					<pathelement location="${source_bin}" />
 					<pathelement path="${jmlLib}" />
+					<pathelement location="${junitPath}"/>
 				</classpath>
 			</javac>
 	</target>
