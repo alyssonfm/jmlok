@@ -190,7 +190,7 @@ public class Detect {
 	private void compileProject(String sourceFolder, String librariesFolder)
 			throws Exception {
 		javaCompile(sourceFolder, librariesFolder);
-		//jmlCompile(sourceFolder, librariesFolder);
+		jmlCompile(sourceFolder, librariesFolder);
 		triggersEvent(StagesDetect.COMPILED_PROJECT);
 	}
 
@@ -239,7 +239,7 @@ public class Detect {
 		try {
 			FileUtils.cleanDirectory(javaBin);
 			FileUtils.cleanDirectory(jmlBin);
-			FileUtils.copyFile(new File("C:\\Users\\ContractOk\\Desktop\\Jodamoney\\src\\org\\joda\\money\\MoneyData.csv"), new File("C:\\Users\\ContractOk\\AppData\\Local\\Temp\\jmlok\\jmlBin\\org\\joda\\money\\MoneyData.csv"));
+			//FileUtils.copyFile(new File("C:\\Users\\ContractOk\\Desktop\\Jodamoney\\src\\org\\joda\\money\\MoneyData.csv"), new File("C:\\Users\\ContractOk\\AppData\\Local\\Temp\\jmlok\\jmlBin\\org\\joda\\money\\MoneyData.csv"));
 			FileUtils.cleanDirectory(testSource);
 			FileUtils.cleanDirectory(testBin);
 		} catch (IOException e) {
@@ -265,16 +265,25 @@ public class Detect {
 		Project p = new Project();
 		DefaultLogger consoleLogger = createLogger(buff);
 		String aspectJMLLib = getJARPath() + Constants.FILE_SEPARATOR + "aspectjml-lib";
-		//File buildFile = accessFile("javaCompile.xml");
-		File buildFile = accessFile("aspectJCompile.xml");
+		File buildFile;
+		String fileName = "";
+		switch (this.compiler) {
+		case ASPECTJ:
+			buildFile = accessFile("aspectJCompile.xml");
+			fileName = "aspectJCompile.xml";
+			break;
+		default:
+			buildFile = accessFile("javaCompile.xml");
+			fileName = "javaCompile.xml";
+			break;
+		}
 		p.setUserProperty("source_folder", sourceFolder);
 		p.setUserProperty("source_bin", Constants.JML_SOURCE_BIN);
 		p.setUserProperty("lib", libFolder);
 		p.setUserProperty("jmlLib", contractLib);
 		p.setUserProperty("jmlBin", Constants.JML_BIN);
 		p.setUserProperty("aspectjml.lib", aspectJMLLib);
-		//p.setUserProperty("app.lib", libFolder);
-		runProject(buff, p, buildFile, "aspectJCompile.xml", "compile_project",
+		runProject(buff, p, buildFile, fileName, "compile_project",
 				consoleLogger);
 	}
 

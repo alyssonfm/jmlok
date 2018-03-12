@@ -24,7 +24,7 @@
 	
 	<target name="run_testsContractJDoc">
 			<echo>Running JUnit to test the ContractJDoc code</echo>
-			<junit printsummary="yes" haltonfailure="yes" fork="true">			
+			<junit printsummary="yes" haltonfailure="yes" fork="true" maxmemory="4096m">			
 				<classpath>
 					<fileset dir="${lib}">
 						<include name="**/*.jar" />
@@ -47,7 +47,7 @@
 	
 	<target name="run_testsAspectJ">
 			<echo>Running JUnit to test the AspectJ code</echo>
-			<junit printsummary="yes" haltonfailure="yes" fork="true">			
+			<junit printsummary="yes" haltonfailure="yes" fork="true" maxmemory="8192m">			
 				<classpath>
 					<fileset dir="${lib}">
 						<include name="**/*.jar" />

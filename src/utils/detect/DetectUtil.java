@@ -76,6 +76,7 @@ public class DetectUtil {
 				+ ((liblist.equals("")) ? ("") : (";" + liblist))
 				+ "\" randoop.main.Main gentests --classlist="
 				+ Constants.CLASSES + " --timelimit=" + timeout
+				+ " --ignore-flaky-tests=true"
 				+ " --junit-output-dir=" + Constants.TEST_DIR;
 		if (System.getProperty("os.name").contains("Windows"))
 			return bruteCommand;
